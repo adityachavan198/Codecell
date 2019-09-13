@@ -1,13 +1,30 @@
+25 August 2019 : Omkar Chorghe	
+	- Added views for registration, used inbuilt forms, need to make customized form
+	- Forms.py contains forms to make use of inbuilt form_view
+	- Modularized urls in Accounts and used include in global urls
+	- Successfully tested Log in, Log out, Register !!!
+
+
+24 August 2019 : Omkar Chorghe
+	- Added forms
+	- HTML pages
+		- Added Registration page
+		- Added log in page
+		- Looks Ugly
+	- Views for log in , log out
+
+
 23 August 2019 : Omkar Chorghe
-- Initialized Codecell project
-- Started App "Accounts"
-- Created Model Student
-- Home Page = Made a HTML Template Home Page 
-	- Added CDN Bootstrap for customizations 
-	- Added Navbar
-- Added View -  home
-- Registered at admin, added app in settings 
-- Superuser set
-- Made migrations 
+	- Initialized Codecell project
+	- Started App "Accounts"
+	- Created Model Student
+	- Home Page = Made a HTML Template Home Page 
+		- Added CDN Bootstrap for customizations 
+		- Added Navbar
+	- Added View -  home
+	- Registered at admin, added app in settings 
+	- Superuser set
+	- Made migrations 
+
 
 
