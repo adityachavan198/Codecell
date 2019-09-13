@@ -1,0 +1,13 @@
+23 August 2019 : Omkar Chorghe
+- Initialized Codecell project
+- Started App "Accounts"
+- Created Model Student
+- Home Page = Made a HTML Template Home Page 
+	- Added CDN Bootstrap for customizations 
+	- Added Navbar
+- Added View -  home
+- Registered at admin, added app in settings 
+- Superuser set
+- Made migrations 
+
+
