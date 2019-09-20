@@ -53,7 +53,7 @@ def user_login(request):
         if user is not None:
             if user.is_active:
                 login(request,user)
-                return render(request,'Accounts/home.html')
+                return HttpResponseRedirect(reverse('home'))
             else:
                 print("Login failed")
                 return HttpResponseRedirect(request,'Accounts/login.html',{})

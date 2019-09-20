@@ -1,3 +1,10 @@
+20 September 2019 : Omkar Chorghe
+	- Removed dependency from Accounts/home.html to Accounts/base.html
+		- base.html contains the link rel stylesheet cdn links and static links
+		- important to add two tags for all other html files to import those
+	- Removed bug - login redirect url used to trail home page and hence lead to inconsistent url pattern 
+
+
 25 August 2019 : Omkar Chorghe	
 	- Added views for registration, used inbuilt forms, need to make customized form
 	- Forms.py contains forms to make use of inbuilt form_view

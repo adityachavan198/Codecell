@@ -1,0 +1,1 @@
+1) Any logged in user can put a login, register link in url and access the pages even if the user is logged in.

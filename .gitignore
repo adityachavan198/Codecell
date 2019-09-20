@@ -1,3 +1,4 @@
 Codecell/__pycache__
 Accounts/__pycache__
 Accounts/migrations/
+db.sqlite3
