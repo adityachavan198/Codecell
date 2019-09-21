@@ -1,0 +1,17 @@
+{% extends 'Accounts/base.html' %}
+{% block content %}
+
+<h2>Quiz Category list</h2>
+
+<ul>
+  {% for cat in category_list %}
+  <li>
+	<a href="#">
+	  {{ cat.category }}
+	</a>
+  </li>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

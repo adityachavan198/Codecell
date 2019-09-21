@@ -3,6 +3,14 @@
 		- Added a authenticate if on both views and it redirects to home page if user is signed in.
 	- Successfully migrated register view from function based view to class based view.
 		- Class based view offers much more flexibility than function based view.
+	- Create App Quiz
+		- Added Models for category and sub category
+		- Added generic list view for category list view
+		- created quiz category list. html template
+		- registered for admin site and used a Admin class
+		- added respective urls
+	* Quiz App has following structure
+		We have categories and sub categories, to which a quiz will be linked.
 
 20 September 2019 : Omkar Chorghe
 	- Removed dependency from Accounts/home.html to Accounts/base.html

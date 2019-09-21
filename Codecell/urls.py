@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from Accounts import views,urls
+from Quiz import urls as Quiz_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),  # home page 
-    path('',include(urls.registerpatterns))  # other log in log out tags
+    path('',include(urls.registerpatterns)),  # other log in log out tags
+    path('quiz/', include(Quiz_urls.Quiz_url_patterns), name = 'quiz'), # urls in quiz category
 ]
