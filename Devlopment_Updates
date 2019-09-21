@@ -1,3 +1,9 @@
+21 September 2019 : Omkar Chorghe
+	- Bug - User was able to access login and register page even when he/she was signed in. 
+		- Added a authenticate if on both views and it redirects to home page if user is signed in.
+	- Successfully migrated register view from function based view to class based view.
+		- Class based view offers much more flexibility than function based view.
+
 20 September 2019 : Omkar Chorghe
 	- Removed dependency from Accounts/home.html to Accounts/base.html
 		- base.html contains the link rel stylesheet cdn links and static links

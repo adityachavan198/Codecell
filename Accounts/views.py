@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponseRedirect,HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.views import View
 
 from Accounts.forms import *
 
@@ -19,33 +20,42 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('home'))
 
+class Register(View):
+    User_form=UserForm
+    Student_form=StudentForm
+    template = 'Accounts/registration.html'
 
-def register(request):
-    ''' Register a new user first if is user submits data and second is load a form '''
-    registered=False
+    def get(self, request, *args, **kwargs):
+        ''' Process a get request '''
+        if request.user.is_authenticated:
+            return HttpResponseRedirect(reverse('home'))
+        User_form = self.User_form()
+        Student_form = self.Student_form()
+        return render(request,self.template,{'user_form':User_form,'student_form':Student_form})
 
-    if request.method=='POST':
-        user_form=UserForm(data=request.POST)
-        student_form=StudentForm(data=request.POST)
+    def post(self, request, *args, **kwargs):
+        ''' Process a post request '''
+        User_form = self.User_form(request.POST)
+        Student_form = self.Student_form(request.POST)
 
-        if user_form.is_valid() and student_form.is_valid():
-            user = user_form.save(commit=False)
-            user.set_password(user.password)
+        if User_form.is_valid() and Student_form.is_valid():
+            user = User_form.save(commit=False)
+            user.set_password(User.password)
             user.save()
-            student=student_form.save(commit=False)
+            student=Student_form.save(commit=False)
             student.user=user
             student.save()
             return HttpResponseRedirect(reverse('home'))
-
         else:
             print(user_form.errors,student_form.errors)
-    else:
-        user_form=UserForm()
-        student_form=StudentForm()
-    return render(request,'Accounts/registration.html',{'user_form':user_form,'student_form':student_form})
-
+    
 def user_login(request):
     ''' log in a user '''
+
+    # if user is already logged in 
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('home'))
+
     if request.method=='POST':
         username=request.POST.get('username')
         password=request.POST.get('password')
@@ -59,6 +69,6 @@ def user_login(request):
                 return HttpResponseRedirect(request,'Accounts/login.html',{})
         else:
             print("No such User")
-            return HttpResponseRedirect('')
+            return HttpResponseRedirect(reverse('home'))
     else:
         return render(request,'Accounts/login.html',{})
