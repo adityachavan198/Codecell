@@ -1,0 +1,27 @@
+{% extends 'Accounts/base.html' %}
+{% block content %}
+
+<h1> Quizzes in the <strong> {{ category.category }}</strong> category </h1>
+
+{% if quiz_list %}
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Quiz Name</th>
+        <th>Sub-Category</th>
+        <th>Level</th>
+    </tr>
+    {% for quiz in quiz_list %}
+    <td>    <li><a href = "#">{{ quiz.title }}</a></li> </td>
+    <td> {{ quiz.sub_category }}</td>
+    <td>{{ quiz.level }}</td>
+    {% endfor %}
+
+</table>
+
+{% else %}
+<p> Sorry, there are no quizzes available here yet.</p>
+
+{% endif %}
+
+{% endblock %}

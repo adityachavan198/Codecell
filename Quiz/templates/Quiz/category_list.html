@@ -6,7 +6,7 @@
 <ul>
   {% for cat in category_list %}
   <li>
-	<a href="#">
+	<a href="{% url 'Quiz_category_list_matching' category_name=cat.category %}">
 	  {{ cat.category }}
 	</a>
   </li>

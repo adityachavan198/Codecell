@@ -16,7 +16,7 @@ class AnswerInline(admin.TabularInline):
 
 class QuizAdmin(admin.ModelAdmin):
     #form = QuizAdminForm  # need to be added 
-    list_display = ('title','category')
+    list_display = ('title','category',)
     list_filter = ('category',)
     search_fields = ('description','category')
 

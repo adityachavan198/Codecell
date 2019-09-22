@@ -42,7 +42,10 @@ class SubCategory(models.Model):
         verbose_name_plural = "Sub-Categories"
 
     def __str__(self):
-        return self.sub_category + " ( " + self.category.category + " ) "
+        if self.category is None:
+            return self.sub_category
+        else:
+            return self.sub_category + " ( " + self.category.category + " ) "
 
 
 class Quiz(models.Model):
@@ -52,9 +55,13 @@ class Quiz(models.Model):
 
     description = models.TextField(verbose_name = "Description", blank = True, help_text = "Quiz description")
 
+    level = models.CharField(verbose_name = "Level", help_text = "Level of difficultly", max_length = 10,default = 'Easy',choices = (('Hard','Hard'),('Intermediate','Intermediate'),('Easy','Easy')))
+
     url = models.SlugField(max_length = 60, blank = False, help_text = "A user friendly url", verbose_name = "User Friendly Url")
 
-    category = models.ForeignKey(Category, null = True, blank = True, verbose_name = "Category", on_delete = models.CASCADE)
+    category = models.ForeignKey(Category, null = False, blank = True, verbose_name = "Category", on_delete = models.CASCADE)
+
+    sub_category = models.ForeignKey(SubCategory, null = False, blank = True, verbose_name = "Sub-Category",on_delete = models.CASCADE)
 
     random_order = models.BooleanField(blank = False, default = True, verbose_name = "Random Order", help_text = "Display the questions in Random Order ?")
 

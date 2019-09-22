@@ -13,6 +13,11 @@
 	- We can now add these fields from admin page itself.
 	- Quiz Form is not yet finalized, need to think about the structure
 		- Any Suggestions, please contact me - wasted a lot of time doing and undoing it.
+	- Added a view for listing different quizzes under a category. 
+	- Added a regex re_path that can process complex urls for category matching.
+	- Added a quiz in categories template and a view for the same, also url has been defined by re_path.
+	- Added a level for quizzes as @Captain suggested
+	- User now goes from category listing to direct quizzes in that category, we have skipped sub-category page.
 
 
 
