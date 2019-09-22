@@ -1,3 +1,21 @@
+22 September 2019 : Omkar Chorghe
+	- Added New Models
+ 		* Wasted lot of time for deciding the database structure, so please do not ask to change again *
+		- Added model for Quiz
+		- Added model for Question ( Base class for all Question and it's answer types )
+		- Added a new folder with models - Multiple Choice Question
+	- Added a requirements.txt to easily install dependency while deploying
+		- instructions present in the respective files
+		- we have dependency on 
+			1) Pillow - for ImageField
+			2) django-utils for InheritanceManager( Returns the entire range of subclasses which may or may not be different
+	- Registered Quiz, Question, MCQ, Answer on Admin site
+	- We can now add these fields from admin page itself.
+	- Quiz Form is not yet finalized, need to think about the structure
+		- Any Suggestions, please contact me - wasted a lot of time doing and undoing it.
+
+
+
 21 September 2019 : Omkar Chorghe
 	- Bug - User was able to access login and register page even when he/she was signed in. 
 		- Added a authenticate if on both views and it redirects to home page if user is signed in.

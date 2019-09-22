@@ -1,0 +1,8 @@
+# Run 'pip install -r requirements.txt'
+
+django
+django-model-utils
+Pillow
+
+# Only needed for running tests.
+tox
