@@ -1,3 +1,9 @@
+23 September 2019 : Omkar Chorghe
+	- Added a new template for quiz and its detail - quiz_detail.html
+	- Added a detailview (inbuilt) for displaying quiz information and also give options to take the quiz
+	- Added url slug (have bugs) 
+
+
 22 September 2019 : Omkar Chorghe
 	- Added New Models
  		* Wasted lot of time for deciding the database structure, so please do not ask to change again *

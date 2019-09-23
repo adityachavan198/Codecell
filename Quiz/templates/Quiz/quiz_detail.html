@@ -1,0 +1,23 @@
+{% extends 'Accounts/base.html' %}
+
+{% block title %}
+{{ quiz.title }}
+{% endblock %}
+
+{% block content %}
+<h2> {{ quiz.title }}</h2>
+
+<h3> Category :- {{quiz.category}}</h3>
+
+<p> {{ quiz.description }} </p>
+
+<p> <a href = "#"> Start Quiz</a></p>
+
+<strong><h4>Note :- </h4></strong>
+{% if quiz.single_attempt %}
+    <h4>You will only get one attempt at this quiz.</h4>
+{% else %}
+    <h4>You can attempt this quiz only once per hour.</h4>
+{% endif %}
+
+{% endblock %}

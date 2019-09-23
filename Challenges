@@ -1,1 +1,3 @@
-1) Any logged in user can put a login, register link in url and access the pages even if the user is logged in.
+1) Quiz detail view urls are not in right order. If anyone knows how to solve it, please contact us.
+	- What we want is quiz/quiz_name.
+	- What we get is quiz/quiz/quiz_name.
