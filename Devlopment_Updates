@@ -1,8 +1,9 @@
-23 September 2019 : Omkar Chorghe
+23 September 2019 : Omkar Chorghe @special_mention = Sagar Maharaja for helping debug
 	- Added a new template for quiz and its detail - quiz_detail.html
 	- Added a detailview (inbuilt) for displaying quiz information and also give options to take the quiz
 	- Added url slug (have bugs) 
-
+	- Created A quiz Take template 
+	** User can now take a quiz :- More details to be updated Soon 	
 
 22 September 2019 : Omkar Chorghe
 	- Added New Models

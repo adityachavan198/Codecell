@@ -3,6 +3,8 @@ from django.db import models
 from model_utils.managers import InheritanceManager
 from django.core.validators import MaxValueValidator
 
+from Accounts.models import Student
+
 # Create your models here.
 
 class CategoryManager(models.Manager):
@@ -65,7 +67,7 @@ class Quiz(models.Model):
 
     random_order = models.BooleanField(blank = False, default = True, verbose_name = "Random Order", help_text = "Display the questions in Random Order ?")
 
-    max_questions = models.PositiveIntegerField(blank = True, null = True, verbose_name = "Max_questions", help_text = "Number of questions to be displayed on each attempt")
+    max_questions = models.PositiveIntegerField(blank = False, null = False, default = 1, verbose_name = "Max_questions", help_text = "Number of questions to be displayed on each attempt")
 
     single_attempt = models.BooleanField(blank = False, default = False, help_text = "If selected, user will be allowed only one attempt for this quiz", verbose_name = "Single Attempt")
 
@@ -113,7 +115,9 @@ class Question(models.Model):
 
     explanation = models.TextField(max_length = 2000, blank = True, help_text = "Explanation to be shown after the question is answered ", verbose_name = "Explanation")
 
-    objects = InheritanceManager()
+    marks = models.PositiveSmallIntegerField(blank = False, default = 1, verbose_name = "Marks", help_text = "Marks alloted to this question", validators = [MaxValueValidator(50)] )
+
+    #objects = InheritanceManager()
 
     class Meta:
         verbose_name = "Question"
@@ -123,3 +127,21 @@ class Question(models.Model):
         def __str__(self):
             return self.content
 
+class Progress(models.Model):
+    ''' Progress model is used to track users progress in particular quiz '''
+
+    student = models.ForeignKey(Student, null = False, blank = False, verbose_name = "Student", on_delete = models.CASCADE)
+
+    quiz = models.ForeignKey(Quiz, null = False, blank = False, verbose_name = "Quiz", on_delete = models.CASCADE)
+
+    attempted_on = models.DateTimeField(auto_now_add = True, verbose_name = "Attempted Quiz on ")
+
+    Questions_attempted = models.PositiveSmallIntegerField(blank = False, null = False, verbose_name = "Question Attempted", default = 0)
+
+    Questions_correct = models.PositiveSmallIntegerField(blank = False, null = False, verbose_name = "Questions Correctly answered", default = 0)
+
+    class Meta:
+        verbose_name = "Progress of Student"
+
+        def __str__(self):
+            return " - ".join([self.student.username, self.quiz.title])

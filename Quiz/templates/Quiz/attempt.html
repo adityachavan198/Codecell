@@ -1,0 +1,13 @@
+{% extends 'Accounts/base.html' %}
+{% block content %}
+
+   
+<form enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{ Quiz_form }}
+
+    <input type="submit" name="" value="Submit">
+</form>
+
+
+{% endblock %}

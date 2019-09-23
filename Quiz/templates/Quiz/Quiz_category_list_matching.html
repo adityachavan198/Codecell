@@ -12,9 +12,11 @@
         <th>Level</th>
     </tr>
     {% for quiz in quiz_list %}
+    <tr>
     <td>    <li><a href = "{% url 'quiz_detail' slug=quiz.url %}">{{ quiz.title }}</a></li> </td>
     <td> {{ quiz.sub_category }}</td>
     <td>{{ quiz.level }}</td>
+    </tr>
     {% endfor %}
 
 </table>
