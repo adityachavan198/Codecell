@@ -1,5 +1,6 @@
 import re   # regex for urls
 from django.db import models
+from django.contrib.auth.models import User
 from model_utils.managers import InheritanceManager
 from django.core.validators import MaxValueValidator
 
@@ -130,7 +131,7 @@ class Question(models.Model):
 class Progress(models.Model):
     ''' Progress model is used to track users progress in particular quiz '''
 
-    student = models.ForeignKey(Student, null = False, blank = False, verbose_name = "Student", on_delete = models.CASCADE)
+    student = models.ForeignKey(User, null = False, blank = False, verbose_name = "Student", on_delete = models.CASCADE)
 
     quiz = models.ForeignKey(Quiz, null = False, blank = False, verbose_name = "Quiz", on_delete = models.CASCADE)
 
@@ -139,6 +140,8 @@ class Progress(models.Model):
     Questions_attempted = models.PositiveSmallIntegerField(blank = False, null = False, verbose_name = "Question Attempted", default = 0)
 
     Questions_correct = models.PositiveSmallIntegerField(blank = False, null = False, verbose_name = "Questions Correctly answered", default = 0)
+
+    marks = models.PositiveSmallIntegerField(blank = False, null = False, verbose_name = "Marks Scored", default = 0)
 
     class Meta:
         verbose_name = "Progress of Student"

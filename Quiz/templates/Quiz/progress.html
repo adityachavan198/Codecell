@@ -1,0 +1,40 @@
+{% extends "Accounts/base.html" %}
+
+{% block title %} "Progress Page" {% endblock %}
+
+{% block content %}
+
+{% if  Quiz %}
+    <h1>Progress on each Quiz.</h1>
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Correctly_solved</th>
+            <th>Marks Obtained</th>
+            <th>Attempted on </th>
+          </tr>
+        </thead>
+
+    {% for name,correct,marks,date in Quiz %}
+        <tbody>
+            <tr>
+              <td>{{ name }}</td>
+              <td>{{ correct }}</td>
+              <td>{{ marks }}</td>
+              <td>{{ date }}</td>
+            </tr>
+        </tbody>
+        
+    {% endfor %}
+
+    </table>
+
+{% else %}
+    <h1> You haven't attempted any quiz yet.</h1>
+
+{% endif %}
+
+{% endblock %}

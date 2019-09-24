@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),  # home page 
     path('',include(urls.registerpatterns)),  # other log in log out tags
-    path('quiz/', include(Quiz_urls.Quiz_url_patterns), name = 'quiz'), # urls in quiz category
+    path('quiz/', include(Quiz_urls.Quiz_url_patterns)), # urls in quiz category
 ]

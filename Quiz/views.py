@@ -1,11 +1,14 @@
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView
+from django.views.generic import ListView,DetailView,TemplateView
 from django.shortcuts import get_object_or_404,render
 from django.core.exceptions import PermissionDenied
 from django.views import View
 from django.http import HttpResponseRedirect,HttpResponse
 from django.urls import reverse
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 
+from Accounts.models import *
 from Quiz.models import *
 from Quiz.forms import *
 
@@ -60,7 +63,8 @@ class QuizAttempt(View):
         ''' Process a get request  to attempt quiz '''
         if not request.user.is_authenticated:
             return HttpResponseRedirect(reverse('home'))
-        
+    
+
         Quiz_form = self.Quiz_form(kwargs['quiz_name'])
 
         return render(request,self.template_name,{'Quiz_form':Quiz_form})
@@ -74,16 +78,42 @@ class QuizAttempt(View):
 
             Current_quiz = Quiz.objects.all().filter(title = kwargs['quiz_name'])[0]
             Question_list = MCQ.objects.all().filter(quiz = Current_quiz)
+
+            New_progress = Progress.objects.create(student = request.user, quiz = Current_quiz)
+            New_progress.Questions_correct = 0
+            New_progress.Questions_attempted = 0
+            
             marks = 0
             for i in request.POST.keys():
 
                 if i!='csrfmiddlewaretoken':
                     question_name =  Question_list.filter(content = i)[0]
                     answer = Answer.objects.all().filter(question = question_name).filter(content = request.POST[i])[0]
+                    New_progress.Questions_attempted += 1
                     if answer.correct:
                         marks += question_name.marks 
+                        New_progress.Questions_correct += 1
                     
-            print("The ",request.user,"Has scored ",marks, "in this quiz")       
+            New_progress.marks = marks
+            New_progress.save()   
             
             return HttpResponseRedirect(reverse('home'))
         
+
+@login_required
+def user_progress(request):
+    quiz = []
+    progress = Progress.objects.all().filter(student = request.user).order_by('-attempted_on')
+    i = 0
+    for j in progress:
+        context = []
+        context.append(j.quiz.title)
+        context.append(j.Questions_correct)
+        context.append(j.marks)
+        context.append(j.attempted_on.date().__str__())
+
+        quiz.append(context)
+        i += 1
+    # context['i'] = i
+    
+    return render(request,'Quiz/progress.html',{"Quiz": quiz})
