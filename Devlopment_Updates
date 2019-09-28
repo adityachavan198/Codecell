@@ -1,9 +1,33 @@
+25 September 2019 : Omkar Chorghe
+	- Added a new html template correct.html
+	- This page renders when user submits a quiz.
+	- It displays the correct answer, along with highlighting the answer user selected.
+	- Also displays the explanation for each question.
+	- Quiz App is done 95%.
+	- Finishing touches remaining.
+
+
+24 September 2019 : Omkar Chorghe
+	- Recorrected post view for quiz taking and checked the right solutions that user has submitted.
+	- Added a new progress model for our quiz.
+	- Progress Stores user, quiz, attempted on and other information like marks, attempted questions etc.
+	- Post view now creates a new Progress and saves it.
+	- Added a new view for progress.
+		- New template progress.html.
+		- View displays all quizzes user took, marks he/she got and more information.
+		- Only a logged in user can see his/her progress.
+		- Quiz are sorted on recent quiz taken.
+
+
 23 September 2019 : Omkar Chorghe @special_mention = Sagar Maharaja for helping debug
 	- Added a new template for quiz and its detail - quiz_detail.html
 	- Added a detailview (inbuilt) for displaying quiz information and also give options to take the quiz
 	- Added url slug (have bugs) 
 	- Created A quiz Take template 
-	** User can now take a quiz :- More details to be updated Soon 	
+	** User can now take a quiz :- More details to be updated Soon
+		- Random questions are taken from a quiz and rendered using inbuilt Forms model.
+		- Answers to this questions are randomly placed, so two way randomness.
+	- After submitting forms, post view is written. 	
 
 22 September 2019 : Omkar Chorghe
 	- Added New Models

@@ -6,10 +6,10 @@ from Quiz.MultipleChoice.models import *
 class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('category',)
 
-class SubCategoryAdmin(admin.ModelAdmin):
-    search_fields = ('sub_category',)
-    list_display = ('sub_category','category',)
-    list_filter = ('category',)
+# class SubCategoryAdmin(admin.ModelAdmin):
+#     search_fields = ('sub_category',)
+#     list_display = ('sub_category','category',)
+#     list_filter = ('category',)
 
 class AnswerInline(admin.TabularInline):
     model = Answer
@@ -32,7 +32,7 @@ class MCQAdmin(admin.ModelAdmin):
 # Register your models here.
 
 admin.site.register(Category,CategoryAdmin)
-admin.site.register(SubCategory,SubCategoryAdmin)
+#admin.site.register(SubCategory,SubCategoryAdmin)
 admin.site.register(Quiz,QuizAdmin)
 admin.site.register(MCQ,MCQAdmin)
 admin.site.register(Progress)

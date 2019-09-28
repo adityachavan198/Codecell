@@ -1,0 +1,45 @@
+{% extends "Accounts/base.html" %}
+
+{% block title %} "Correct Answers" {% endblock %}
+
+{% block content %}
+
+    {% if marks %}
+    <h2>You have scored {{ marks }} marks.</h2>
+    {% else %}
+    You have not passed this Quiz.
+    {% endif %}
+    <h1>Correct Solutions :</h1>
+
+    <table class="table table-bordered table-striped">
+
+    
+    {% for question,answer in content %}
+      {{ question.content }} :- 
+      <br>
+      <table class="table table-bordered">
+        {% for  answer,correct,attempted in answer %}
+        <tbody>
+            <tr>
+                <td>{{ answer.content }}</td>
+
+                {% if correct is True  %}
+                <td style="background-color:chartreuse"><strong>This is Correct</strong> </td>
+                {% endif %}
+                {% if correct is False and attempted is True %}
+                <td style="background-color: crimson">This is Incorrect </td>
+                {% endif %}
+
+            </tr>
+        </tbody>
+        {% endfor %}
+      </table>    
+      {{question.explanation}}
+        
+       
+    {% endfor %}
+
+  
+
+      <a href = "{% url 'quiz_category_list_all' %}">Go Back</a>
+{% endblock %}

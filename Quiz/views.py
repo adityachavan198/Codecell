@@ -84,19 +84,26 @@ class QuizAttempt(View):
             New_progress.Questions_attempted = 0
             
             marks = 0
+            content = []
             for i in request.POST.keys():
 
                 if i!='csrfmiddlewaretoken':
+                    j = []
                     question_name =  Question_list.filter(content = i)[0]
+                    j.append(question_name)
                     answer = Answer.objects.all().filter(question = question_name).filter(content = request.POST[i])[0]
+                    anslist = [(i,i.correct,True) if i==answer else (i,i.correct,False) for i in Answer.objects.all().filter(question = question_name)]
+                    j.append(anslist)
                     New_progress.Questions_attempted += 1
                     if answer.correct:
                         marks += question_name.marks 
                         New_progress.Questions_correct += 1
-                    
+                    content.append(j)
+
+                
             New_progress.marks = marks
             New_progress.save()   
-            
+            return render(request,"Quiz/correct.html",{"content":content,"marks":marks})
             return HttpResponseRedirect(reverse('home'))
         
 
@@ -108,10 +115,16 @@ def user_progress(request):
     for j in progress:
         context = []
         context.append(j.quiz.title)
+        context.append(len(Question.objects.all().filter(quiz = j.quiz)))
         context.append(j.Questions_correct)
         context.append(j.marks)
+        #context.append(j.quiz.total_marks())
+        if j.marks is 0:
+            context.append(0)
+        else:
+            context.append(str(j.marks/j.quiz.total_marks()*100)[:5])
         context.append(j.attempted_on.date().__str__())
-
+        
         quiz.append(context)
         i += 1
     # context['i'] = i

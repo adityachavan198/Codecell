@@ -12,18 +12,22 @@
         <thead>
           <tr>
             <th>Title</th>
+            <th>Total Questions</th>
             <th>Correctly_solved</th>
             <th>Marks Obtained</th>
+            <th>Percentage</th>
             <th>Attempted on </th>
           </tr>
         </thead>
 
-    {% for name,correct,marks,date in Quiz %}
+    {% for name,total_question,correct,marks,percentage,date in Quiz %}
         <tbody>
             <tr>
               <td>{{ name }}</td>
+              <td>{{ total_question }}</td>
               <td>{{ correct }}</td>
               <td>{{ marks }}</td>
+              <td>{{ percentage }}%</td>
               <td>{{ date }}</td>
             </tr>
         </tbody>
