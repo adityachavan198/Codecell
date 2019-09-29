@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path,include
 from Accounts import views,urls
 from Quiz import urls as Quiz_urls
+from Forum import urls as Forum_urls
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),  # home page 
-    path('',include(urls.registerpatterns)),  # other log in log out tags
+    path('accounts/',include(urls.registerpatterns)),  # other log in log out tags
     path('quiz/', include(Quiz_urls.Quiz_url_patterns)), # urls in quiz category
+    path('forum/', include(Forum_urls.Forum_url_patterns)), # urls in forums
 ]

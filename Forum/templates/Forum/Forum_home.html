@@ -1,0 +1,12 @@
+{% extends 'Accounts/base.html' %}
+{% block title %} Forum {% endblock %}
+{% block content %}
+
+    <h1>Forum </h1>
+
+    <ul >
+        {% for i in question_list %}
+        <li>i.question</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

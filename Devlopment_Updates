@@ -1,3 +1,11 @@
+29 September 2019 : Omkar Chorghe
+	- Added redirect urls (buggy )
+	* Started A forum App
+		- Created Models :- Question, Answer, Comment etc.
+		- Registered At admin site.
+		- Added a forum home view, lists all question ( still needs work ).
+
+
 25 September 2019 : Omkar Chorghe
 	- Added a new html template correct.html
 	- This page renders when user submits a quiz.

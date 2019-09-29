@@ -1,7 +1,6 @@
 import re   # regex for urls
 from django.db import models
 from django.contrib.auth.models import User
-from model_utils.managers import InheritanceManager
 from django.core.validators import MaxValueValidator
 
 from Accounts.models import Student

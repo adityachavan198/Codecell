@@ -49,9 +49,12 @@ class Register(View):
         else:
             print(user_form.errors,student_form.errors)
     
-def user_login(request):
+def user_login(request, *args, **kwargs):
     ''' log in a user '''
-
+    try:
+        next_page = request.GET['next']
+    except:
+        next_page = None
     # if user is already logged in 
     if request.user.is_authenticated:
         return HttpResponseRedirect(reverse('home'))
@@ -63,6 +66,8 @@ def user_login(request):
         if user is not None:
             if user.is_active:
                 login(request,user)
+                if next_page:
+                    return HttpResponseRedirect(next_page)
                 return HttpResponseRedirect(reverse('home'))
             else:
                 print("Login failed")
