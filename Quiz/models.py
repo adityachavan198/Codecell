@@ -31,25 +31,6 @@ class Category(models.Model):
         return self.category
 
 
-# class SubCategory(models.Model):
-
-#     sub_category = models.CharField(verbose_name="Sub_Category", max_length = 250, blank = True, null = True)
-
-#     category = models.ForeignKey(Category, null = True, blank = True, verbose_name = "Category", on_delete=models.CASCADE)
-
-#     objects = CategoryManager()
-
-#     class Meta:
-#         verbose_name = "Sub-Category"
-#         verbose_name_plural = "Sub-Categories"
-
-#     def __str__(self):
-#         if self.category is None:
-#             return self.sub_category
-#         else:
-#             return self.sub_category + " ( " + self.category.category + " ) "
-
-
 class Quiz(models.Model):
     ''' Quiz is onetomany modeled to Questions '''
 
@@ -62,8 +43,6 @@ class Quiz(models.Model):
     url = models.SlugField(max_length = 60, blank = False, help_text = "A user friendly url", verbose_name = "User Friendly Url")
 
     category = models.ForeignKey(Category, null = False, blank = True, verbose_name = "Category", on_delete = models.CASCADE)
-
-    # sub_category = models.ForeignKey(SubCategory, null = False, blank = True, verbose_name = "Sub-Category",on_delete = models.CASCADE)
 
     random_order = models.BooleanField(blank = False, default = True, verbose_name = "Random Order", help_text = "Display the questions in Random Order ?")
 
@@ -106,8 +85,6 @@ class Question(models.Model):
 
     category = models.ForeignKey(Category, verbose_name = "Category", blank = True, null = True, on_delete = models.CASCADE)
 
-    # sub_category = models.ForeignKey(SubCategory, verbose_name = "Sub-Category", blank = True, null = True, on_delete = models.CASCADE)
-
     # same as before, needs pillow
     figure = models.ImageField(upload_to='Images/Questions/', blank = True, null = True, verbose_name = "Question Image")
 
@@ -117,7 +94,6 @@ class Question(models.Model):
 
     marks = models.PositiveSmallIntegerField(blank = False, default = 1, verbose_name = "Marks", help_text = "Marks alloted to this question", validators = [MaxValueValidator(50)] )
 
-    #objects = InheritanceManager()
 
     class Meta:
         verbose_name = "Question"

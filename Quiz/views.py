@@ -59,11 +59,12 @@ class QuizAttempt(View):
     template_name = 'Quiz/attempt.html'
     Quiz_form = QuizForm
 
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
     def get(self, request, *args, **kwargs):
-        ''' Process a get request  to attempt quiz '''
-        if not request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('home'))
-    
+        ''' Process a get request  to attempt quiz '''    
 
         Quiz_form = self.Quiz_form(kwargs['quiz_name'])
 

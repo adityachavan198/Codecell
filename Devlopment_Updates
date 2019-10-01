@@ -1,3 +1,13 @@
+1 October 2019 : Omkar Chorghe
+	- Added a forum view, lists all forum questions ordered by recents.
+	- Added a ask question view, template 
+		- view is class based CreateView
+	- Added a list all answers view and template
+	- Added a answer question view and template
+		- view is class based CreateView
+	- User can now question and anybody else can answer it.
+
+
 29 September 2019 : Omkar Chorghe
 	- Added redirect urls (buggy )
 	* Started A forum App

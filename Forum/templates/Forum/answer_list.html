@@ -1,0 +1,28 @@
+{% extends 'Accounts/base.html' %}
+{% block title %} Answer {% endblock %}
+{% block content %}
+
+    <h1>{{ question }}</h1>
+    <a href="{% url 'add_answer' pk=question.pk %}">Can You Answer this?</a>
+    
+{% if answer %}
+    <table class="table table-bordered table-striped">
+
+        <thead>
+          <tr>
+            <th>Answers</th>
+          </tr>
+        </thead>
+
+        {% for i in answer %}
+            <tbody>
+                <tr>
+                <td>{{ i }}</td>
+                </tr>
+            </tbody>
+        {% endfor %}
+{% else %}   
+   <h2> No answers yet</h2>
+{% endif %}
+   
+{% endblock %}

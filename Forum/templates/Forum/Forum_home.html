@@ -3,10 +3,33 @@
 {% block content %}
 
     <h1>Forum </h1>
+    <a href="{% url 'ask_question' %}">Ask</a>
+    
+    {% if question_list %}
 
-    <ul >
+    <table class="table table-bordered table-striped">
+
+        <thead>
+          <tr>
+            <th>Questions</th>
+            <th>Topic </th>
+          </tr>
+        </thead>
+        
+
         {% for i in question_list %}
-        <li>i.question</li>
+            <tbody>
+                <tr>
+                <td><a href="{% url 'answer_list' pk=i.pk %}">{{ i.question }}</a></td>
+                <td>{% for j in i.topic.all %} {{j}}, {%endfor%}</td>
+                </tr>
+            </tbody>
         {% endfor %}
-    </ul>
+    </table>
+
+{% else %}
+            <h2>No Questions Yet</h2>
+     
+{% endif %}
+   
 {% endblock %}
