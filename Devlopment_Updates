@@ -1,3 +1,8 @@
+4 October 2019: Omkar Chorghe
+	- Critical Bug
+		- User was being registered but the variable password was being not hashed properly
+
+
 3 October 2019: Omkar Chorghe	
 	- Added login for forum question and answer views
 	 	- method decorators for dispatch function.

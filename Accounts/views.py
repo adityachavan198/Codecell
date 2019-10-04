@@ -40,26 +40,29 @@ class Register(View):
 
         if User_form.is_valid() and Student_form.is_valid():
             user = User_form.save(commit=False)
-            user.set_password(User.password)
+            user.set_password(user.password)
             user.save()
             student=Student_form.save(commit=False)
             student.user=user
             student.save()
             return HttpResponseRedirect(reverse('home'))
         else:
-            print(user_form.errors,student_form.errors)
+            print(User_form.errors,Student_form.errors)
+            return HttpResponseRedirect(reverse('home'))
     
 def user_login(request, *args, **kwargs):
     ''' log in a user '''
-    try:
-        next_page = request.GET['next']
-    except:
-        next_page = None
+    
     # if user is already logged in 
     if request.user.is_authenticated:
         return HttpResponseRedirect(reverse('home'))
 
     if request.method=='POST':
+        try:
+            next_page = request.GET['next']
+        except:
+            next_page = None
+
         username=request.POST.get('username')
         password=request.POST.get('password')
         user=authenticate(username=username,password=password)
