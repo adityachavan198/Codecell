@@ -1,3 +1,8 @@
+3 October 2019: Omkar Chorghe	
+	- Added login for forum question and answer views
+	 	- method decorators for dispatch function.
+
+
 1 October 2019 : Omkar Chorghe
 	- Added a forum view, lists all forum questions ordered by recents.
 	- Added a ask question view, template 
