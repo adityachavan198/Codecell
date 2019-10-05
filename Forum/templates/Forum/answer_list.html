@@ -2,27 +2,121 @@
 {% block title %} Answer {% endblock %}
 {% block content %}
 
-    <h1>{{ question }}</h1>
-    <a href="{% url 'add_answer' pk=question.pk %}">Can You Answer this?</a>
-    
-{% if answer %}
-    <table class="table table-bordered table-striped">
 
-        <thead>
-          <tr>
-            <th>Answers</th>
-          </tr>
-        </thead>
 
-        {% for i in answer %}
-            <tbody>
-                <tr>
-                <td>{{ i }}</td>
-                </tr>
-            </tbody>
-        {% endfor %}
-{% else %}   
-   <h2> No answers yet</h2>
-{% endif %}
+<section id="profile">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9" style="margin-top:19px;">
+          <div class="card">
+            <div class="card-header" style="background:orange">
+              <h4 class="text-center"><i><i class="fas fa-question-circle"></i> Doubts</i></h4>
+            </div>
+            <div class="card-body">
+              <div class="container">
+                   <div class="row">
+                       <div class="col-md-6">
+                         <h2>{{ question }}</h2>  
+                         <h4>{{ question.description }}</h4>
+                       </div><br>
+                    </div>
+                    <div class="row">
+                
+                    <div class="col-md-6">
+                        <h5 class="text-muted" style="margin-top:20px;">Total Answers : 10(dynamic) </h5>
+                    </div>
+                    </div>
+                    
+                    <br>
+                     <hr>  
+                  <div class="well">
+                    <h4><i>Post Your Answer:</i></h4>
+                    <form role="form" method="post" >
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            <textarea name="answer" class="form-control"></textarea>
+                        </div>
+                        <div class="text-center">
+                        <button type="submit" class="btn btn-danger" name="create_answer">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                {% if answer %}
+                <h3>Answers :</h3>
+                {% for i in answer %}
+                <div class="card-body">
+                  <div class="container">  
+                    <div class="row">
+                      <div class="col-md-12">
+                          <h3>{{ i }}</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+                {% else %}
+                <h3>No Answers yet.</h3>
+                {% endif %}
+
+
+
+
+
+
+
+
+
+
+        
+                
+                   
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div style="margin-top:20px;">
+                   <div class="card text-center bg-danger text-warning mb-3">
+                    <div class="card-body">
+                     <h3>Doubts Asked</h3>
+                     <h4 class="display-4">
+                     <i class="fas fa-pencil-alt"></i> 10
+                    </h4>
+                    
+                   </div>
+                  </div>
+               </div>
+               <div style="margin-top:20px;">
+                   <div class="card text-center bg-danger text-warning mb-3">
+                    <div class="card-body">
+                     <h3>Doubts Cleared</h3>
+                     <h4 class="display-4">
+                     <i class="fas fa-thumbs-up"></i> 10
+                    </h4>
+                    
+                   </div>
+                  </div>
+               </div>
+               <div style="margin-top:20px;">
+                   <div class="card text-center bg-danger text-warning mb-3">
+                    <div class="card-body">
+                     <h3>Happy Students</h3>
+                     <h4 class="display-4">
+                     <i class="far fa-smile"></i> 200+
+                    </h4>
+                    
+                   </div>
+                  </div>
+               </div>
+          
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
    
 {% endblock %}

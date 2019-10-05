@@ -1,3 +1,10 @@
+6 October 2019: Omkar Chorghe and Asad Memon
+	- Added new Front end pages for forum as given by Asad.
+*	 	- merged two views for answer list and give answer, probably need testing
+	- Added Home page with navbar
+	- Added Quiz Category page with navbars
+
+
 4 October 2019: Omkar Chorghe
 	- Critical Bug
 		- User was being registered but the variable password was being not hashed properly
