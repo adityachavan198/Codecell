@@ -11,13 +11,13 @@
 <link rel="stylesheet" href="{% static 'Accounts/css/loginPage.css' %}">
 <link rel="stylesheet" href="{% static 'Accounts/css/loginPageResponsive.css' %}">
 
-  <body>
+ 
     <header id="header">
       <div class="container">
         <nav class="navbar navbar-expand-lg">
           <div class="container">
             <!-- Logo -->
-            <a class="logo" href="#"><h4 style="color: #fff" class="text-uppercase">CodeCell</h4></a>
+            <a class="logo" href="{% url 'home' %}"><h4 style="color: #fff" class="text-uppercase">CodeCell</h4></a>
             <button
               class="navbar-toggler"
               type="button"
@@ -27,13 +27,13 @@
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"><img src="assets/arrow-alt-circle-down-regular.svg" style="width: 30px;" alt=""></span>
+              <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/arrow-alt-circle-down-regular.svg' %}" style="width: 30px;" alt=""></span>
             </button>
             <!-- navbar links -->
             <div class="collapse navbar-collapse" id="navbarContent">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#">Home</a>
+                  <a class="nav-link active" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">About Us</a>
@@ -61,10 +61,7 @@
                 {% else %}
 
                 <li class="nav-item download-btn">
-                    <a class="nav-link" href="{% url 'register' %}">Register</a>
-                  </li>
-                <li class="nav-item download-btn">
-                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-link" href="{% url 'authenticate' %}">Login/Register</a>
                 </li>
 
                 {% endif %}
@@ -75,8 +72,8 @@
         </nav>
       </div>
     </header>
-  </body>
-</html>
+
+
 
 <!-- End of Navbar -->
 

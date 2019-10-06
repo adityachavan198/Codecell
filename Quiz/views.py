@@ -14,8 +14,11 @@ from Quiz.forms import *
 
 # Create your views here.
 
-class Categories_list_view(ListView):
-    model = Category
+def Categories_list_view(request, *args, **kwargs):
+    category_list = dict()
+    for i in Category.objects.all():
+        category_list[i.category] = i
+    return render(request, 'Quiz/category_list.html',category_list)
 
 class View_Quizlist_by_Category(ListView):
     model = Quiz
