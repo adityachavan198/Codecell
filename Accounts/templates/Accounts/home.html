@@ -4,78 +4,126 @@
 <!DOCTYPE html>
 {% load static %}
 
-
-
-<!-- This is the Navbar -->
-
-<link rel="stylesheet" href="{% static 'Accounts/css/loginPage.css' %}">
-<link rel="stylesheet" href="{% static 'Accounts/css/loginPageResponsive.css' %}">
-
- 
-    <header id="header">
+<link rel="stylesheet" href="{% static 'Accounts/homecss/homePage.css' %}" />
+<link rel="stylesheet" href="{% static 'Accounts/homecss/homePageResponsive.css' %}" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<header id="header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container">
-            <!-- Logo -->
-            <a class="logo" href="{% url 'home' %}"><h4 style="color: #fff" class="text-uppercase">CodeCell</h4></a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarContent"
-              aria-controls="navbarContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/arrow-alt-circle-down-regular.svg' %}" style="width: 30px;" alt=""></span>
-            </button>
-            <!-- navbar links -->
-            <div class="collapse navbar-collapse" id="navbarContent">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link active" href="{% url 'home' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="" data-scroll-nav="5">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'quiz_category_list_all' %}">Quiz</a>
-                </li>
-              
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'forum_home' %}">Forum</a>
-                </li>
+        <!-- Logo -->
+        <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/CodeCell Logo 1 copy.png' %}" width="200px;" alt=""/></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"
+            ><img
+              src="assets/arrow-alt-circle-down-regular.svg"
+              style="width: 30px;"
+              alt=""
+          /></span>
+        </button>
+        <!-- navbar links -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5">Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'forum_home' %}">Forum</a>
+            </li>
+            <!-- <li class="nav-item">
+                            <a class="nav-link" href="#" data-scroll-nav="4">  </a>
+                        </li> -->
+                        {% if user.is_authenticated %}
 
-                {% if user.is_authenticated %}
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'quiz_progress' %}">Progress</a>
-                  </li>
-                <li class="nav-item">
-                <a class="nav-link download-btn" href="{%url 'logout'%}">Logout</a>
-                </li>
-
-                {% else %}
-
-                <li class="nav-item download-btn">
-                    <a class="nav-link" href="{% url 'authenticate' %}">Login/Register</a>
-                </li>
-
-                {% endif %}
-
-              </ul>
-            </div>
-          </div>
-        </nav>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'quiz_progress' %}">Progress</a>
+                          </li>
+                        <li class="nav-item">
+                        <a class="nav-link download-btn" href="{%url 'logout'%}">Logout</a>
+                        </li>
+        
+                        {% else %}
+        
+                        <li class="nav-item download-btn">
+                            <a class="nav-link" href="{% url 'authenticate' %}">Login/Register</a>
+                        </li>
+        
+                        {% endif %}
+          </ul>
+        </div>
       </div>
-    </header>
+    </nav>
+  </div>
+</header>
+<div id="introbox">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" >
+        <h1 style="color: red">Who We Are</h1>
+        <p style="color: #2748a0">
+          Codecell: A platform for students to code and excel in their
+          coding abilities. We are students who have took the initiative 
+          to help one another on our path to becoming efficient coders.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h1 style="color: red">Objective</h1>
+        <p style="color: #2748a0">
+          We aim to create a platform where students will be able to 
+          learn and update their knowledge to the current industry standards.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h1 style="color: red">Plans</h1>
+        <p style="color: #2748a0">
+          Project Drive :- Where mentors guide you to create a project you will be proud to add in your CV.<br>
+          Reach and Teach :- Mentors teach you the latest tech in the industry.
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="contact">
+  <div class="container" id="anibox">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="typing">There are only 10 types of people !</div>
+        <div id="crow">|</div>
+      </div>
+      <div class="col-md-6">
+        <a class="btn" href="#">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a class="btn" href="#">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a class="btn" href="#">
+    <i class="fab fa-google"></i>
+  </a>
+  <a class="btn" href="#">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a class="btn" href="#">
+    <i class="fab fa-youtube"></i>
+  </a>
+      </div>
+    </div>
+  </div>
+  <h3 class="text-center" style="margin-top: 150px;">Powered By RGIT Codecell</h3>
 
-
-
-<!-- End of Navbar -->
+</div>
 
 
 

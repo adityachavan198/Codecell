@@ -8,7 +8,7 @@ class QuizForm(forms.Form):
     def __init__(self,quiz_name, *args, **kwargs):
         super(QuizForm, self).__init__(*args, **kwargs)
         
-        Current_quiz = Quiz.objects.all().filter(title = quiz_name)[0]
+        Current_quiz = Quiz.objects.all().filter(url = quiz_name)[0]
         Question_list = MCQ.objects.all().filter(quiz = Current_quiz).order_by("?")[:Current_quiz.max_questions]
         
         for i in range(len(Question_list)):

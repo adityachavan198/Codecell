@@ -3,7 +3,7 @@
 {% block title %} "Correct Answers" {% endblock %}
 
 {% block content %}
-
+<div class="container">
     {% if marks %}
     <h2>You have scored {{ marks }} marks.</h2>
     {% else %}
@@ -14,8 +14,8 @@
     <table class="table table-bordered table-striped">
 
     
-    {% for question,answer in content %}
-      {{ question.content }} :- 
+    {% for question,answer,counter in content %}
+      {{ counter }}) {{ question.content }} :- 
       <br>
       <table class="table table-bordered">
         {% for  answer,correct,attempted in answer %}
@@ -36,10 +36,12 @@
       </table>    
       {{question.explanation}}
         
-       
+       <br><br>
     {% endfor %}
 
   
-
+      <br><br><strong>
       <a href = "{% url 'quiz_category_list_all' %}">Go Back</a>
+    </strong>
+    </div>
 {% endblock %}

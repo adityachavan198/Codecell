@@ -1,17 +1,88 @@
 {% extends 'Accounts/base.html' %}
-
+{% load static %}
 {% block title %}
 {{ quiz.title }}
 {% endblock %}
 
 {% block content %}
+
+<!-- This is the Navbar -->
+
+<link rel="stylesheet" href="{% static 'Accounts/css/loginPage.css' %}">
+<link rel="stylesheet" href="{% static 'Accounts/css/loginPageResponsive.css' %}">
+
+
+    <header id="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <!-- Logo -->
+            <a class="logo" href="{% url 'home' %}"><h4 style="color: #fff" class="text-uppercase">CodeCell</h4></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarContent"
+              aria-controls="navbarContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/arrow-alt-circle-down-regular.svg' %}" style="width: 30px;" alt=""></span>
+            </button>
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link " href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="" data-scroll-nav="5">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="{% url 'quiz_category_list_all' %}">Quiz</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="{% url 'forum_home' %}">Forum</a>
+                </li>
+
+                {% if user.is_authenticated %}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'quiz_progress' %}">Progress</a>
+                  </li>
+                <li class="nav-item">
+                <a class="nav-link download-btn" href="{%url 'logout'%}">Logout</a>
+                </li>
+
+                {% else %}
+                <li class="nav-item download-btn">
+                    <a class="nav-link" href="{% url 'authenticate' %}">Login/Register</a>
+                </li>
+
+                {% endif %}
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+</html>
+
+<!-- End of Navbar -->
+
 <h2> {{ quiz.title }}</h2>
 
 <h3> Category :- {{quiz.category}}</h3>
 
 <p> {{ quiz.description }} </p>
 
-<p> <a href = "{% url 'Quiz_attempt' quiz_name=quiz.title%}"> Start Quiz</a></p>
+<p> <a href = "{% url 'Quiz_attempt' quiz_name=quiz.url%}"> Start Quiz</a></p>
 
 <strong><h4>Note :- </h4></strong>
 {% if quiz.single_attempt %}

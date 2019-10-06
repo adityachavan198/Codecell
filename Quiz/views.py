@@ -45,20 +45,16 @@ class View_Quizlist_by_Category(ListView):
         queryset = super(View_Quizlist_by_Category, self).get_queryset()
         return queryset.filter(category = self.category, draft = False)
     
-class Quiz_Detail_View(DetailView):
-    model = Quiz
-    slug_field = 'url'
+class Quiz_Detail_View(View):
     template_name = 'Quiz/quiz_detail.html'
 
     def get(self, request, *args, **kwargs):
-        
-        self.object = self.get_object()
+        quiz = Quiz.objects.get(url = kwargs['slug'])
 
-        if self.object.draft and not request.user.has_perm('quiz.change_quiz'):
+        if quiz.draft and not request.user.has_perm('quiz.change_quiz'):
             return PermissionDenied
-        
-        context = self.get_context_data(object = self.object)
-        return render(request,self.template_name,{'quiz':self.object})
+
+        return render(request, self.template_name, {'quiz':quiz})
 
 class QuizAttempt(View):
     template_name = 'Quiz/attempt.html'
@@ -81,17 +77,18 @@ class QuizAttempt(View):
 
         if Quiz_form.is_valid():
 
-            Current_quiz = Quiz.objects.all().filter(title = kwargs['quiz_name'])[0]
+            Current_quiz = Quiz.objects.all().filter(url= kwargs['quiz_name'])[0]
             Question_list = MCQ.objects.all().filter(quiz = Current_quiz)
-            latest_quiz_attempt = Progress.objects.all().filter(quiz = Current_quiz).filter(student = request.user).order_by('-attempted_on')[0]
-            # current_time = datetime.datetime.now().replace(tzinfo=latest_quiz_attempt.attempted_on.tzinfo)
-            current_time = datetime.datetime.now().replace(tzinfo=tzlocal())
-            Hours = current_time - latest_quiz_attempt.attempted_on
-            print(Hours.total_seconds())
-            Hours = Hours.total_seconds()//3600
-            print("current time",current_time,Hours)
-            if Hours<3:
-                return HttpResponseRedirect(reverse('quiz_progress'))
+            latest_quiz_attempt = Progress.objects.all().filter(quiz = Current_quiz).filter(student = request.user).order_by('-attempted_on')
+            
+            # if latest_quiz_attempt:
+            #     latest_quiz_attempt = latest_quiz_attempt[0]
+            #     current_time = datetime.datetime.now().replace(tzinfo=tzlocal())
+            #     Hours = current_time - latest_quiz_attempt.attempted_on
+            #     Hours = Hours.total_seconds()//3600
+
+            #     if Hours<1:
+            #         return HttpResponseRedirect(reverse('quiz_progress'))
 
             New_progress = Progress.objects.create(student = request.user, quiz = Current_quiz)
             New_progress.Questions_correct = 0
@@ -99,6 +96,7 @@ class QuizAttempt(View):
             
             marks = 0
             content = []
+            counter = 1
             for i in request.POST.keys():
 
                 if i!='csrfmiddlewaretoken':
@@ -112,12 +110,14 @@ class QuizAttempt(View):
                     if answer.correct:
                         marks += question_name.marks 
                         New_progress.Questions_correct += 1
+                    j.append(counter)
+                    counter += counter
                     content.append(j)
 
                 
             New_progress.marks = marks
             New_progress.save()   
-            return render(request,"Quiz/correct.html",{"content":content,"marks":marks})
+            return render(request,"Quiz/correct.html",{"content":content,"marks":marks,})
             return HttpResponseRedirect(reverse('home'))
         
 
