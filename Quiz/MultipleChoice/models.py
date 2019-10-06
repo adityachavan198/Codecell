@@ -1,14 +1,13 @@
 from django.db import models
 from Quiz.models import Question
 
-
 ANSWER_ORDER_OPTIONS = (
     ('content','Content'),
     ('random','Random')
 )
 
 class MCQ(Question):
-    
+
     answer_order = models.CharField(max_length = 30, choices = ANSWER_ORDER_OPTIONS, help_text = "The order in which the answer options are to be displayed", verbose_name = "Answer Options Order")
 
     single_correct = models.BooleanField(default = True, help_text = "If selected, only one choice should have a correct answer", verbose_name = "Single Correct")

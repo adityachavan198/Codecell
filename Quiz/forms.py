@@ -1,5 +1,5 @@
 from django import forms
-from Quiz.models import Quiz, Question
+from Quiz.models import *
 from Quiz.MultipleChoice.models import *
 from django.forms.widgets import RadioSelect,CheckboxInput,TextInput
 

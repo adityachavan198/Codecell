@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from dateutil.tz import tzlocal
+import datetime
 
 from Accounts.models import *
 from Quiz.models import *
@@ -70,7 +72,6 @@ class QuizAttempt(View):
         ''' Process a get request  to attempt quiz '''    
 
         Quiz_form = self.Quiz_form(kwargs['quiz_name'])
-
         return render(request,self.template_name,{'Quiz_form':Quiz_form})
 
     
@@ -82,6 +83,15 @@ class QuizAttempt(View):
 
             Current_quiz = Quiz.objects.all().filter(title = kwargs['quiz_name'])[0]
             Question_list = MCQ.objects.all().filter(quiz = Current_quiz)
+            latest_quiz_attempt = Progress.objects.all().filter(quiz = Current_quiz).filter(student = request.user).order_by('-attempted_on')[0]
+            # current_time = datetime.datetime.now().replace(tzinfo=latest_quiz_attempt.attempted_on.tzinfo)
+            current_time = datetime.datetime.now().replace(tzinfo=tzlocal())
+            Hours = current_time - latest_quiz_attempt.attempted_on
+            print(Hours.total_seconds())
+            Hours = Hours.total_seconds()//3600
+            print("current time",current_time,Hours)
+            if Hours<3:
+                return HttpResponseRedirect(reverse('quiz_progress'))
 
             New_progress = Progress.objects.create(student = request.user, quiz = Current_quiz)
             New_progress.Questions_correct = 0
