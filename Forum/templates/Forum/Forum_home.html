@@ -128,7 +128,7 @@
               <div class="row">
                 <div class="col-md-10">
                     <h3>{{ i.question }}</h3>
-                        {{i.description}}
+                        {{ i.user }} asked on {{ i.asked_on }}
                 </div>
                 <br/>
                 <div class="col-md-2">
@@ -160,7 +160,7 @@
               
               <h4 class="display-4">
                 <i class="fas fa-pencil-alt"></i>
-                10
+                {% if user.is_authenticated %} {{ user.doubts_asked}} {% else %} -- {% endif %}
               </h4>
             </div>
           </div>
@@ -171,7 +171,7 @@
               <h3>Doubts Cleared</h3>
               <h4 class="display-4">
                 <i class="fas fa-thumbs-up"></i>
-                10
+                {% if user.is_authenticated %} {{ user.doubts_solved}} {% else %} -- {% endif %}
               </h4>
             </div>
           </div>

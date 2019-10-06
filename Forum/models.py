@@ -34,6 +34,9 @@ class Forum_question(models.Model):
     def __str__(self):
         return self.question
     
+    def count_answers(self):
+        return Forum_answer.objects.all().filter(question = self).count()
+    
 
 class Forum_answer(models.Model):
 

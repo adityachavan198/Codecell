@@ -18,7 +18,8 @@ class Ask_question(View):
 
     def get(self, request, *args, **kwargs):
         ''' Process a get request for asking a question '''
-        return render(request, self.template_name, {})
+        topic = Topic.objects.all()
+        return render(request, self.template_name, {'topic':topic})
 
     def post(self, request, *args, **kwargs):
         ''' After a question is asked '''
@@ -36,7 +37,7 @@ class Ask_question(View):
                 new_question.topic.add(*topic_list)
                 new_question.save()
             return HttpResponseRedirect(reverse('forum_home'))
-        return render(request, self.template_name, {"error":"There is a error in your form."})
+        return render(request, self.template_name, {"error":"There is a error in your form.","topic":Topic.objects.all()})
 
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
@@ -63,16 +64,6 @@ class Add_answer(View):
             return HttpResponseRedirect(reverse('answer_list', kwargs={'pk':question.pk}))
         return HttpResponseRedirect(reverse('answer_list'))
 
-    # def form_valid(self, form):
-    #     form.instance.user = self.request.user
-    #     form.instance.question = Forum_question.objects.get(pk=self.kwargs['pk'])
-    #     return super().form_valid(form)
-
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
-
-def answer_list(request, *args, **kwargs):
-    question = Forum_question.objects.all().filter(pk = kwargs['pk'])[0]
-    answers = Forum_answer.objects.all().filter(question = question).order_by('-answered_on')
-    return render(request,'Forum/answer_list.html',{'answer':answers, 'question':question})

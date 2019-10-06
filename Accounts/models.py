@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from Forum.models import *
 
 # Create your models here.
 
@@ -18,3 +19,15 @@ class Student(models.Model):
     class Meta:
         verbose_name="Student"
         verbose_name_plural="Students"
+
+
+
+# Monkey Patching
+def doubts_asked(self):
+    return Forum_question.objects.all().filter(user = self).count()
+
+def doubts_solved(self):
+    return Forum_answer.objects.all().filter(user = self).count()
+
+User.add_to_class("doubts_asked",doubts_asked)
+User.add_to_class("doubts_solved",doubts_solved)

@@ -86,7 +86,7 @@
             <div class="card-body">
               <div class="container">
                    <div class="row">
-                       <div class="col-md-6">
+                       <div class="col-md-12">
                          <h2>{{ question }}</h2>  
                          <h4>{{ question.description }}</h4>
                        </div><br>
@@ -94,7 +94,7 @@
                     <div class="row">
                 
                     <div class="col-md-6">
-                        <h5 class="text-muted" style="margin-top:20px;">Total Answers : 10(dynamic) </h5>
+                        <h5 class="text-muted" style="margin-top:20px;">Total Answers : {{ question.count_answers}} </h5>
                     </div>
                     </div>
                     
@@ -120,7 +120,8 @@
                   <div class="container">  
                     <div class="row">
                       <div class="col-md-12">
-                          <h3>{{ i }}</h3>
+                          <h2>{{ i.user }} answered on {{ i.answered_on }}</h2>
+                         <h4> Answer:{{ i }}</h4>
                       </div>
                     </div>
                   </div>
@@ -153,7 +154,7 @@
                     <div class="card-body">
                      <h3>Doubts Asked</h3>
                      <h4 class="display-4">
-                     <i class="fas fa-pencil-alt"></i> 10
+                     <i class="fas fa-pencil-alt"></i> {% if user.is_authenticated %} {{ user.doubts_asked }} {% else %} -- {% endif %}
                     </h4>
                     
                    </div>
@@ -164,7 +165,7 @@
                     <div class="card-body">
                      <h3>Doubts Cleared</h3>
                      <h4 class="display-4">
-                     <i class="fas fa-thumbs-up"></i> 10
+                     <i class="fas fa-thumbs-up"></i> {% if user.is_authenticated %} {{user.doubts_solved}} {% else %} -- {% endif %}
                     </h4>
                     
                    </div>
