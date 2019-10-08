@@ -54,7 +54,16 @@ class Login_Register(View):
             username = request.POST.get('rusername')
             email = request.POST.get('remail')
             password = request.POST.get('rpassword')
+            error = None
             if username is not None and email is not None and password is not None:
+                if username =="" or username == " ":
+                    error = "Username cannot be empty"
+                elif password == "" or password == " ":
+                    error = "Password cannot be empty"
+                elif email =="" or email == " ":
+                    error = "Email cannot be empty"
+                if error is not None:
+                    return render(request , self.template, {'error': error})
                 try:
                     newuser = User.objects.create_user(username, email, password)
                 except IntegrityError:
