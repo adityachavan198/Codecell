@@ -49,12 +49,26 @@ class Quiz_Detail_View(View):
     template_name = 'Quiz/quiz_detail.html'
 
     def get(self, request, *args, **kwargs):
+        time_error = None
         quiz = Quiz.objects.get(url = kwargs['slug'])
+
+        # Commented the following for testing purposes
+        # It will not allow user to take quiz more than once in a hour.
+        # latest_quiz_attempt = Progress.objects.all().filter(student = request.user).filter(quiz_id = quiz.id).order_by('-attempted_on')
+        # print(latest_quiz_attempt)
+        # if latest_quiz_attempt:
+        #     latest_quiz_attempt = latest_quiz_attempt[0]
+        #     current_time = datetime.datetime.now().replace(tzinfo=tzlocal())
+        #     Hours = current_time - latest_quiz_attempt.attempted_on
+        #     Hours = Hours.total_seconds()//3600
+        #     if Hours<1:
+        #         time_error = "Only one Attempt per hour"
 
         if quiz.draft and not request.user.has_perm('quiz.change_quiz'):
             return PermissionDenied
 
-        return render(request, self.template_name, {'quiz':quiz})
+
+        return render(request, self.template_name, {'quiz':quiz, 'time_error':time_error})
 
 class QuizAttempt(View):
     template_name = 'Quiz/attempt.html'
@@ -66,21 +80,22 @@ class QuizAttempt(View):
 
     def get(self, request, *args, **kwargs):
         ''' Process a get request  to attempt quiz '''    
-
-        Quiz_form = self.Quiz_form(kwargs['quiz_name'])
-        return render(request,self.template_name,{'Quiz_form':Quiz_form})
+        Current_quiz = Quiz.objects.get(url = kwargs['quiz_name'])
+        Quiz_form = self.Quiz_form(Current_quiz)
+        return render(request,self.template_name,{'Quiz_form':Quiz_form, 'len':range(Current_quiz.max_questions)})
 
     
     def post(self, request, *args, **kwargs):
         ''' Process a post request after user has answered '''
-        Quiz_form = self.Quiz_form(kwargs['quiz_name'],request.POST)
+        Current_quiz = Quiz.objects.get(url = kwargs['quiz_name'])
+        Quiz_form = self.Quiz_form(Current_quiz,request.POST)
 
         if Quiz_form.is_valid():
-
-            Current_quiz = Quiz.objects.all().filter(url= kwargs['quiz_name'])[0]
             Question_list = MCQ.objects.all().filter(quiz = Current_quiz)
-            latest_quiz_attempt = Progress.objects.all().filter(quiz = Current_quiz).filter(student = request.user).order_by('-attempted_on')
             
+            # Commented the following for testing purposes
+            # It will not allow user to take quiz more than once in a hour. 
+            # latest_quiz_attempt = Progress.objects.all().filter(quiz = Current_quiz).filter(student = request.user).order_by('-attempted_on')
             # if latest_quiz_attempt:
             #     latest_quiz_attempt = latest_quiz_attempt[0]
             #     current_time = datetime.datetime.now().replace(tzinfo=tzlocal())
@@ -88,7 +103,7 @@ class QuizAttempt(View):
             #     Hours = Hours.total_seconds()//3600
 
             #     if Hours<1:
-            #         return HttpResponseRedirect(reverse('quiz_progress'))
+            #         return HttpResponseRedirect(reverse('quiz_detail', kwargs = {'slug':Current_quiz.url}))
 
             New_progress = Progress.objects.create(student = request.user, quiz = Current_quiz)
             New_progress.Questions_correct = 0

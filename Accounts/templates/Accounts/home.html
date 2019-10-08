@@ -4,9 +4,11 @@
 <!DOCTYPE html>
 {% load static %}
 
+<!-- This is the Navbar -->
+
 <link rel="stylesheet" href="{% static 'Accounts/homecss/homePage.css' %}" />
 <link rel="stylesheet" href="{% static 'Accounts/homecss/homePageResponsive.css' %}" />
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
 <header id="header">
   <div class="container">
     <nav class="navbar navbar-expand-lg">
@@ -24,16 +26,13 @@
         >
           <span class="navbar-toggler-icon"
             ><img
-              src="assets/arrow-alt-circle-down-regular.svg"
-              style="width: 30px;"
-              alt=""
-          /></span>
+              src="{% static 'Accounts/assets/arrow-alt-circle-down-regular.svg' %}" style="width: 30px;" alt=""/></span>
         </button>
         <!-- navbar links -->
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Home</a>
+              <a class="nav-link active" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5">Quiz</a>
@@ -65,6 +64,11 @@
       </div>
     </nav>
   </div>
+
+
+<!-- End of Navbar -->
+
+
 </header>
 <div id="introbox">
   <div class="container">

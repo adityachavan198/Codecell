@@ -8,132 +8,104 @@
 <link rel="stylesheet" href="{% static 'Accounts/css/loginPage.css' %}">
 <link rel="stylesheet" href="{% static 'Accounts/css/loginPageResponsive.css' %}">
 
- 
-    <header id="header">
+<header id="header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container">
-            <!-- Logo -->
-            <a class="logo" href="{% url 'home' %}"><h4 style="color: #fff" class="text-uppercase">CodeCell</h4></a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarContent"
-              aria-controls="navbarContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/arrow-alt-circle-down-regular.svg' %}" style="width: 30px;" alt=""></span>
-            </button>
-            <!-- navbar links -->
-            <div class="collapse navbar-collapse" id="navbarContent">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'home' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="" data-scroll-nav="5">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'quiz_category_list_all' %}">Quiz</a>
-                </li>
-              
-                <li class="nav-item">
-                  <a class="nav-link active" href="{% url 'forum_home' %}">Forum</a>
-                </li>
+        <!-- Logo -->
+        <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/CodeCell Logo 1 copy.png' %}" width="200px;" alt=""/></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"
+            ><img
+              src="{% static 'Accounts/assets/arrow-alt-circle-down-regular.svg' %}" style="width: 30px;" alt=""/></span>
+        </button>
+        <!-- navbar links -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5">Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'forum_home' %}">Forum</a>
+            </li>
+            <!-- <li class="nav-item">
+                            <a class="nav-link" href="#" data-scroll-nav="4">  </a>
+                        </li> -->
+                        {% if user.is_authenticated %}
 
-                {% if user.is_authenticated %}
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'quiz_progress' %}">Progress</a>
-                  </li>
-                <li class="nav-item">
-                <a class="nav-link download-btn" href="{%url 'logout'%}">Logout</a>
-                </li>
-
-                {% else %}
-
-                <li class="nav-item download-btn">
-                    <a class="nav-link" href="{% url 'authenticate' %}">Login/Register</a>
-                </li>
-
-                {% endif %}
-
-              </ul>
-            </div>
-          </div>
-        </nav>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'quiz_progress' %}">Progress</a>
+                          </li>
+                        <li class="nav-item">
+                        <a class="nav-link download-btn" href="{%url 'logout'%}">Logout</a>
+                        </li>
+        
+                        {% else %}
+        
+                        <li class="nav-item download-btn">
+                            <a class="nav-link" href="{% url 'authenticate' %}">Login/Register</a>
+                        </li>
+        
+                        {% endif %}
+          </ul>
+        </div>
       </div>
-    </header>
+    </nav>
+  </div>
 
 
 
 <!-- End of Navbar -->
 
-<div class="container" style="margin-top:100px;">
-        <div class="well">
-                
-                        <h4 class="text-center"><i class="fas fa-question-circle"></i> Ask Your Doubt:</h4>
-                        {% if error %}
-                        <div class="alert alert-warning">
-                                <strong>{{ error }}</strong>
-                        </div>
-                        {% endif %}
-                        <form role="form" method="post">
-                                {% csrf_token %}
+<div class="container bg-dark" style="margin-top:100px;padding: 20px;border-radius: 15px">
+  <div class="well">
+          
+                  <h4 class="text-center text-warning"><i class="fas fa-question-circle"></i> Ask Your Doubt:</h4>
+                  {% if error %}
+                  <div class="alert alert-warning">
+                          <strong>{{ error }}</strong>
+                  </div>
+                  {% endif %}
+                  <form role="form" method="post">
+                          {% csrf_token %}
 
-                              <div class="form-group">
-                                  <label for="topic"><h6>Topic :</h6></label>
-                                  <select name="topic" type="topic">
-                                    {% for i in topic %}
-                                    <option value="{{ i }}" class="form-control">{{ i }}</option>
-                                    {% endfor %}
-                                  </select>
-                                   
-                               </div>
-    
-    
-                            <div class="form-group">
-                                <label for="question"><h6>Question :- </h6></label>
-                                <input type="question" name="question" class="form-control" >
-                            </div>
-                            <br>
-                            
-                            <div class="form-group">
-                               <label for="description"><h6>Description :-</h6></label>
-                                <textarea class="form-control" name="description" rows="5"></textarea>
-                            </div>
-                            <div class="text-center">
-                            <button type="submit" class="btn btn-danger" name="create_doubt">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-    </div>
-    
+                        <div class="form-group">
+                            <label for="topic"><h6 style="color: white">Topic :</h6></label>
+                            <select name="topic" type="topic">
+                              {% for i in topic %}
+                              <option value="{{ i }}" class="form-control">{{ i }}</option>
+                              {% endfor %}
+                            </select>
+                             
+                         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-    <form method = "post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type ="submit" value = "Ask">
-    </form> -->
+                      <div class="form-group">
+                          <label for="question"><h6 style="color: white">Question :- </h6></label>
+                          <input type="question" name="question" class="form-control" >
+                      </div>
+                      <br>
+                      
+                      <div class="form-group">
+                         <label for="description"><h6 style="color: white">Description :-</h6></label>
+                          <textarea class="form-control" name="description" rows="5"></textarea>
+                      </div>
+                      <div class="text-center">
+                      <button type="submit" class="btn btn-dark" name="create_doubt">Submit</button>
+                      </div>
+                  </form>
+              </div>
+</div>
 
 {% endblock %}

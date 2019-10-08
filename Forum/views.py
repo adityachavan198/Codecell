@@ -27,6 +27,8 @@ class Ask_question(View):
         question = request.POST.get('question')
         description = request.POST.get('description')
         if topic is not None and question is not None and description is not None:
+            if question=="":
+                return render(request, self.template_name, {"error":"Question cannot be blank","topic":Topic.objects.all()})
             new_question = Forum_question()
             new_question.question = question
             new_question.user = request.user
@@ -51,15 +53,18 @@ class Add_answer(View):
         ''' Process a get request for answers '''
         question = Forum_question.objects.all().filter(pk = kwargs['pk'])[0]
         answers = Forum_answer.objects.all().filter(question = question).order_by('-answered_on')
-        print(question,answers)
         return render(request, self.template_name, {'answer':answers, 'question':question})
 
     def post(self, request, *args, **kwargs):
         ''' After a new answer is posted '''
         answer = request.POST.get('answer')
         question = Forum_question.objects.all().filter(pk = kwargs['pk'])[0]
+        answers = Forum_answer.objects.all().filter(question = question).order_by('-answered_on')
 
         if answer is not None:
+            if answer =="":
+                blankerror = "Answer cannot be blank"
+                return render(request, self.template_name, {'answer':answers,'question':question,'blankerror':blankerror})
             new_answer = Forum_answer.objects.create(answer = answer, question = question, user = request.user)
             return HttpResponseRedirect(reverse('answer_list', kwargs={'pk':question.pk}))
         return HttpResponseRedirect(reverse('answer_list'))

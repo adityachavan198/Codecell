@@ -1,4 +1,19 @@
-7 October 2019: Omkar Chorghe and Asad Memon
+8 October 2019: Omkar Chorghe and Nachiket Digha
+	- Nachiket modified the ask question and forum home page.
+	- Now users are logged in as they sign up. No need to logging in after user is logged in.
+
+
+7 October 2019: Omkar Chorghe and Nachiket Digha
+	- Nachiket modified Home page and added a carousel
+	- Nachiket addressed the colors for Forum.
+	* Removed bugs
+		- You could submit a blank answer in forum.
+		- Unique username Integrity error.
+		- Now user can't take the quiz more than once, it will not show the take quiz url.
+	- Happy students is now dynamic.
+
+
+6 October 2019: Omkar Chorghe and Asad Memon
 	- Added all front end pages with navbars
 		- two pages needs to be more customized progress page and correct answer page
 	- Solved a critical bug 
@@ -9,11 +24,14 @@
 * 	- Testing might be needed in quiz
 
 
-6 October 2019: Omkar Chorghe and Asad Memon
+5 October 2019: Omkar Chorghe and Asad Memon and Saket and Nabeel
 	- Added new Front end pages for forum as given by Asad.
 *	 	- merged two views for answer list and give answer, probably need testing
 	- Added Home page with navbar
 	- Added Quiz Category page with navbars
+	- Forum pages by Asad
+	- Quiz category page by Nabeel
+	- Login/Register page by Saket
 
 
 4 October 2019: Omkar Chorghe

@@ -24,67 +24,62 @@
   float: right;
 }
 </style> 
-
-    <header id="header">
+<header id="header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <nav class="navbar navbar-expand-lg">
-          <div class="container">
-            <!-- Logo -->
-            <a class="logo" href="{% url 'home' %}"><h4 style="color: #fff" class="text-uppercase">CodeCell</h4></a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarContent"
-              aria-controls="navbarContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/arrow-alt-circle-down-regular.svg' %}" style="width: 30px;" alt=""></span>
-            </button>
-            <!-- navbar links -->
-            <div class="collapse navbar-collapse" id="navbarContent">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'home' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="" data-scroll-nav="5">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'quiz_category_list_all' %}">Quiz</a>
-                </li>
-              
-                <li class="nav-item">
-                  <a class="nav-link active" href="{% url 'forum_home' %}">Forum</a>
-                </li>
+        <!-- Logo -->
+        <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/CodeCell Logo 1 copy.png' %}" width="200px;" alt=""/></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"
+            ><img
+              src="{% static 'Accounts/assets/arrow-alt-circle-down-regular.svg' %}" style="width: 30px;" alt=""/></span>
+        </button>
+        <!-- navbar links -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5">Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'forum_home' %}">Forum</a>
+            </li>
+            <!-- <li class="nav-item">
+                            <a class="nav-link" href="#" data-scroll-nav="4">  </a>
+                        </li> -->
+                        {% if user.is_authenticated %}
 
-                {% if user.is_authenticated %}
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'quiz_progress' %}">Progress</a>
-                  </li>
-                <li class="nav-item">
-                <a class="nav-link download-btn" href="{%url 'logout'%}">Logout</a>
-                </li>
-
-                {% else %}
-
-                <li class="nav-item download-btn">
-                    <a class="nav-link" href="{% url 'authenticate' %}">Login/Register</a>
-                </li>
-
-                {% endif %}
-
-              </ul>
-            </div>
-          </div>
-        </nav>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'quiz_progress' %}">Progress</a>
+                          </li>
+                        <li class="nav-item">
+                        <a class="nav-link download-btn" href="{%url 'logout'%}">Logout</a>
+                        </li>
+        
+                        {% else %}
+        
+                        <li class="nav-item download-btn">
+                            <a class="nav-link" href="{% url 'authenticate' %}">Login/Register</a>
+                        </li>
+        
+                        {% endif %}
+          </ul>
+        </div>
       </div>
-    </header>
+    </nav>
+  </div>
+
 
 
 
@@ -96,8 +91,8 @@
       <div class="row">
         <div class="col-md-9" style="margin-top:19px;">
           <div class="card">
-            <div class="card-header" style="background:orange">
-              <h4 class="text-center"><i><i class="fas fa-question-circle"></i> Doubts</i></h4>
+            <div class="card-header" style="background:#343a40">
+              <h4 class="text-center text-light"><i><i class="fas fa-question-circle "></i> Doubts</i></h4>
             </div>
             <div class="card-body">
               <div class="container">
@@ -118,6 +113,12 @@
                      <hr>  
                   <div class="well">
                     <h4><i>Post Your Answer:</i></h4>
+                    
+                  {% if blankerror %}
+                  <div class="alert alert-warning">
+                      <strong>{{ blankerror }}</strong>
+                  </div>
+                  {% endif %}
                     <form role="form" method="post" >
                         {% csrf_token %}
 
@@ -125,7 +126,7 @@
                             <textarea name="answer" class="form-control"></textarea>
                         </div>
                         <div class="text-center">
-                        <button type="submit" class="btn btn-danger" name="create_answer">Submit</button>
+                        <button type="submit" class="btn btn-dark" name="create_answer">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -133,10 +134,10 @@
                 <h3>Answers :</h3>
                 {% for i in answer %}
                 <div class="card incard">
-                  <div class="container">  
+                  <div class="container bg-secondary">  
                     <div class="row">
                       <div class="col-md-12">
-                          <p class="text-comment">Answered by <u><span class="user-comment">{{ i.user }}</span></u><span class="text-muted date"> &#8226; {{ i.answered_on }}</span></p>
+                          <p class="text-comment text-light">Answered by <u><span class="user-comment text-light">{{ i.user }}</span></u><span class="text-muted date"> &#8226; {{ i.answered_on }}</span></p>
                          <h5> &#187; {{ i }}</h5>
                       </div>
                     </div>
@@ -149,17 +150,6 @@
                 <h3>No Answers yet.</h3>
                 {% endif %}
 
-
-
-
-
-
-
-
-
-
-        
-                
                    
               </div>
             </div>
@@ -167,7 +157,7 @@
         </div>
         <div class="col-md-3">
           <div style="margin-top:20px;">
-                   <div class="card text-center bg-danger text-warning mb-3">
+                   <div class="card text-center bg-light text-dark mb-3">
                     <div class="card-body">
                      <h3>Doubts Asked</h3>
                      <h4 class="display-4">
@@ -178,7 +168,7 @@
                   </div>
                </div>
                <div style="margin-top:20px;">
-                   <div class="card text-center bg-danger text-warning mb-3">
+                   <div class="card text-center bg-light text-dark mb-3">
                     <div class="card-body">
                      <h3>Doubts Cleared</h3>
                      <h4 class="display-4">
@@ -189,7 +179,7 @@
                   </div>
                </div>
                <div style="margin-top:20px;">
-                   <div class="card text-center bg-danger text-warning mb-3">
+                   <div class="card text-center bg-light text-dark mb-3">
                     <div class="card-body">
                      <h3>Happy Students</h3>
                      <h4 class="display-4">

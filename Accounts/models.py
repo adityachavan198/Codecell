@@ -29,5 +29,9 @@ def doubts_asked(self):
 def doubts_solved(self):
     return Forum_answer.objects.all().filter(user = self).count()
 
+def total_users(self):
+    return User.objects.all().count()
+
 User.add_to_class("doubts_asked",doubts_asked)
 User.add_to_class("doubts_solved",doubts_solved)
+User.add_to_class("total_users", total_users)

@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.views import View
+from django.db import IntegrityError
 
 from Accounts.forms import *
 
@@ -54,11 +55,20 @@ class Login_Register(View):
             email = request.POST.get('remail')
             password = request.POST.get('rpassword')
             if username is not None and email is not None and password is not None:
-                newuser = User.objects.create_user(username, email, password)
+                try:
+                    newuser = User.objects.create_user(username, email, password)
+                except IntegrityError:
+                    return render(request , self.template, {'error':"Username exists"})
                 newuser.set_password(password)
                 newuser.save()
                 student = Student.objects.create(user = newuser)
                 student.save()
+                
+                user = authenticate(username=username, password=password)
+                if user is not None:
+                    if user.is_active:
+                        login(request,user)
+
                 if next_page:
                     return HttpResponseRedirect(next_page)
                 return HttpResponseRedirect(reverse('home'))

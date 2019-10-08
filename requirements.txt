@@ -3,6 +3,5 @@
 django
 django-model-utils
 Pillow
+python-dateutil
 
-# Only needed for running tests.
-tox
