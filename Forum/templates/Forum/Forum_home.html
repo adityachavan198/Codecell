@@ -174,7 +174,7 @@
             <div class="card text-center bg-light text-dark mb-3">
               <div class="card-body">
                 <h3>Happy Students</h3>
-                <h4 class="display-4"><i class="far fa-smile"></i> 200+</h4>
+                <h4 class="display-4"><i class="far fa-smile"></i> {% if user.is_authenticated %} {{user.total_users}} {% else %} 100+ {% endif %}</h4>
               </div>
             </div>
           </div>
