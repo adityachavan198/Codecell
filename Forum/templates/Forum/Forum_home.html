@@ -140,11 +140,27 @@
               </div>
             </div>
             {% endfor %}
-          </div>
+          
+  
+        <div class="pagination">
+          <span class="step-links">
+              {% if question_list.has_previous %}
+                  <a href="?page=1">&laquo; first</a>
+                  <a href="?page={{ question_list.previous_page_number }}">previous</a>
+              {% endif %}
+      
+              <span class="current">
+                  Page {{ question_list.number }} of {{ question_list.paginator.num_pages }}.
+              </span>
+      
+              {% if question_list.has_next %}
+                  <a href="?page={{ question_list.next_page_number }}">next</a>
+                  <a href="?page={{ question_list.paginator.num_pages }}">last &raquo;</a>
+              {% endif %}
+          </span>
         </div>
-  
-  
-  
+      </div>
+    </div>
   
         <div class="col-md-3">
           <div style="margin-top:20px;">
@@ -186,124 +202,5 @@
   </div>   
 
 
-<!-- <div class="container" style="margin-top: 30px">
-  <div class="main">
-      <header id="main-header" class="py-2 bg-dark text-warning " style="border-radius: 20px">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <h1>
-                <i class="fas fa-question-circle"></i> Doubts Area</h1>
-            </div>
-          </div>
-        </div>
-      </header>
-           <div style="border:1px ; width:100%; height:300px;border-radius: 20px ;" class="back bg-light" >
-               <h1  class="font" style="text-align:center; padding-top:100px;">Welcome To CodeCell Forum</h1>
-               <h5 class="text-muted" style="text-align:center;"><u><i>Ask your Doubts And Get It Clearified By Our Expertise</i></u></h5>
-               <div class="form-group">
-               
-    <div class="text-center">
-      <a href="{% url 'ask_question' %}" style="text-decoration:none;"><button type="button" class="btn btn-dark text-warning" style="margin-top:20px;">Ask Doubts</button></a>
-    </div></a>
-    </div>       
-  </div>
-  </div>
-  <style>
-      h1.font{
-          font-family: 'Acme', sans-serif;
-      }
-      div.back{
-          background: #e5efac;
-      }
-  </style>
-  <div class="container" style="margin-bottom:50px;">
-      <h3 style="text-align:center;color: white">"Live as if you were to die tomorrow, learn as if you were to live forever"</h3>
-      <h5 style="text-align:center;color: white" ><i class="fas fa-minus"></i> Mahatma Gandhi</h5>
-  </div>
-  <section id="profile">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9" style="margin-top:19px;">
-          <div class="card">
-            <div class="card-header text-warning" style="background:#292b2c">
-              <h4 class="text-center">
-                <i><i class="fas fa-question-circle"></i> Doubts</i>
-              </h4>
-            </div>
-  
-  
-            {% for i in question_list %}
-            <div class="card-body bg-light">
-              <div class="container ">
-                 
-                <div class="row">
-                  <div class="col-md-10 ">
-                      <h3>{{ i.question }}</h3>
-                          {{ i.user }} asked on {{ i.asked_on }}
-                  </div>
-                  <br/>
-                  <div class="col-md-2">
-                    <a href="{% url 'answer_list' pk=i.pk %}"><button style="margin-top:15px;" class="btn  btn-dark">View</button></a>
-                  </div>
-                </div>
-                
-                <div class="row">
-                  <div class="col-md-6">
-                    <p><h5>Topic:- {% for j in i.topic.all %} {{j}},  {%endfor%}</h5> </p>
-                  </div>
-                </div>
-                
-                <hr />
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-  
-  
-  
-  
-        <div class="col-md-3">
-          <div style="margin-top:20px;">
-            <div class="card text-center bg-light text-dark mb-3">
-              <div class="card-body">
-                <h3>Doubts Asked</h3>
-                
-                <h4 class="display-4">
-                  <i class="fas fa-pencil-alt"></i>
-                  {% if user.is_authenticated %} {{ user.doubts_asked}} {% else %} -- {% endif %}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top:20px;">
-            <div class="card text-center bg-light text-dark mb-3">
-              <div class="card-body">
-                <h3>Doubts Cleared</h3>
-                <h4 class="display-4">
-                  <i class="fas fa-thumbs-up"></i>
-                  {% if user.is_authenticated %} {{ user.doubts_solved}} {% else %} -- {% endif %}
-                </h4>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top:20px;">
-            <div class="card text-center bg-light text-dark mb-3">
-              <div class="card-body">
-                <h3>Happy Students</h3>
-                <h4 class="display-4"><i class="far fa-smile"></i> 200+</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  </div>   
-  
-  
- -->
 
 {% endblock %}

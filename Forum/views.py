@@ -6,11 +6,17 @@ from django.http import HttpResponseRedirect,HttpResponse
 from django.urls import reverse_lazy,reverse
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 
 # Create your views here.
 
 def forum_home(request, *args, **kwargs):
-    question_list = Forum_question.objects.all().order_by('-asked_on')
+    No_of_questions_in_single_page = 25
+    questions = Forum_question.objects.all().order_by('-asked_on')
+    paginator = Paginator(questions, No_of_questions_in_single_page )
+
+    page = request.GET.get('page')
+    question_list = paginator.get_page(page)
     return render(request,'Forum/Forum_home.html',{'question_list':question_list})
 
 class Ask_question(View):
@@ -55,6 +61,7 @@ class Add_answer(View):
         answers = Forum_answer.objects.all().filter(question = question).order_by('-answered_on')
         return render(request, self.template_name, {'answer':answers, 'question':question})
 
+    @method_decorator(login_required)
     def post(self, request, *args, **kwargs):
         ''' After a new answer is posted '''
         answer = request.POST.get('answer')
@@ -69,6 +76,6 @@ class Add_answer(View):
             return HttpResponseRedirect(reverse('answer_list', kwargs={'pk':question.pk}))
         return HttpResponseRedirect(reverse('answer_list'))
 
-    @method_decorator(login_required)
+    
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
