@@ -5,104 +5,101 @@
 {% block content %}
 
 <!-- This is the Navbar -->
-
-<link rel="stylesheet" href="{% static 'Accounts/css/loginPage.css' %}">
-<link rel="stylesheet" href="{% static 'Accounts/css/loginPageResponsive.css' %}">
-
-<header id="header">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <!-- Logo -->
-        <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/CodeCell Logo 1 copy.png' %}" width="200px;" alt=""/></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarContent"
-          aria-controls="navbarContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"
-            ><img
-              src="{% static 'Accounts/assets/arrow-alt-circle-down-regular.svg' %}" style="width: 30px;" alt=""/></span>
-        </button>
-        <!-- navbar links -->
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5">Quiz</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'forum_home' %}">Forum</a>
-            </li>
-            <!-- <li class="nav-item">
-                            <a class="nav-link" href="#" data-scroll-nav="4">  </a>
-                        </li> -->
-                        {% if user.is_authenticated %}
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'quiz_progress' %}">Progress</a>
-                          </li>
-                        <li class="nav-item">
-                        <a class="nav-link download-btn" href="{%url 'logout'%}">Logout</a>
-                        </li>
-        
-                        {% else %}
-        
-                        <li class="nav-item download-btn">
-                            <a class="nav-link" href="{% url 'authenticate' %}">Login/Register</a>
-                        </li>
-        
-                        {% endif %}
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-
-
-<!-- End of Navbar -->
-
-<div class="container" style="color: white;margin-top: 8%">
-  {% if  Quiz %}
-      <center><h1 style="color: white">Progress on each Quiz.</h1></center>
+<style> 
+    html {
+    scroll-behavior: smooth;
+  }
+  </style>
   
+  <body data-spy="scroll" data-target=".navbar" >
+    <!-- Navbar links -->
+    <header id="header">
+      <div class="container-fluid fixed-top bg-dark" >
+        <nav class="navbar navbar-expand-lg ">
+          <div class="container-fluid">
+            <!-- Logo -->
+            <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""></a>
+              <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarContent"
+                aria-controls="navbarContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width: 30px;" alt=""/></span>
+              </button>
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse" id="navbarContent" >
+              <ul class="navbar-nav ml-auto ">
+                <li class="nav-item">
+                  
+                  <a class="nav-link text-light " href="{% url 'home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px;"><span class="fa fa-home"></span> Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5" style="font-size: 25px;padding-left: 10px;padding-right: 10px;"><span class="fas fa-pen"></span> Quiz</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="{% url 'forum_home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px"><span class="fas fa-comments"></span> Forum</a>
+                </li>
+  
+                            <li><div class="dropdown">
+                  <button type="button" class="btn btn-outline-light dropdown-toggle fa fa-user" data-toggle="dropdown">
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="{% url 'quiz_progress' %}">Quiz  Progress</a>
+                    <a class="dropdown-item" href="">My Profile</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <a class="dropdown-item" href="{% url 'authenticate' %}">Sign in</a>
+                    {% endif %}
+                  </div>
+  
+                </div></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Navbar -->
+
+<div class="container">
+  {% if  Quiz %}
+      <center><h1 >Progress on each Quiz.</h1></center>
+      <div class ="table-responsive">
       <table class="table table-bordered table-striped table-hover">
   
           <thead>
             <tr>
-              <th style="color: white">Title</th>
-              <th style="color: white">Total Questions</th>
-              <th style="color: white">Correctly_solved</th>
-              <th style="color: white">Marks Obtained</th>
-              <th style="color: white">Percentage</th>
-              <th style="color: white">Attempted on </th>
+              <th style="color: green;">Title</th>
+              <th style="color: green;">Total Questions</th>
+              <th style="color: green;">Correctly_solved</th>
+              <th style="color: green;">Marks Obtained</th>
+              <th style="color: green;">Percentage</th>
+              <th style="color: green;">Attempted on </th>
             </tr>
           </thead>
   
       {% for name,total_question,correct,marks,percentage,date in Quiz %}
           <tbody>
               <tr>
-                <td style="color: white">{{ name }}</td>
-                <td style="color: white">{{ total_question }}</td>
-                <td style="color: white">{{ correct }}</td>
-                <td style="color: white">{{ marks }}</td>
-                <td style="color: white">{{ percentage }}%</td>
-                <td style="color: white">{{ date }}</td>
+                <td >{{ name }}</td>
+                <td >{{ total_question }}</td>
+                <td >{{ correct }}</td>
+                <td >{{ marks }}</td>
+                <td >{{ percentage }}%</td>
+                <td >{{ date }}</td>
               </tr>
           </tbody>
           
       {% endfor %}
-  
+          
       </table>
+      </div>
   
   {% else %}
-      <h1 style="color: white"> You haven't attempted any quiz yet.</h1>
+      <h1 > You haven't attempted any quiz yet.</h1>
   
   {% endif %}
   </div>

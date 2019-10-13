@@ -9,6 +9,16 @@
   html {
   scroll-behavior: smooth;
 }
+
+header{
+    margin-bottom: 30px;
+}
+
+button{
+    margin-top: 12px;
+    /* margin-right: 2vh; */
+}
+
 </style>
 
 <body data-spy="scroll" data-target=".navbar" >
@@ -45,11 +55,11 @@
                           <li><div class="dropdown">
                 <button type="button" class="btn btn-outline-light dropdown-toggle fa fa-user" data-toggle="dropdown">
                 </button>
-                <div class="dropdown-menu">
+                <div class="dropdown-menu dropdown-menu-right">
                   {% if user.is_authenticated %}
                   <a class="dropdown-item" href="{% url 'quiz_progress' %}">Quiz  Progress</a>
                   <a class="dropdown-item" href="">My Profile</a>
-                  <a class="dropdown-item" href="{%url 'logout'%">Logout</a>
+                  <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                   {% else %}
                   <a class="dropdown-item" href="{% url 'authenticate' %}">Sign in</a>
                   {% endif %}
@@ -163,7 +173,7 @@
               </ul>
           </div>
           <div class="col-7 col-sm-5">
-              <h5>Our Address</h5>
+              <h5>Contact Us</h5>
               <address>
                 Juhu Versova Link Rd,Bharat Nagar, Versova,<br>
                 Andheri West, Mumbai - 400053<br>

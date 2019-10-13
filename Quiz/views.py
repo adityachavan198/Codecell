@@ -132,7 +132,7 @@ class QuizAttempt(View):
                 
             New_progress.marks = marks
             New_progress.save()   
-            return render(request,"Quiz/correct.html",{"content":content,"marks":marks,})
+            return render(request,"Quiz/correct.html",{"content":content,"marks":marks,'quiz':Current_quiz,'progress':New_progress})
             return HttpResponseRedirect(reverse('home'))
         
 

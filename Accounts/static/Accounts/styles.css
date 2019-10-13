@@ -1,13 +1,8 @@
-body{
-        margin-top: 75px;
+header{
+    margin-top: 75px;
 }
 
 button{
     margin-top: 12px;
     margin-right: 2vh;
-}
-
-.navbar{
-    padding:70px 30px 70px 30px;
-    margin:0px auto;
 }
