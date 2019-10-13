@@ -6,9 +6,19 @@
 
 <!-- This is the Navbar -->
 <style> 
-    html {
-    scroll-behavior: smooth;
-  }
+<style> 
+  html {
+  scroll-behavior: smooth;
+}
+
+header{
+    margin-top: 30px;
+}
+
+button{
+    margin-top: 12px;
+    /* margin-right: 2vh; */
+}
   </style>
   
   <body data-spy="scroll" data-target=".navbar" >
@@ -48,7 +58,7 @@
                   <div class="dropdown-menu dropdown-menu-right">
                     {% if user.is_authenticated %}
                     <a class="dropdown-item" href="{% url 'quiz_progress' %}">Quiz  Progress</a>
-                    <a class="dropdown-item" href="">My Profile</a>
+                    <a class="dropdown-item" href="{% url 'user_profile' username=request.user.username %}">My Profile</a>
                     <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                     {% else %}
                     <a class="dropdown-item" href="{% url 'authenticate' %}">Sign in</a>

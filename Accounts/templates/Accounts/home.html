@@ -11,7 +11,7 @@
 }
 
 header{
-    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 button{
@@ -58,7 +58,7 @@ button{
                 <div class="dropdown-menu dropdown-menu-right">
                   {% if user.is_authenticated %}
                   <a class="dropdown-item" href="{% url 'quiz_progress' %}">Quiz  Progress</a>
-                  <a class="dropdown-item" href="">My Profile</a>
+                  <a class="dropdown-item" href="{% url 'user_profile' username=request.user.username %}">My Profile</a>
                   <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                   {% else %}
                   <a class="dropdown-item" href="{% url 'authenticate' %}">Sign in</a>
@@ -162,74 +162,43 @@ button{
 </div>
 
 <footer class="footer bg-secondary">
-  <div class="container">
-      <div class="row">             
-          <div class="col-4 offset-1 col-sm-2">
-              <h5>Links</h5>
-              <ul class="list-unstyled">
-                  <li><a href="{% url 'home' %}">Home</a></li>
-                  <li><a href="{% url 'quiz_category_list_all' %}">Quiz</a></li>
-                  <li><a href="{% url 'forum_home' %}">Forum</a></li>
-              </ul>
-          </div>
-          <div class="col-7 col-sm-5">
-              <h5>Contact Us</h5>
-              <address>
-                Juhu Versova Link Rd,Bharat Nagar, Versova,<br>
-                Andheri West, Mumbai - 400053<br>
-                India<br>
-            <i class="fa fa-phone fa-lg"></i>: +91 123456789<br>
-            <i class="fa fa-fax fa-lg"></i>: +91 123456789<br>
-            <i class="fa fa-phone fa-envelope"></i>: <a href="mailto:confusion@food.net">rgitcodecell@gmail.com</a>
-         </address>
-          </div>
-          <div class="col-12 col-sm-4 align-self-center">
-              <div class="text-center">
-                  <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
-                  <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/"><i class="fa fa-facebook fa-lg"></i></a>
-                  <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
-                  <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
-                  <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
-              </div>
-          </div>
-     </div>
-     <div class="row justify-content-center">             
-          <div class="col-auto">
-              <p>© Copyright 2019 RGIT-Codecell</p>
-          </div>
-     </div>
-  </div>
-</footer>
-
-<!-- 
-<div id="contact">
-  <div class="container-fluid bg-secondary" id="anibox">
-      <div class="row">
-          <div class="col-md-6">
-            <div style="font-size: 25px">There are only 10 types of people !</div>
-          </div>
-        <div class="col-md-6" style="padding-top: 3vh">
-          <a class="btn btn-lg btn-outline-light" href="#">
-          <i class="fab fa-facebook-f"></i>
-       </a>
-        <a class="btn btn-lg btn-outline-light" href="#">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a class="btn btn-lg btn-outline-light" href="#">
-          <i class="fab fa-google"></i>
-        </a>
-        <a class="btn btn-lg btn-outline-light" href="#">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a class="btn btn-lg btn-outline-light" href="#">
-          <i class="fab fa-youtube"></i>
-        </a>
-        </div>
-      </div>
-    <h2 class="text-center text-dark" style="margin-top: 10vh;">Powered By RGIT Codecell</h2>
-  </div>
- 
-</div> -->
-
+    <div class="container">
+        <div class="row">             
+            <div class="col-4 offset-1 col-sm-2" style="padding-top: 3vh">
+                <h4 style="color: black">Links</h5>
+                <ul class="list-unstyled">
+                    <li><a style="color: white" href="{% url 'home' %}">Home</a></li>
+                    <li><a style="color: white" href="{% url 'quiz_category_list_all' %}">Quiz</a></li>
+                    <li><a style="color: white" href="{% url 'forum_home' %}">Forum</a></li>
+                </ul>
+            </div>
+            <div class="col-7 col-sm-5" style="padding-top: 3vh">
+                <h4 style="color: black">Contact Us</h5>
+                <address style="color: white">
+                  Juhu Versova Link Rd,Bharat Nagar, Versova,<br>
+                  Andheri West, Mumbai - 400053<br>
+                  India<br>
+              <i style="color: black" class="fa fa-phone fa-lg"></i> : +91 123456789<br>
+              <i style="color: black" class="fa fa-fax fa-lg"></i> : +91 123456789<br>
+              <i style="color: black" class="fa fa-phone fa-envelope"></i> : <a style="color: white" href="mailto:confusion@food.net">rgitcodecell@gmail.com</a>
+           </address>
+            </div>
+            <div class="col-12 col-sm-4 align-self-center">
+                <div class="text-center">
+                    <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/"><i class="fa fa-facebook fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+       </div>
+       <div class="row justify-content-center">             
+            <div class="col-auto">
+                <p>© Copyright 2019 RGIT-Codecell</p>
+            </div>
+       </div>
+    </div>
+  </footer>
 
 {% endblock %}

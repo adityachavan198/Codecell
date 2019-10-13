@@ -9,7 +9,7 @@ class UserForm(forms.ModelForm):
         model=User
         fields=('username','password','email')
 
-class StudentForm(forms.ModelForm):
-    class Meta:
-        model=Student
-        fields=('year','div','branch','rollno')
+# class StudentForm(forms.ModelForm):
+#     class Meta:
+#         model=Student
+#         fields=('year','div','branch','rollno')

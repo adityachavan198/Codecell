@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path,include,re_path
 from Accounts import views,urls
 from Quiz import urls as Quiz_urls
 from Forum import urls as Forum_urls
@@ -25,4 +25,6 @@ urlpatterns = [
     path('accounts/',include(urls.registerpatterns)),  # other log in log out tags
     path('quiz/', include(Quiz_urls.Quiz_url_patterns)), # urls in quiz category
     path('forum/', include(Forum_urls.Forum_url_patterns)), # urls in forums
+    re_path(r'^(?P<username>[\w|W-]+)/$', views.User_profile.as_view() , name = "user_profile"),
+    re_path(r'^(?P<username>[\w|W-]+)/update/$', views.User_update.as_view() , name = "profile_update"),
 ]

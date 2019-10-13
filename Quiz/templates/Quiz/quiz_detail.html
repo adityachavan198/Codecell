@@ -13,19 +13,18 @@ $(document).ready(function(){
 </script>
  <!-- Navbar links -->
  <style> 
-    html {
-    scroll-behavior: smooth;
-  }
-  
-  header{
-      margin-bottom: 30px;
-  }
-  
-  button{
-      margin-top: 12px;
-      /* margin-right: 2vh; */
-  }
-  
+  html {
+  scroll-behavior: smooth;
+}
+
+header{
+    margin-top: 30px;
+}
+
+button{
+    margin-top: 12px;
+    /* margin-right: 2vh; */
+}
   </style>
   <header id="header">
     <div class="container-fluid fixed-top bg-dark" >
@@ -62,7 +61,7 @@ $(document).ready(function(){
                 <div class="dropdown-menu dropdown-menu-right">
                   {% if user.is_authenticated %}
                   <a class="dropdown-item" href="{% url 'quiz_progress' %}">Quiz  Progress</a>
-                  <a class="dropdown-item" href="">My Profile</a>
+                  <a class="dropdown-item" href="{% url 'user_profile' username=request.user.username %}">My Profile</a>
                   <a class="dropdown-item" href="{%url 'logout' %}">Logout</a>
                   {% else %}
                   <a class="dropdown-item" href="{% url 'authenticate' %}">Sign in</a>

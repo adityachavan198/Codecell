@@ -6,12 +6,23 @@ from Forum.models import *
 
 class Student(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
-    year_options=[('FE','First Year'),('SE','Second Year'),('TE','Third Year'),('BE','Final Year')]
-    year=models.CharField(choices=year_options, max_length=2, default='SE')
-    div =models.CharField(choices=[(i,i) for i in "ABCDEFG"], max_length=1, default='A')
-    branch_options=[('Comps','Computers'),('IT','IT'),('EXTC','EXTC'),('Instru','Instru'),('Mech','Mechanical')]
-    branch=models.CharField(choices=branch_options, max_length=10, default='Comps')
-    rollno=models.IntegerField(blank = False, null = False, default = 1)
+    stream=models.CharField(max_length=10, default='Comps')
+    description = models.CharField(max_length=100, blank = True)
+    birthdate = models.CharField(max_length = 50, blank = True)
+    gender = models.CharField(max_length = 50, choices = (("Male","Male"),("Female","Female")))
+    phone = models.IntegerField( blank = True, null = True)
+    githublink = models.CharField(max_length = 70, blank = True)
+    facebooklink = models.CharField(max_length = 70, blank = True)
+    instagramlink = models.CharField(max_length = 70, blank = True)
+    linkedinlink = models.CharField(max_length = 70, blank = True)
+    achname1 = models.CharField(max_length = 70, blank = True)
+    ach1 = models.CharField(max_length = 100, blank = True)
+    achname2 = models.CharField(max_length = 70, blank = True)
+    ach2 = models.CharField(max_length = 100, blank = True)
+    achname3 = models.CharField(max_length = 70, blank = True)
+    ach3 = models.CharField(max_length = 100, blank = True)
+    achname4 = models.CharField(max_length = 70, blank = True)
+    ach4 = models.CharField(max_length = 100, blank = True)
 
     def __str__(self):
         return self.user.username

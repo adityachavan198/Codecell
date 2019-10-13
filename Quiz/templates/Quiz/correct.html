@@ -7,18 +7,18 @@
 
 <!-- This is the Navbar -->
 <style> 
-		html {
-		scroll-behavior: smooth;
-	  }
-	  
-	  header{
-		  margin-bottom: 30px;
-	  }
-	  
-	  button{
-		  margin-top: 12px;
-		  /* margin-right: 2vh; */
-	  }
+	html {
+	scroll-behavior: smooth;
+  }
+  
+  header{
+	  margin-top: 30px;
+  }
+  
+  button{
+	  margin-top: 12px;
+	  /* margin-right: 2vh; */
+  }
 	  
 	  </style>
 	  
@@ -59,7 +59,7 @@
 					  <div class="dropdown-menu dropdown-menu-right">
 						{% if user.is_authenticated %}
 						<a class="dropdown-item" href="{% url 'quiz_progress' %}">Quiz  Progress</a>
-						<a class="dropdown-item" href="">My Profile</a>
+						<a class="dropdown-item" href="{% url 'user_profile' username=request.user.username %}">My Profile</a>
 						<a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
 						{% else %}
 						<a class="dropdown-item" href="{% url 'authenticate' %}">Sign in</a>
@@ -79,7 +79,6 @@
 			<div class = "row">
 				<div class = "col-sm-12">
 					<h1> Codecell Quiz Test ::  <font color = "blue"> {{ quiz }} </font> </h1>
-					
 					<div class ="table-responsive">
 					<table class = "table table-bordered" style = "margin : 5% 0 ">
 						<thead>

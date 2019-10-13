@@ -22,7 +22,7 @@
 	<!-- css files -->
 	<link rel="stylesheet" href="{% static 'Accounts/Signing/css/style.css' %}" type="text/css" media="all" />
 	<!-- Style-CSS -->
-	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static 'Accounts/Signing/css/font-awesome.min.css' %}" rel="stylesheet">
 	<!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
 
@@ -33,6 +33,11 @@
 </head>
 
 <body>
+		{% if error %}
+		<div style="align-items: center;">
+				<strong>{{ error }}</strong>
+		</div>
+		{% endif %}
 	<div class="main-bg">
 		<!-- title -->
 		<br><br>
@@ -40,11 +45,6 @@
        <h5 style="float:right; color:white;">&larr;</h5>
        <br>
 		<h1>&nbsp;</h1>
-		{% if error %}
-		<div class="alert alert-warning">
-				<strong>{{ error }}</strong>
-		</div>
-		{% endif %}
 		<!-- //title -->
 		<div class="sub-main-w3">
 			
@@ -53,11 +53,13 @@
 				<div id="section1" class="section-w3ls">
 					<input type="radio" name="sections" id="option1" checked>
 					<label for="option1" class="icon-left-w3pvt"><span class="fa fa-user-circle" aria-hidden="true"></span>Login</label>
+					
 					<article>
 						<form  method="post">
 								{% csrf_token %}
 							<h3 class="legend" style="font-family: cursive;">Login</h3>
 							<div class="input">
+								
 								<span class="fa fa-envelope-o" aria-hidden="true"></span>
 								<input type="text" placeholder="username" name="lusername" />
 							</div>
@@ -92,6 +94,7 @@
 							<a href="#" class="bottom-text-w3ls">Be the member of codecell!</a>
 						</form>
 					</article>
+					
 				</div>
 				
 				
