@@ -68,10 +68,10 @@
 									<li><span>E-mail</span>{{ user.email}}</li>
 									<li><span>Phone </span>{{ student.phone }}</li>
 									<li><span>Stream</span>{{ student.stream }}</li>
-									{% if student.achname1 %}<li><span>{{ student.achname1 }}</span><a href="#">{{ student.ach1}}</a></li>{% endif %}
-									{% if student.achname2 %}<li><span>{{ student.achname2 }}</span><a href="#">{{ student.ach2}}</a></li>{% endif %}
-									{% if student.achname3 %}<li><span>{{ student.achname3 }}</span><a href="#">{{ student.ach3}}</a></li>{% endif %}
-									{% if student.achname4 %}<li><span>{{ student.achname4 }}</span><a href="#">{{ student.ach4}}</a></li>{% endif %}
+									{% if student.achname1 %}<li><span>{{ student.achname1 }}</span><a href="{{ student.ach1}}">{{ student.ach1}}</a></li>{% endif %}
+									{% if student.achname2 %}<li><span>{{ student.achname2 }}</span><a href="{{ student.ach2}}">{{ student.ach2}}</a></li>{% endif %}
+									{% if student.achname3 %}<li><span>{{ student.achname3 }}</span><a href="{{ student.ach3}}">{{ student.ach3}}</a></li>{% endif %}
+									{% if student.achname4 %}<li><span>{{ student.achname4 }}</span><a href="{{ student.ach4}}">{{ student.ach4}}</a></li>{% endif %}
 								</ul>
 							</div>
 						</div>
@@ -97,9 +97,9 @@
 				<div class="col-xl-10 offset-xl-1">
 					<div class="social-link-warp">
 						<div class="social-links">
-							{% if student.instagramlink %}<a href="//{{ student.instagramlink }}"><i class="fa fa-instagram"></i></a>{% endif %}
+							{% if student.instagramlink %}<a href="{{ student.instagramlink }}"><i class="fa fa-instagram"></i></a>{% endif %}
 							{% if student.facebooklink %}<a href="{{ student.facebooklink }}"><i class="fa fa-facebook"></i></a>{% endif %}
-							{% if student.githublink %}<a href="//{{ student.githublink }}"><i class="fa fa-github"></i></a>{% endif %}
+							{% if student.githublink %}<a href="{{ student.githublink }}"><i class="fa fa-github"></i></a>{% endif %}
 							{% if student.linkedinlink %}<a href="{{ student.linkedinlink }}"><i class="fa fa-linkedin"></i></a>{% endif %}
 						</div>
 						
