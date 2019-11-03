@@ -12,3 +12,6 @@
 
 6) We need different cards for different answers in answerlist html page.
 
+7) forloop.counter used in correct.html. No need of counter in its view.
+
+

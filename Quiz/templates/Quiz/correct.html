@@ -3,7 +3,7 @@
 {% load static %}
 {% block content %}
 
-	
+
 
 <!-- This is the Navbar -->
 
@@ -28,7 +28,7 @@
 				<div class="collapse navbar-collapse" id="navbarContent" >
 				  <ul class="navbar-nav ml-auto ">
 					<li class="nav-item">
-					  
+
 					  <a class="nav-link text-light " href="{% url 'home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px;"><span class="fa fa-home"></span> Home</a>
 					</li>
 					<li class="nav-item">
@@ -37,7 +37,7 @@
 					<li class="nav-item">
 					  <a class="nav-link text-light" href="{% url 'forum_home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px"><span class="fas fa-comments"></span> Forum</a>
 					</li>
-	  
+
 								<li><div class="dropdown">
 					  <button type="button" class="btn btn-outline-light dropdown-toggle fa fa-user" data-toggle="dropdown">
 					  </button>
@@ -50,7 +50,7 @@
 						<a class="dropdown-item" href="{% url 'authenticate' %}">Sign in</a>
 						{% endif %}
 					  </div>
-	  
+
 					</div></li>
 				  </ul>
 				</div>
@@ -59,7 +59,7 @@
 		  </div>
 		</header>
 		<!-- End Navbar -->
-	
+
 		<div class ="container">
 			<div class = "row">
 				<div class = "col-sm-12">
@@ -68,35 +68,37 @@
 					<table class = "table table-bordered" style = "margin : 5% 0 ">
 						<thead>
 							<tr>
-								<th colspan = 2> <font color = "green" size = 5><center>Marks : {{marks}}/{{quiz.total_marks}} </center></font></th>	
+								<th colspan = 2> <font color = "green" size = 5><center>Marks : {{marks}}/{{quiz.total_marks}} </center></font></th>
 							</tr>
 						</thead>
-						
+
 						<tbody>
-						
+
 							<tr>
 								<td> Total questions </td>
-								<td> {{quiz.max_questions}} </td>	
+								<td> {{quiz.max_questions}} </td>
 							</tr>
-							
+
 							<tr>
 								<td> Correct </td>
 								<td> {{progress.Questions_correct}} </td>
 							</tr>
-							
-						</tbody>
-						
-					</table>
-					</div>	
 
-		
-			<h2> <font color = "green"> REVIEW QUIZ </font>  </h2>
+						</tbody>
+
+					</table>
+					</div>
+                </div>
+            </div>
+        </div>
+
+			<center><h2> <font color = "green"> REVIEW QUIZ </font>  </h2></center>
 			{% for question,answer,counter in content %}
-      								
-			<div class = "container" style="font-size:20px; margin : 5% 0%">
+
+			<div class = "container mx-auto" style="font-size:20px; margin : 5% 0%">
 				<div class = "text-drak" style = "width : 100%; font-size : 25px; margin : 3% 0%;font-style: bold">
-						{{ counter }}) {{ question.content }} 
-			
+						{{ forloop.counter }}) {{ question.content }}
+
 				</div>
 				{% for  answer,correct,attempted in answer %}
 
@@ -108,20 +110,18 @@
 				<div class="badge badge-danger badge-pill " style="width : 100%; padding-bottom:15px; padding-top:15px; font-size:20px; margin:5px 5px; border:1px solid black">{{ answer.content }}</div>
 				{% endif %}
 
-				{% if attempted is False %}
+				{% if correct is False and attempted is False %}
 				<div class="badge badge-light badge-pill " style="width : 100%; padding-bottom:15px; padding-top:15px; font-size:20px; margin:5px 5px; border:1px solid black">{{ answer.content }}</div>
-				{% endif %}				
-				
+				{% endif %}
+
 				{% endfor %}
-						
+
 						<div class = "" style="margin-top: 2vh">
 						<p>Ans:-	{{question.explanation}}</p>
-						</div>	
 						</div>
-				</div>
-				{% endfor %}
+						</div>
 			</div>
+			{% endfor %}
 		</div>
-	
-	</center>
+
 {% endblock %}
