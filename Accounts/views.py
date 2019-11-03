@@ -113,15 +113,18 @@ class User_update(View):
         if request.user.is_authenticated and request.user == user:
 
             Form = request.POST
+            print(Form)
             if Form['first_name']=="" or Form['last_name']=="" or Form['birthday']=="" or Form["email"]=="" or Form["phone"]=="":
                 error = "There is an error in your form"
                 return render(request, self.template_name, {"error":error})
             else:
                 user.first_name = Form['first_name']
                 user.last_name = Form['last_name']
+                user.email = Form['email']
                 student.description = Form['description']
                 student.birthdate = str(Form['birthday'])
                 student.gender = Form['gender']
+                student.stream = Form['stream']
                 student.phone = Form['phone']
                 student.githublink = Form['github']
                 student.facebooklink = Form['facebook']
