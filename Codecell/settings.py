@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Accounts',
     'Quiz',
     'Forum',
+    'Hackathon',
 ]
 
 MIDDLEWARE = [

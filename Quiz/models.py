@@ -39,7 +39,7 @@ class Quiz(models.Model):
 
     description = models.TextField(verbose_name = "Description", blank = True, help_text = "Quiz description")
 
-    level = models.CharField(verbose_name = "Level", help_text = "Level of difficultly", max_length = 10,default = 'Easy',choices = (('Hard','Hard'),('Intermediate','Intermediate'),('Easy','Easy')))
+    level = models.CharField(verbose_name = "Level", help_text = "Level of difficultly", max_length = 15,default = 'Easy',choices = (('Hard','Hard'),('Intermediate','Intermediate'),('Easy','Easy')))
 
     url = models.SlugField(max_length = 60, blank = False, help_text = "A user friendly url", verbose_name = "User Friendly Url")
 

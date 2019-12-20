@@ -18,6 +18,7 @@ from django.urls import path,include,re_path
 from Accounts import views,urls
 from Quiz import urls as Quiz_urls
 from Forum import urls as Forum_urls
+from Hackathon import urls as Hackathon_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +26,7 @@ urlpatterns = [
     path('accounts/',include(urls.registerpatterns)),  # other log in log out tags
     path('quiz/', include(Quiz_urls.Quiz_url_patterns)), # urls in quiz category
     path('forum/', include(Forum_urls.Forum_url_patterns)), # urls in forums
+    path('hackathon/', include(Hackathon_urls.Hackathon_url_patterns)),
     re_path(r'^(?P<username>[\w|W-]+)/$', views.User_profile.as_view() , name = "user_profile"),
     re_path(r'^(?P<username>[\w|W-]+)/update/$', views.User_update.as_view() , name = "profile_update"),
 ]

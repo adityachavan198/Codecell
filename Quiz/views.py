@@ -126,14 +126,14 @@ class QuizAttempt(View):
                         marks += question_name.marks 
                         New_progress.Questions_correct += 1
                     j.append(counter)
-                    counter += counter
+                    counter += 1
                     content.append(j)
 
                 
             New_progress.marks = marks
             New_progress.save()   
             return render(request,"Quiz/correct.html",{"content":content,"marks":marks,'quiz':Current_quiz,'progress':New_progress})
-            return HttpResponseRedirect(reverse('home'))
+        return HttpResponseRedirect(reverse('home'))
         
 
 @login_required
