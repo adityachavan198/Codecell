@@ -13,7 +13,9 @@ from Accounts.forms import *
 
 def home(request):
     ''' The first page user visits '''
-    return render(request,'Accounts/home.html',{}) 
+    template = 'Accounts/home.html'
+    if request.method == 'GET':
+        return render(request,'Accounts/home.html',{})
 
 
 @login_required
@@ -50,6 +52,7 @@ class Login_Register(View):
                     return HttpResponseRedirect(reverse('home'))
             else:
                 return render(request , self.template, {'error':'There is an error in username or password, please try again!'})
+
         elif request.POST.get('rusername'):
             username = request.POST.get('rusername')
             email = request.POST.get('remail')
