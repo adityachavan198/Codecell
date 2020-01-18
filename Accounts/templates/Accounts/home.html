@@ -1,13 +1,7 @@
 {% extends 'Accounts/base.html' %}
 {% block content %}
 
-<!DOCTYPE html>
 {% load static %}
-
-<!-- This is the Navbar -->
-
-<body>
-
 <div class="section1 box">
   <h1 style="padding-top: 35vh;margin-left: 10%;color: #00ff00"><span class="text_1">{CODE}CELL</span></h1>
   <p style="color: white;font-size: 10vmin;margin-left: 10%">Platform for coders,by coders.</p>
@@ -30,7 +24,7 @@
 <div class="container-fluid" style="margin-top: 4vh;background-color: black;margin-bottom: 5vh;padding: 3vh">
   <h2 style="color: white;text-align: center;">Our Events</h2>
   <div class="container-fluid row " >
-    <div class="col-lg-6 col-sm-12"><center><a href="#hackathon"><img src="{% static 'Accounts/assets/hack1.jpg' %}" style="padding: 3vmin;height: 20vmax;width: 38vmax;margin-bottom: 3vmax"></a></center></div>
+    <div class="col-lg-6 col-sm-12"><center><a href="{% url 'home' %}"><img src="{% static 'Accounts/assets/hack1.jpg' %}" style="padding: 3vmin;height: 20vmax;width: 38vmax;margin-bottom: 3vmax"></a></center></div>
     <div class="col-lg-6 col-sm-12"><p style="padding: 3vmin;color: white;margin-bottom: 3vh;text-align: center;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p></div>
 </div>
 
