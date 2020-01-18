@@ -15,13 +15,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{% static 'Accounts/styles.css' %}" media="screen" />
 
 </head> 
-<body>
-<header>
-    <div class="container-fluid fixed-top bg-dark" >
+
+<header id="header">
+    <div id="navBar" class="container-fluid fixed-top bg-dark" >
       <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
           <!-- Logo -->
@@ -40,16 +42,16 @@
             <ul class="navbar-nav ml-auto ">
               <li class="nav-item">
 
-                <a class="nav-link text-light " href="{% url 'home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px;"><span class="fa fa-home"></span> Home</a>
+                <a class="nav-link text-light " href="{% url 'home' %}" style="font-size: 20px;padding-left: 10px;padding-right: 10px;"><span class="fa fa-home"></span> Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5" style="font-size: 25px;padding-left: 10px;padding-right: 10px;"><span class="fas fa-pen"></span> Quiz</a>
+                <a class="nav-link text-light" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5" style="font-size: 20px;padding-left: 10px;padding-right: 10px;"><span class="fas fa-pen"></span> Quiz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="{% url 'forum_home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px"><span class="fas fa-comments"></span> Forum</a>
+                <a class="nav-link text-light" href="{% url 'forum_home' %}" style="font-size: 20px;padding-left: 10px;padding-right: 10px"><span class="fas fa-comments"></span> Forum</a>
               </li>
 
-                          <li><div class="dropdown">
+                          <li><div  style="padding-left: 07px; padding-top: 08px;;" class="dropdown">
                 <button type="button" class="btn btn-outline-light dropdown-toggle fa fa-user" data-toggle="dropdown">
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
@@ -104,11 +106,29 @@
   </div>
   <div class="row mt-5">
     <div class="col copyright">
-      <p align="center"><small style="color: white">© 2019. All Rights Reserved.</small></p>
+      <p align="center"><small style="color: white">© <span id="date"></span>. All Rights Reserved.</small></p>
     </div>
   </div>
 </div>
 </div>
+
+<script>
+//GET DATE DYNAMICALLY 
+var d = new Date();
+var n = d.getFullYear();
+document.getElementById("date").innerHTML = n + " ";
+</script>
+
+
+<style>
+  body{
+    font-family: 'Bree Serif', serif;
+
+  }
+  #navBar{
+font-family: 'Nanum Gothic Coding', monospace;
+  }
+</style>
 
 {#footer ends here#}
 {% endblock %}
