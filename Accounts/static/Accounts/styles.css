@@ -1,4 +1,6 @@
-
+body{
+    padding-top: 70px;
+}
 .box{
 		width: 100%;
 		height: auto;

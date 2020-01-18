@@ -1,5 +1,5 @@
 {% load static %}
-
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="{% static 'Accounts/styles.css' %}" media="screen" />
 
 </head> 
-<body>
-<header id="header" style="margin-bottom: 70px">
+
+<header id="header">
     <div id="navBar" class="container-fluid fixed-top bg-dark" >
       <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
@@ -112,12 +112,15 @@
 </div>
 </div>
 
+<<<<<<< HEAD
 <script>
 //GET DATE DYNAMICALLY 
 var d = new Date();
 var n = d.getFullYear();
 document.getElementById("date").innerHTML = n + " ";
 </script>
+=======
+>>>>>>> 1cd5d1379718f8b51512191184d819245508b939
 
 <style>
   body{
@@ -131,5 +134,3 @@ font-family: 'Nanum Gothic Coding', monospace;
 
 {#footer ends here#}
 {% endblock %}
-</body>
-</html>
