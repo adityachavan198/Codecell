@@ -7,23 +7,25 @@
 
 {% if quiz_list %}
 <div class="container" >
-<table class="table table-bordered table-striped table-hover bg-secondary" style="border:2px solid black;margin-top: 5vh">
-    <tr class="bg-dark">
-        <th style="color: white">Quiz Name</th>
-        <th style="color: white">Level</th>
-    </tr>
+
+
     {% for quiz in quiz_list %}
-    <tr>
-    <td style="color: white">    <li><a style="color: white" href = "{% url 'quiz_detail' slug=quiz.url %}">{{ quiz.title }}</a></li> </td>
-    <td style="color: white">{{ quiz.level }}</td>
-    </tr>
+        <div class="card">
+          <div class="card-header">
+            {{ quiz.title }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Level :- {{ quiz.level }}</h5>
+            <p class="card-text">{{ quiz.description }}</p>
+            <a href="{% url 'quiz_detail' slug=quiz.url %}" class="btn btn-primary pull-right">Start</a>
+          </div>
+        </div>
     {% endfor %}
 
-</table>
 </div>
-{% else %}
-<p style="color: black;font-size: 20px;text-align: center;"> Sorry, there are no quizzes available here yet.</p>
+    {% else %}
+         <p style="color: black;font-size: 20px;text-align: center;"> Coming Soon.</p>
 
-{% endif %}
+    {% endif %}
 
 {% endblock %}
