@@ -22,8 +22,10 @@
 
 </head> 
 
+<script src="https://unpkg.com/scrollreveal"></script>
+
 <header id="header">
-    <div id="navBar" class="container-fluid fixed-top bg-dark" >
+    <div id="navBar" class="container-fluid navbar-default" >
       <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
           <!-- Logo -->
@@ -42,13 +44,13 @@
             <ul class="navbar-nav ml-auto ">
               <li class="nav-item">
 
-                <a class="nav-link text-light " href="{% url 'home' %}" style="font-size: 20px;padding-left: 10px;padding-right: 10px;"><span class="fa fa-home"></span> Home</a>
+                <a class="nav-link text-light " href="{% url 'home' %}" style="font-size: 22px;padding-left: 10px;padding-right: 10px;">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5" style="font-size: 20px;padding-left: 10px;padding-right: 10px;"><span class="fas fa-pen"></span> Quiz</a>
+                <a class="nav-link text-light" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5" style="font-size: 22px;padding-left: 15px;padding-right: 10px;"> Quiz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="{% url 'forum_home' %}" style="font-size: 20px;padding-left: 10px;padding-right: 10px"><span class="fas fa-comments"></span> Forum</a>
+                <a class="nav-link text-light" href="{% url 'forum_home' %}" style="font-size: 22px;padding-left: 10px;padding-right: 15px"> Forum</a>
               </li>
 
                           <li><div  style="padding-left: 07px; padding-top: 08px;;" class="dropdown">
@@ -123,12 +125,28 @@ document.getElementById("date").innerHTML = n + " ";
 <style>
   body{
     font-family: 'Bree Serif', serif;
+    overflow-x: hidden;
 
   }
   #navBar{
 font-family: 'Nanum Gothic Coding', monospace;
   }
+  .navbar-default{
+    background-color: #000;
+    border: 0;
+  }
 </style>
+
+
+<!-- SCRIPT FOR SCROLLING ANIMATION -->
+<script>
+window.sr = ScrollReveal();
+sr.reveal(".navbar", {
+  duration: 2000,
+  origin: 'bottom',
+  distance: "300px",
+});
+</script>
 
 {#footer ends here#}
 {% endblock %}
