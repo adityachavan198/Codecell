@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Amarante&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{% static 'Accounts/styles.css' %}" media="screen" />
 
@@ -106,15 +106,23 @@
   </div>
   <div class="row mt-5">
     <div class="col copyright">
-      <p align="center"><small style="color: white">© 2019. All Rights Reserved.</small></p>
+      <p align="center"><small style="color: white">© <span id="date"></span>. All Rights Reserved.</small></p>
     </div>
   </div>
 </div>
 </div>
 
+<script>
+//GET DATE DYNAMICALLY 
+var d = new Date();
+var n = d.getFullYear();
+document.getElementById("date").innerHTML = n + " ";
+</script>
+
 <style>
   body{
-    font-family: 'Amarante', cursive;
+    font-family: 'Bree Serif', serif;
+
   }
   #navBar{
 font-family: 'Nanum Gothic Coding', monospace;
