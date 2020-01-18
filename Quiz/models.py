@@ -33,7 +33,7 @@ class Category(models.Model):
 
 
 class Quiz(models.Model):
-    ''' Quiz is onetomany modeled to Questions '''
+    ''' Quiz is one to many modeled to Questions '''
 
     title = models.CharField(verbose_name= "Title", max_length = 50, blank = False)
 
