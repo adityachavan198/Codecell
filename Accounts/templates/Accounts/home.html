@@ -21,21 +21,22 @@
     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
   </div>
 
-<div class="container-fluid" style="margin-top: 4vh;background-color: black;margin-bottom: 5vh;padding: 3vh">
+<div class="container-fluid" style="margin-top: 4vh;background-color: black;padding: 3vh">
   <h2 style="color: white;text-align: center;">Our Events</h2>
   <div class="container-fluid row " >
+
     <div class="col-lg-6 col-sm-12"><center><a href="{% url 'home' %}"><img src="{% static 'Accounts/assets/hack1.jpg' %}" style="padding: 3vmin;height: 20vmax;width: 38vmax;margin-bottom: 3vmax"></a></center></div>
     <div class="col-lg-6 col-sm-12"><p style="padding: 3vmin;color: white;margin-bottom: 3vh;text-align: center;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p></div>
 </div>
 
   <div class="container-fluid row " >
     <div class="col-lg-6 col-sm-12"><center><a href="#Seminar"><img src="{% static 'Accounts/assets/seminar.png' %}" style="padding: 3vmin;height: 20vmax;width: 38vmax;margin-bottom: 3vmax"></a></center></div>
-    <div class="col-lg-6 col-sm-12"><p style="padding: 3vmin;color: white;margin-bottom: 3vh;text-align: center;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p></div>
+    <div class="col-lg-6 col-sm-12"><p style="padding: 2vmin;color: white;margin-bottom: 3vh;text-align: center;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p></div>
 </div>
 
 </div>
 
-<div class="row container-fluid" style="align-items: center;text-align: center;margin: 3vh 0vh 3vh 0vh;padding: 3vh">
+<!-- <div class="row container-fluid" style="align-items: center;text-align: center;margin: 3vh 0vh 3vh 0vh;padding: 3vh">
         <div class="col-md-5 ">
             <form role="form">
             <fieldset>              
@@ -87,6 +88,147 @@
             </fieldset>
           </form>
         </div>
+</div> -->
+
+<div class="container-fluid" style="background-color: white;padding: 20px;margin: 20px 0 20px 0">
+              <div>
+                <button type="button" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#myModal" style="background-color: black;color: white;margin: auto;display: block;font-size: 2vmax;border-radius: 15px;width: 30%">
+                      Login
+                </button>
+
+                  <div class="modal" id="myModal">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                        
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title">Login</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+                          
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <form action="">
+                              
+                               <div class="form-group">
+                                  <label for="Username">Username:</label>
+                                  <input type="text" class="form-control" id="Username" placeholder="Enter username" name="username">
+                                </div>
+                                <div class="form-group">
+                                  <label for="pwd">Password:</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                </div>
+
+                                 <div class="form-group form-check">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                                  </label>
+                                </div>
+
+                            </form>
+                          </div>
+                          
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <input type="submit" class="btn btn-lg btn-dark" value="Login" style="display: block;margin: auto;"></button>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+              <h3 style="color: black;text-align: center;padding: 2vh;font-size: 2vmax">OR</h3>
+              </div>
+            
+              <div>
+                <button type="button" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#myModal1" style="background-color: black;color: white;margin: auto;display: block;font-size: 2vmax;border-radius: 15px;width: 30%">
+                      Sign up
+                </button>
+
+                <div class="modal" id="myModal1">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                        
+                          <!-- Modal Header -->
+                          <div class="modal-header">
+                            <h4 class="modal-title">Sign up</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+                          
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <form action="">
+                              
+                               <div class="form-group">
+                                  <label for="Username">Username:</label>
+                                  <input type="text" class="form-control" id="Username" placeholder="Enter username" name="username">
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="email">Email Address</label>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Email Address">
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="pwd">Password:</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                </div>
+
+                                <div class="form-group">
+                                  <label for="pwd">Rewrite Password:</label>
+                                  <input type="password" class="form-control" id="pwd" placeholder="Confirm password" name="pswd">
+                                </div>
+                                
+                                 <div class="form-group form-check">
+                                  <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
+                                  </label>
+                                </div>
+
+                            </form>
+                          </div>
+                          
+                          <!-- Modal footer -->
+                          <div class="modal-footer">
+                            <input type="submit" class="btn btn-lg btn-dark" value="Sign up" style="display: block;margin: auto;"></button>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+              </div>
+</div>
+<div class="footer" style="background-color: black/*#0b1e4f*/ /*#2f4785*/;color: white;text-align: center;">
+<div class="container" >
+  <div class="row" >
+    <div class="col-lg-5 col-xs-12 about-company">
+      <h2 style="margin-top: 2vh">Heading</h2>
+      <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
+    </div>
+    <div class="col-lg-3 col-xs-12 links">
+      <h2 class="mt-lg-0 mt-sm-3" style="/*margin-top:3vh;*/margin-top: 2vh ">Links</h2>
+        <ul class="m-0 p-0" style="font-size: 3vh;">
+          <a href="#" class="link" data-hover="Hover Me" style="color: white">Home</a><br>
+          <a href="#" class="link" data-hover="Hover Me" style="color: white">About us</a><br>
+          <a href="#" class="link" data-hover="Hover Me" style="color: white">Quiz</a><br>
+          <a href="#" class="link" data-hover="Hover Me" style="color: white">Forum</a><br>
+          <a href="#" class="link" data-hover="Hover Me" style="color: white">Login</a><br>
+        </ul>
+    </div>
+    <div class="col-lg-4 col-xs-12 location"> 
+      <h2 class="mt-lg-0 mt-sm-4" style="margin-top:2vh; ">Location</h2>
+      <p>Rajiv Gandhi Institute of Technology,Versova,Mumbai.</p>
+      <p class="mb-0"><i class="fa fa-phone mr-3"></i>99887 74455</p>
+      <p><i class="fa fa-envelope-o mr-3"></i>rgit@gmail.com</p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col copyright">
+      <p align="center"><small style="color: white">© 2019. All Rights Reserved.</small></p>
+    </div>
+  </div>
+</div>
 </div>
 
 {% endblock %}
