@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/static/Accounts/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/static/Accounts/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +98,7 @@
       <workItem from="1579331978251" duration="13270000" />
       <workItem from="1579367570421" duration="343000" />
       <workItem from="1579367983345" duration="96000" />
-      <workItem from="1579410925576" duration="1236000" />
+      <workItem from="1579410925576" duration="2513000" />
     </task>
     <servers />
   </component>
