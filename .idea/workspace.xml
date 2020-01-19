@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +37,16 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../environment" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Accounts/static/Accounts" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Accounts/static" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Accounts/static/Accounts" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Codecell" type="Python.DjangoServer" factoryName="Django server">
@@ -98,7 +107,7 @@
       <workItem from="1579331978251" duration="13270000" />
       <workItem from="1579367570421" duration="343000" />
       <workItem from="1579367983345" duration="96000" />
-      <workItem from="1579410925576" duration="2513000" />
+      <workItem from="1579410925576" duration="6532000" />
     </task>
     <servers />
   </component>
