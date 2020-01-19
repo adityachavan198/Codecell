@@ -1,3 +1,51 @@
-h2{
-  color: red;
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins' ,serif;
+}
+.navi
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: auto;
+	overflow: hidden;
+	margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.navi ul
+{
+	position: relative;
+}
+.navi ul li
+{
+	text-align: center;
+	list-style: none;
+}
+.navi ul li a
+{
+	color: /*#333*/white;
+	text-decoration: none;
+	font-size: /*3em*/ 3.5vmax;
+	padding: 5px 20px;
+	display: inline-flex;
+	font-weight: 700;
+	transition: 0.5s;
+}
+.navi ul:hover li a
+{
+	color: #000;
+}
+.navi ul li:hover a
+{
+	color: #000;
+	background: /*#fff*/cyan;
 }
