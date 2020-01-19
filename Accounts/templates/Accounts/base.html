@@ -24,6 +24,7 @@
 
 <script src="https://unpkg.com/scrollreveal"></script>
 
+{% if user.is_authenticated %}
 <header id="header">
     <div id="navBar" class="container-fluid navbar-default" >
       <nav class="navbar navbar-expand-lg ">
@@ -73,46 +74,61 @@
       </nav>
     </div>
   </header>
+{%  endif %}
   <!-- End Navbar -->
+
+
+{% if not user.is_authenticated %}
+<header id="header">
+    <div id="navBar" class="container-fluid navbar-default fixed-top" >
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <!-- Logo -->
+          <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""></a>
+            <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarContent"
+              aria-controls="navbarContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width: 30px;" alt=""/></span>
+            </button>
+          <!-- navbar links -->
+          <div class="collapse navbar-collapse" id="navbarContent" >
+            <ul class="navbar-nav ml-auto ">
+              <li class="nav-item">
+
+                <a class="nav-link text-light " href="#codecell" style="font-size: 22px;padding-left: 10px;padding-right: 10px;">Codecell</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#about" data-scroll-nav="5" style="font-size: 22px;padding-left: 15px;padding-right: 10px;">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#events" style="font-size: 22px;padding-left: 10px;padding-right: 15px">Events</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'authenticate' %}" style="font-size: 22px;padding-left: 10px;padding-right: 15px">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- End Navbar -->
+{% endif %}
 
 {% block content %}
 
 {% endblock %}
 
 
-{% block footer %}
-{# footer starts here#}
-<div class="mt-5 pt-5 pb-5 footer" style="background-color: black/*#0b1e4f*/ /*#2f4785*/;color: white;text-align: center;margin-top: 3vh ">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-5 col-xs-12 about-company">
-      <h2>Heading</h2>
-      <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p>
-    </div>
-    <div class="col-lg-3 col-xs-12 links">
-      <h2 class="mt-lg-0 mt-sm-3" style="margin-top:3vh; ">Links</h2>
-        <ul class="m-0 p-0" style="font-size: 3vh;">
-          <a href="#" class="link" data-hover="Hover Me" style="color: white">Home</a><br>
-          <a href="#" class="link" data-hover="Hover Me" style="color: white">About us</a><br>
-          <a href="#" class="link" data-hover="Hover Me" style="color: white">Quiz</a><br>
-          <a href="#" class="link" data-hover="Hover Me" style="color: white">Forum</a><br>
-          <a href="#" class="link" data-hover="Hover Me" style="color: white">Login</a><br>
-        </ul>
-    </div>
-    <div class="col-lg-4 col-xs-12 location">
-      <h2 class="mt-lg-0 mt-sm-4" style="margin-top:3vh; ">Location</h2>
-      <p>Rajiv Gandhi Institute of Technology,Versova,Mumbai.</p>
-      <p class="mb-0"><i class="fa fa-phone mr-3"></i>99887 74455</p>
-      <p><i class="fa fa-envelope-o mr-3"></i>rgit@gmail.com</p>
-    </div>
-  </div>
   <div class="row mt-5">
     <div class="col copyright">
-      <p align="center"><small style="color: white">© <span id="date"></span>. All Rights Reserved.</small></p>
+      <p align="center"><small style="color: black">© <span id="date"></span>. All Rights Reserved.</small></p>
     </div>
   </div>
-</div>
-</div>
 
 <script>
 //GET DATE DYNAMICALLY 
@@ -139,14 +155,12 @@ font-family: 'Nanum Gothic Coding', monospace;
 
 
 <!-- SCRIPT FOR SCROLLING ANIMATION -->
-<script>
-window.sr = ScrollReveal();
-sr.reveal(".navbar", {
-  duration: 2000,
-  origin: 'bottom',
-  distance: "300px",
-});
-</script>
+{#<script>#}
+{#window.sr = ScrollReveal();#}
+{#sr.reveal(".navbar", {#}
+{#  duration: 2000,#}
+{#  origin: 'bottom',#}
+{#  distance: "300px",#}
+{#});#}
+{#</script>#}
 
-{#footer ends here#}
-{% endblock %}
