@@ -1,16 +1,21 @@
 import os
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from Hackathon.models import *
+from Hackathon.forms import *
 
 def hackathon_home(request, *args, **kwargs):
     return render(request, "Hackathon/hackathon_home.html", {})
 
 def hackathon_register(request):
-    problems_db = problems.objects.all()
-    problems_var=dict()
-    for i in problems_db:
-        problems_var[i.id]={"title":i.title,"statement":i.statement,"category":i.Category}
-    print("\n\n\n\nnsgasfg\n\n\n\n",problems_var)
+    template = 'Hackathon/hackathon_register1.html'
 
-    return render(request,"Hackathon/hackathon_register.html",{'problems':problems_var})
+    if request.method == "POST":
+        form = register_form(request.POST,)
+        if form.is_valid():
+            form.save()
+            return redirect('hackathon_home')
+    else:
+        form = register_form()
+    return render(request, template, {'form': form})
+
