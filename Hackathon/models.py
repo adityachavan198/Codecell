@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import MaxValueValidator
+from django.core.validators import MaxValueValidator,MinValueValidator
 from django.core.validators import RegexValidator
 
 # Create your models here.
@@ -29,7 +29,7 @@ class team(models.Model):
 
     name = models.CharField(verbose_name = "Team Name", max_length= 50, blank= False)
 
-    size = models.PositiveSmallIntegerField(blank = False, default = 4, verbose_name = "Team Size", help_text = "No. of player in a team", validators = [MaxValueValidator(4)] )
+    size = models.PositiveSmallIntegerField(blank = False, default = 4, verbose_name = "Team Size", help_text = "No. of player in a team", validators = [MaxValueValidator(4),MinValueValidator(2)] )
 
     leader_name = models.CharField(verbose_name = "Team Leader name", max_length= 50, blank= False)
 
@@ -37,9 +37,9 @@ class team(models.Model):
 
     leader_email = models.EmailField(blank= False)
 
-    mate2_name = models.CharField(verbose_name = "Mate 2 name", max_length= 50, blank= True)
-    mate2_number = models.CharField(validators=[phone_regex], max_length=15, blank=True)
-    mate2_email = models.EmailField(blank=True)
+    mate2_name = models.CharField(verbose_name = "Mate 2 name", max_length= 50, blank= False)
+    mate2_number = models.CharField(validators=[phone_regex], max_length=15, blank=False)
+    mate2_email = models.EmailField(blank=False)
 
     mate3_name = models.CharField(verbose_name="Mate 3 name", max_length=50, blank=True)
     mate3_number = models.CharField(validators=[phone_regex], max_length=15, blank=True)
@@ -58,5 +58,6 @@ class team(models.Model):
 
     problem3_selected = models.ForeignKey(problems,  related_name='ps3',verbose_name= 'Selected problem statement 3', on_delete=models.CASCADE, blank=True)
     solution3 = models.CharField(verbose_name="Solution", help_text="How will you solve it", max_length=500, blank=True)
+
     def __str__(self):
         return self.name
