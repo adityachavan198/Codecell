@@ -3,14 +3,14 @@
 
 {% load static %}
 <div class="section1 box" id="codecell" >
-  <h1 style="padding-top: 35vh;margin-left: 10%;color: #00ff00; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><p class="text_1">{CODE}CELL </p></h1><br>
-  <p class="anim" style="color: white;font-size: 10vmin;margin-left: 10%">Platform for coders,by coders.</p>
+  <h1 style="padding-top: 35vh;margin-left: 10%;color: #00ff00; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><p class="text_1">{CODE}CELL</p></h1><br>
+  <p style="color: white;font-size: 10vmin;margin-left: 10%">Platform for coders,by coders.</p>
   <center><a id="btnHome" href="#about" class="btn bg-light text-dark btn-lg" role="button">Learn more</a></center>
 </div>
   
   
 <div class="container " id="about" style="text-align: center;padding: 3vh;">
-    <img src="{% static 'Accounts/assets/i1.svg' %}" style="height: 10vmax;width: 7vmax">
+    <img class="imgRight" src="{% static 'Accounts/assets/i1.svg' %}" style="height: 10vmax;width: 7vmax">
     <h2 class="upperTop">What is Codecell?</h2>
     <p class="lowerBottom">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
 </div>
@@ -35,117 +35,6 @@
 </div>
 
 </div>
-{##}
-{#<div class="container-fluid" style="background-color: white;padding: 20px;margin: 20px 0 20px 0">#}
-{#              <div>#}
-{#                <button type="button" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#myModal" style="background-color: black;color: white;margin: auto;display: block;font-size: 2vmax;border-radius: 15px;width: 30%">#}
-{#                      Login#}
-{#                </button>#}
-{##}
-{#                  <div class="modal" id="myModal">#}
-{#                      <div class="modal-dialog">#}
-{#                        <div class="modal-content">#}
-{#                        #}
-{#                          <!-- Modal Header -->#}
-{#                          <div class="modal-header">#}
-{#                            <h4 class="modal-title">Login</h4>#}
-{#                            <button type="button" class="close" data-dismiss="modal">&times;</button>#}
-{#                          </div>#}
-{#                          #}
-{#                          <!-- Modal body -->#}
-{#                          <div class="modal-body">#}
-{#                            <form method="post">#}
-{#                              {% csrf_token %}#}
-{#                               <div class="form-group">#}
-{#                                  <label for="Username">Username:</label>#}
-{#                                  <input type="text" class="form-control" id="Username" placeholder="Enter username" name="lusername">#}
-{#                                </div>#}
-{#                                <div class="form-group">#}
-{#                                  <label for="pwd">Password:</label>#}
-{#                                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="lpassword">#}
-{#                                </div>#}
-{##}
-{#                                 <div class="form-group form-check">#}
-{#                                  <label class="form-check-label">#}
-{#                                    <input class="form-check-input" type="checkbox" name="remember"> Remember me#}
-{#                                  </label>#}
-{#                                </div>#}
-{##}
-{##}
-{#                          </div>#}
-{#                          #}
-{#                          <!-- Modal footer -->#}
-{#                          <div class="modal-footer">#}
-{#                            <input type="submit" class="btn btn-lg btn-dark" value="Login" style="display: block;margin: auto;"></button>#}
-{#                          </div>#}
-{#                          #}
-{#                        </div>#}
-{#                      </div>#}
-{#                      </form>#}
-{#                    </div>#}
-{##}
-{#              <h3 style="color: black;text-align: center;padding: 2vh;font-size: 2vmax">OR</h3>#}
-{#              </div>#}
-{#            #}
-{#              <div>#}
-{#                <button type="button" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#myModal1" style="background-color: black;color: white;margin: auto;display: block;font-size: 2vmax;border-radius: 15px;width: 30%">#}
-{#                      Sign up#}
-{#                </button>#}
-{##}
-{#                <div class="modal" id="myModal1">#}
-{#                      <div class="modal-dialog">#}
-{#                        <div class="modal-content">#}
-{#                        #}
-{#                          <!-- Modal Header -->#}
-{#                          <div class="modal-header">#}
-{#                            <h4 class="modal-title">Sign up</h4>#}
-{#                            <button type="button" class="close" data-dismiss="modal">&times;</button>#}
-{#                          </div>#}
-{#                          #}
-{#                          <!-- Modal body -->#}
-{#                          <div class="modal-body">#}
-{#                            <form action="" method="post">#}
-{##}
-{#                               <div class="form-group">#}
-{#                                  <label for="Username">Username:</label>#}
-{#                                  <input type="text" class="form-control" id="Username" placeholder="Enter username" name="rusername">#}
-{#                                </div>#}
-{##}
-{#                                <div class="form-group">#}
-{#                                  <label for="email">Email Address</label>#}
-{#                                <input type="email" name="remail" id="email" class="form-control" placeholder="Email Address">#}
-{#                                </div>#}
-{##}
-{#                                <div class="form-group">#}
-{#                                  <label for="pwd">Password:</label>#}
-{#                                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="rpassword">#}
-{#                                </div>#}
-
-{#                                <div class="form-group">#}
-{#                                  <label for="pwd">Rewrite Password:</label>#}
-{#                                  <input type="password" class="form-control" id="pwd" placeholder="Confirm password" name="pswd">#}
-{#                                </div>#}
-                                
-{#                                 <div class="form-group form-check">#}
-{#                                  <label class="form-check-label">#}
-{#                                    <input class="form-check-input" type="checkbox" name="remember"> Remember me#}
-{#                                  </label>#}
-{#                                </div>#}
-{##}
-{#                            </form>#}
-{#                          </div>#}
-{#                          #}
-{#                          <!-- Modal footer -->#}
-{#                          <div class="modal-footer">#}
-{#                            <input type="submit" class="btn btn-lg btn-dark" value="Sign up" style="display: block;margin: auto;"></button>#}
-{#                          </div>#}
-{#                          #}
-{#                        </div>#}
-{#                      </div>#}
-{#                    </div>#}
-{##}
-{#              </div>#}
-{#</div>#}
 
 
 <script>
