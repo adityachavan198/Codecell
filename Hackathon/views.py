@@ -8,12 +8,19 @@ def hackathon_home(request, *args, **kwargs):
     return render(request, "Hackathon/hackathon_home.html", {})
 
 def hackathon_register(request):
-    template = 'Hackathon/hackathon_register1.html'
+    template = 'Hackathon/index.html'
 
     if request.method == "POST":
-        form = register_form(request.POST,)
+        form = register_form(request.POST)
         if form.is_valid():
-            form.save()
+            team = form.save(commit = False)
+            if team.mate3_name and team.mate4_name:
+                team.size = 4
+            elif team.mate3_name:
+                team.size = 3
+            else:
+                team.size = 2
+            team.save()
             return redirect('hackathon_home')
     else:
         form = register_form()

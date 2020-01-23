@@ -29,26 +29,32 @@ class team(models.Model):
 
     name = models.CharField(verbose_name = "Team Name", max_length= 50, blank= False)
 
+    college_name = models.CharField(verbose_name = "College Name", default="RGIT",  max_length= 100, blank= False)
+
     size = models.PositiveSmallIntegerField(blank = False, default = 4, verbose_name = "Team Size", help_text = "No. of player in a team", validators = [MaxValueValidator(4),MinValueValidator(2)] )
 
-    leader_name = models.CharField(verbose_name = "Team Leader name", max_length= 50, blank= False)
+    leader_name = models.CharField(verbose_name = "Team Leader name",  max_length= 50, blank= False)
 
     leader_number = models.CharField(validators=[phone_regex], max_length=15, blank=False)
 
     leader_email = models.EmailField(blank= False)
 
+    leader_year = models.CharField(verbose_name = "Leader Current Year", default = "TE", max_length= 20, blank= False)
+
     mate2_name = models.CharField(verbose_name = "Mate 2 name", max_length= 50, blank= False)
     mate2_number = models.CharField(validators=[phone_regex], max_length=15, blank=False)
     mate2_email = models.EmailField(blank=False)
+    mate2_year = models.CharField(verbose_name="Mate 2 Current Year", default = "TE", max_length=20, blank=False)
 
     mate3_name = models.CharField(verbose_name="Mate 3 name", max_length=50, blank=True)
     mate3_number = models.CharField(validators=[phone_regex], max_length=15, blank=True)
     mate3_email = models.EmailField(blank=True)
+    mate3_year = models.CharField(verbose_name="Mate 3 Current Year", max_length=20, blank=True)
 
     mate4_name = models.CharField(verbose_name="Mate 4 name", max_length=50, blank=True)
     mate4_number = models.CharField(validators=[phone_regex], max_length=15, blank=True)
     mate4_email = models.EmailField(blank=True)
-
+    mate4_year = models.CharField(verbose_name="Mate 4 Current Year", max_length=20, blank=True)
 
     problem1_selected = models.ForeignKey(problems, related_name='ps1', verbose_name='Selected problem statement 1', on_delete=models.CASCADE, blank= False)
     solution1 = models.CharField(verbose_name="Solution", help_text="How will you solve it",max_length=500, blank=False)

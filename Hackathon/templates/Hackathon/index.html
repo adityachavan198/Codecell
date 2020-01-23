@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title Page-->
+    <title>RGIT Hackathon Registration</title>
+
+    <!-- Icons font CSS-->
+    <link href="{% static 'Hackathon/register_files/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'Hackathon/register_files/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'Hackathon/register_files/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'Hackathon/register_files/vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'Hackathon/register_files/css/main.css' %}" rel="stylesheet" media="all">
+</head>
+
+<body>
+{#{{ form.solution1 }}#}
+
+
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w960">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Registration Form</h2>
+                </div>
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger" style="color: #1c7430">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger" style="color: #1c7430">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}
+{% endif %}
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="name">Team Name*</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" maxlength="50" required type="text" name="name" id="{{ form.name.auto_id }}">
+                                </div>
+                            </div>
+                                    {% for error in form.name.errors %}
+                                    <div class="alert alert-danger" style="color:greenyellow">
+                                    <strong>{{ error|escape }}</strong>
+                                    </div>
+                                    {% endfor %}
+                        </div>
+
+                         <div class="form-row">
+                            <div class="name">College Name*</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="text" name="college_name" required maxlength="100">
+                                </div>
+                            </div>
+                        </div>
+
+{#                        <div class="form-row">#}
+{#                              <div class="name">Members</div>#}
+{#                            <div class="value">#}
+{#                                <div class="input-group">#}
+{#                                  <div class="range-control">#}
+{#                                    <input id="inputRange" type="range" min="1" max="4" step="1" value="4" data-thumbwidth="1">#}
+{#                                    <output name="rangeVal">1</output>#}
+{#                                  </div>#}
+{#                                </div>#}
+{#                        </div>#}
+{#                    </div>#}
+
+                    <div class="form-row m-b-55">
+                        <div class="name">Leader*</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="leader_name" maxlength="50">
+                                            <label class="label--desc">name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-custom">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="leader_number" required maxlength="15">
+                                            <label class="label--desc">Phone No.</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                        <div class="name"></div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="leader_year" maxlength="20" required>
+                                        <label class="label--desc">Current Year</label>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="leader_email" required maxlength="254">
+                                        <label class="label--desc">Email Id</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="form-row m-b-55">
+                        <div class="name">Member 2*</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="mate2_name" maxlength="50" required>
+                                            <label class="label--desc">Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-custom">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="mate2_number" maxlength="15" required>
+                                            <label class="label--desc">Phone</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                        <div class="name"></div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="mate2_year" maxlength="20" required>
+                                        <label class="label--desc">Current Year</label>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="mate2_email" maxlength="254" required>
+                                        <label class="label--desc">Email Id</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="form-row m-b-55">
+                        <div class="name">Member 3</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="mate3_name" maxlength="50">
+                                            <label class="label--desc">Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-custom">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="mate3_number" maxlength="15">
+                                            <label class="label--desc">Phone</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                        <div class="name"></div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="mate3_year" maxlength="20">
+                                        <label class="label--desc">Current Year</label>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="mate3_email" maxlength="254">
+                                        <label class="label--desc">Email Id</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <div class="form-row m-b-55">
+                        <div class="name">Member 4</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-2">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="mate4_name" maxlength="50">
+                                            <label class="label--desc">Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-custom">
+                                        <div class="input-group-desc">
+                                            <input class="input--style-5" type="text" name="mate4_number" maxlength="15">
+                                            <label class="label--desc">Phone</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                        <div class="name"></div>
+                        <div class="value">
+                            <div class="row row-refine">
+                                <div class="col-3">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="mate4_year" maxlength="20">
+                                        <label class="label--desc">Current Year</label>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="input-group-desc">
+                                        <input class="input--style-5" type="text" name="mate4_email" maxlength="254">
+                                        <label class="label--desc">Email Id</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="form-row">
+                            <div class="name">Select Problem Statement 1*</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {{ form.problem1_selected }}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Solution 1*</div>
+                            <div class="value">
+                                <div class="md-form">
+                                      <i class="fas fa-pencil-alt prefix"></i>
+                                      <textarea class="lg-textarea form-control" rows="5" name="solution1" maxlength="500" style="width: 100%"></textarea>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Select Problem Statement 2</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {{ form.problem2_selected }}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Solution 2</div>
+                            <div class="value">
+                                <div class="md-form">
+                                      <i class="fas fa-pencil-alt prefix"></i>
+                                      <textarea class="lg-textarea form-control" rows="5" name="solution2" maxlength="500" style="width: 100%"></textarea>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Select Problem Statement 3</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {{ form.problem3_selected }}
+{#                                        <select name="subject">#}
+{#                                            <option disabled="disabled" selected="selected" name="problem1_selected" required>Choose Problem Statement</option>#}
+{#                                            <option>How to travel in space</option>#}
+{#                                            <option>How to get rid off stress</option>#}
+{#                                            <option>How to stop rain</option>#}
+{#                                        </select>#}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Solution 3</div>
+                            <div class="value">
+                                <div class="md-form">
+                                      <i class="fas fa-pencil-alt prefix"></i>
+                                      <textarea class="lg-textarea form-control" rows="5" name="solution3" maxlength="500" style="width: 100%"></textarea>
+                                    </div>
+                            </div>
+                        </div>
+
+
+{##}
+{#                        <div class="form-row">#}
+{#                            <div class="name">Solution</div>#}
+{#                            <div class="value">#}
+{#                                <div class="input-group">#}
+{#                                    <input class="input--style-5" type="text" name="email">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+
+{#                        <div class="form-row">#}
+{#                            <div class="value">#}
+{#                                <div class="input-group">#}
+{#                                    <div class="rs-select2 js-select-simple select--no-search">#}
+{#                                        <select name="subject">#}
+{#                                            <option disabled="disabled" selected="selected">Choose Problem Statement</option>#}
+{#                                            <option>How to travel in space</option>#}
+{#                                            <option>How to get rid off stress</option>#}
+{#                                            <option>How to stop rain</option>#}
+{#                                        </select>#}
+{#                                        <div class="select-dropdown"></div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        #}
+{##}
+{#                        <div class="form-row">#}
+{#                            <div class="value">#}
+{#                                <div class="input-group">#}
+{#                                    <div class="rs-select2 js-select-simple select--no-search">#}
+{#                                        <select name="subject">#}
+{#                                            <option disabled="disabled" selected="selected">Choose Problem Statement</option>#}
+{#                                            <option>How to travel in space</option>#}
+{#                                            <option>How to get rid off stress</option>#}
+{#                                            <option>How to stop rain</option>#}
+{#                                        </select>#}
+{#                                        <div class="select-dropdown"></div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        #}
+{#                        <div class="form-row">#}
+{#                            <div class="name">Solution</div>#}
+{#                            <div class="value">#}
+{#                                <div class="input-group">#}
+{#                                    <input class="input--style-5" type="text" name="email">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-row m-b-55">#}
+
+
+                        <div>
+                            <button class="btn btn--radius-2 btn--green" type="submit">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'Hackathon/register_files/vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% static 'Hackathon/register_files/vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'Hackathon/register_files/vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% static 'Hackathon/register_files/vendor/datepicker/daterangepicker.js' %}"></script>
+
+    <!-- Main JS-->
+    <script src="{% static 'Hackathon/register_files/js/global.js' %}"></script>
+    <script>
+            $('input[type="range"]').on('input', function() {
+
+            var control = $(this),
+            controlMin = control.attr('min'),
+            controlMax = control.attr('max'),
+            controlVal = control.val(),
+            controlThumbWidth = control.data('thumbwidth');
+
+            var range = controlMax - controlMin;
+
+            var position = ((controlVal - controlMin) / range) * 100;
+            var positionOffset = Math.round(controlThumbWidth * position / 100) - (controlThumbWidth / 2);
+            var output = control.next('output');
+
+            output
+            .css('left', 'calc(' + position + '% - ' + positionOffset + 'px)')
+            .text(controlVal);
+
+            });
+    </script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
