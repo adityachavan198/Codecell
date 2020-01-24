@@ -8,12 +8,84 @@
     <meta http-eqiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'Hackathon/styles.css' %}">
 
+{#    first  #}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'Hackathon/heads/assets/css/header-cover.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
+    <link rel="stylesheet" href="{% static 'Hackathon/heads/assets/css/Network-Particles-Hero.css' %}">
+    <link rel="stylesheet" href="{% static 'Hackathon/heads/assets/css/styles.css' %}">
+{#    first #}
+
+{#    countdown  #}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'Hackathon/countdown/assets/css/-Countdown-BS4-.css' %}">
+        <link rel="stylesheet" href="{% static 'Hackathon/countdown/assets/css/styles.css' %}">
+    {# countdown #}
+
+{#    faq #}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="{% static 'Hackathon/FAQ/assets/css/Faq-by-pomdre-1.css' %}">
+    <link rel="stylesheet" href="{% static 'Hackathon/FAQ/assets/css/Faq-by-pomdre.css' %}">
+    <link rel="stylesheet" href="{% static 'Hackathon/FAQ/assets/css/FAQ-Frequentlly-Asked-Questions-1.css' %}">
+    <link rel="stylesheet" href="{% static 'Hackathon/FAQ/assets/css/FAQ-Frequentlly-Asked-Questions.css' %}">
+    <link rel="stylesheet" href="{% static 'Hackathon/FAQ/assets/css/styles.css' %}">
+{# faq #}
+
+{#    paralax #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'Hackathon/paralax/assets/css/Dark-NavBar-1.css' %}">
+    <link rel="stylesheet" href="{% static 'Hackathon/paralax/assets/css/Dark-NavBar-2.css' %}">
+    <link rel="stylesheet" href="{% static 'Hackathon/paralax/assets/css/Dark-NavBar.css' %}">
+    <link rel="stylesheet" href="{% static 'Hackathon/paralax/assets/css/Parallax-Scroll-Effect.css' %}">
+    <link rel="stylesheet" href="{% static 'Hackathon/paralax/assets/css/styles.css' %}">
+{#    paralax #}
+
+{# sponsors #}
+    <link rel="stylesheet" href="{% static 'Hackathon/sponsors/assets/css/styles.css' %}">
+{#    sponsors#}
+
+{#    first #}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{% static 'Hackathon/heads/assets/js/bs-init.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+{#    first #}
 
 </head>
 <body style="background-color: black">
+
+ <!-- Start: Dark NavBar -->
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button" style="height:80px;background-color:#37434d;color:#ffffff;">
+            <div class="container-fluid"><a class="navbar-brand" href="#"><i class="fa fa-globe"></i>&nbsp;Antariksh</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff;" href="#"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff;" href="#"><i class="fa fa-wpexplorer"></i>&nbsp;Explore</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff;" href="#"><i class="fa fa-star-o"></i>&nbsp;Features</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff;" href="#"><i class="fa fa-user-circle-o"></i>&nbsp;Portfolio</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff;" href="#"><i class="fa fa-sign-in"></i>&nbsp;Sign In</a></li>
+                    </ul>
+            </div>
+    </div>
+    </nav>
+    </div>
+    <!-- End: Dark NavBar -->
 {% block content %}
 
 {% endblock %}
 
+
+{#countdown #}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'Hackathon/countdown/assets/js/-Countdown-BS4-.js' %}"></script>
+{#countdown#}
+
+{# faq #}
+<script src="{% static 'Hackathon/FAQ/assets/js/Faq-by-pomdre.js' %}"></script>
+{# faq #}
 </body>
 </html>

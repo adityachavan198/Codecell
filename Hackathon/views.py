@@ -1,6 +1,7 @@
-import os
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.decorators.clickjacking import xframe_options_exempt
+
 from Hackathon.models import *
 from Hackathon.forms import *
 
@@ -26,3 +27,26 @@ def hackathon_register(request):
         form = register_form()
     return render(request, template, {'form': form})
 
+@xframe_options_exempt
+def shedule(request):
+    return render(request, "Hackathon/shedule.html",{})
+
+@xframe_options_exempt
+def countdown(request):
+    return render(request, "Hackathon/countdown.html",{})
+
+@xframe_options_exempt
+def faq(request):
+    return render(request, "Hackathon/faq.html",{})
+
+@xframe_options_exempt
+def sponsors(request):
+    return render(request, "Hackathon/sponsors.html",{})
+
+@xframe_options_exempt
+def paralax(request):
+    return render(request, "Hackathon/paralax.html",{})
+
+@xframe_options_exempt
+def first(request):
+    return render(request, "Hackathon/first.html",{})
