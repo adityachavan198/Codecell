@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/countdown/assets/css/-Countdown-BS4-.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/countdown/assets/css/-Countdown-BS4-.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/shedule/assets/css/Zig-Zag-Timeline-v3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hackathon/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,7 +120,8 @@
       <workItem from="1579706549636" duration="1058000" />
       <workItem from="1579772202497" duration="10795000" />
       <workItem from="1579873337639" duration="218000" />
-      <workItem from="1579873858730" duration="4397000" />
+      <workItem from="1579873858730" duration="5571000" />
+      <workItem from="1579929624931" duration="6462000" />
     </task>
     <servers />
   </component>
@@ -139,10 +142,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1579873858645">
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1579929624410">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1579873858645" />
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1579929624410" />
     <state x="343" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579877763458">
       <screen x="0" y="27" width="1360" height="741" />
     </state>

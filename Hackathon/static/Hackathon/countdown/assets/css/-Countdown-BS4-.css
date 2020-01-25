@@ -1,6 +1,7 @@
 p.number-days, p.number-hours, p.number-minutes, p.number-seconds {
   font-size: 5rem;
   line-height: 1;
+  background-color: #2f7ed5 !important;
 }
 
 p.text-countdown {

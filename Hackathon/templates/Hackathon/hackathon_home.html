@@ -3,19 +3,20 @@
 
 {% load static %}
 
+
         <!-- first header -->
     <!-- Start: Network Particles Hero -->
     <div class="jumbotron jumbotron-fluid jumbotron-main" style="height:100vh;width:100%;"><script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
     <div id="particles-js">
-	<canvas class="particles-js-canvas-el" width="1409" height="319" style="width: 100%; height: 100%;"></canvas>
+	<canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
 	</div>
-        <div class="container center-vertically-holder" style="margin-top:-20px;">
+        <div class="container center-vertically-holder" >
             <div class="row center-vertically">
                 <div class="col-md-8 offset-sm-0 offset-md-2 text-center" style="margin-top:100px;margin-bottom:100px;">
-                    <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="700" id="hero-title" ">Hackathon 2020</h1>
-                    <p data-aos="fade-up" data-aos-duration="650" data-aos-delay="1450" id="hero-subtitle" style="margin-top:19px;font-size:2vmax;font-family:Poppins, sans-serif;">RGIT Codecell presents&nbsp;<strong> Major Hacathon </strong>&nbsp;&amp;&nbsp;<strong>Coding</strong>&nbsp on 13 March.&nbsp;</p><button class="btn btn-primary" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="1500"
-                        id="hero-btn" type="button">Register now&nbsp;<i class="fa fa-angle-double-right tada animated"></i>&nbsp;</button></div>
+                    <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-delay="700" id="hero-title">Hackathon 2020</h1>
+                    <p data-aos="fade-up" data-aos-duration="650" data-aos-delay="1450" id="hero-subtitle" style="margin-top:19px;font-size:2vmax;font-family:Poppins, sans-serif;">RGIT Codecell presents&nbsp;<strong> Major Hacathon </strong>&nbsp;&amp;&nbsp;<strong>Coding Competion</strong>&nbsp on 13 March, 2020.&nbsp;</p><button class="btn btn-primary" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="1500"
+                       onclick="location.href = '{% url 'hackathon_register' %}';" id="hero-btn" type="button">Register now&nbsp;<i class="fa fa-angle-double-right tada animated"></i>&nbsp;</button></div>
             </div>
         </div>
     </div>
@@ -24,11 +25,13 @@
 
 
     <!-- Start: ♣ Countdown BS4 ♣ -->
-    <section class="py-5 bg-info text-white">
+    <section class="py-5 bg-black text-white" style="height: 100vh;">
         <!-- Start: Big countdown -->
         <div class="container text-center boxed-countdown" data-countdown="03/13/2020 08:00:00">
             <div class="row">
-
+                 <div class="col-12 mb-3">
+                    <h1>Countdown to Hackathon</h1>
+                </div>
                 <!-- Start: Days -->
                 <div class="col-6 col-md-3 mt-3">
                     <p class="number-days m-0 rounded-top">00</p>
@@ -58,16 +61,18 @@
         <!-- End: Big countdown -->
         <!-- Start: Inline countdown -->
         <div class="container">
-            <p class="text-center mt-5" data-countdown="03/13/2020 08:00:00"><span class="number-days">00</span>&nbsp;days <span class="number-hours">00</span>&nbsp;hours <span class="number-minutes">00</span>&nbsp;minutes <span class="number-seconds">00</span>&nbsp;seconds<br></p>
+            <p class="text-center mt-5 text-dark" data-countdown="03/13/2020 08:00:00"><span class="number-days">00</span>&nbsp;days <span class="number-hours">00</span>&nbsp;hours <span class="number-minutes">00</span>&nbsp;minutes <span class="number-seconds">00</span>&nbsp;seconds to go !!<br></p>
         </div>
         <!-- End: Inline countdown -->
+            <h3><p class="text-center mt-5 text-dark">Are you a Coder ? It's time to prove it .</p></h3>
     </section>
     <!-- End: ♣ Countdown BS4 ♣ -->
-
+        <div id="shedule"></div>
         <iframe height="100%" width="100%" scrolling="no" frameborder=0 sandbox="allow-same-origin"
         onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" src="{% url 'shedule' %}"></iframe>
 
     <!-- Start: Faq by pomdre -->
+    <div id="faq"></div>
     <section id="faq" style="padding: 2px;margin: 11px;">
         <h2 class="text-uppercase text-center" style="font-size: 48;color: white">FAQ</h2>
         <!-- Start: br --><br >
@@ -121,27 +126,39 @@
 
 
 	</div>
-
+    <div id="contact"></div>
    <div class="container " style="padding-bottom: 3vh;padding: 3vh">
     <p style="color: white;font-size: 2vmax;text-align: center;margin-bottom: 2vh">Address</p>
     <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 align-content-center text-white">
              <!-- <div class="col-md-2"> -->
                 <p class="text-md-center" style="color: white;font-size: 2vmax">Contact Us</p>
                 <hr>
          <!--    </div>
             <div class="col-md-6"> -->
-                <form>
-                    <fieldset class="form-group">
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                    </fieldset>
-                    <fieldset class="form-group">
-                        <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
-                    </fieldset>
-                    <fieldset class="form-group text-xs-right">
-                        <button type="button" class="btn btn-light btn-lg">Send</button>
-                    </fieldset>
-                </form>
+{#                <div class="col-sm-6" style="align-items: center">#}
+                <address>
+                <strong>Address</strong> :- Rajiv Gandhi Institute of Technology
+                Juhu Versova Link Rd, behind HDFC Bank, Gharkul Society, Bharat Nagar, Versova, Andheri West, Mumbai, Maharashtra 400053
+                    <br>
+                <strong>Call at</strong> :- <a href="tel:+91 123456789"">+91 123456789</a>
+                    <br>
+                <strong>Email at</strong> :- <a href="mailto:rgitcodecell@gmail.com?Subject=Doubts" target="_top">rgitcodecell@gmail.com</a>
+                    </address>
+{#                </div>#}
+
+
+{#                <form>#}
+{#                    <fieldset class="form-group">#}
+{#                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">#}
+{#                    </fieldset>#}
+{#                    <fieldset class="form-group">#}
+{#                        <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>#}
+{#                    </fieldset>#}
+{#                    <fieldset class="form-group text-xs-right">#}
+{#                        <button type="button" class="btn btn-light btn-lg">Send</button>#}
+{#                    </fieldset>#}
+{#                </form>#}
             </div>
             <div class="col-sm-6 mapouter"><div class="gmap_canvas"><iframe width="494" height="307" id="gmap_canvas" src="https://maps.google.com/maps?q=Rajiv%20gandhi%20instute%20of%20technology%2Cmumbai&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:307px;width:494px;}.gmap_canvas {overflow:hidden;background:none!important;height:307px;width:494px;}</style></div>
     </div>

@@ -29,7 +29,7 @@ def hackathon_register(request):
 
 @xframe_options_exempt
 def shedule(request):
-    return render(request, "Hackathon/shedule.html",{})
+    return render(request, "Hackathon/shedule1.html",{})
 
 @xframe_options_exempt
 def countdown(request):
