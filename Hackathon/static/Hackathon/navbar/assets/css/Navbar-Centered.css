@@ -62,7 +62,7 @@
 
 .navigation-clean.navbar-default .navbar-nav > li > a:focus, .navigation-clean.navbar-default .navbar-nav > li > a:hover {
   color: #37434d !important;
-  background-color: transparent;
+  background-color: black !important;
 }
 
 .navigation-clean .navbar-nav > li > .dropdown-menu {

@@ -7,7 +7,7 @@ img {
 }
 
 .navigation-clean {
-  background: #040505;
+  background: #7900ff;
   padding-top: 10px;
   padding-bottom: 10px;
   color: white;
@@ -79,7 +79,7 @@ img {
 
 .navigation-clean.navbar-default .navbar-nav > li > a:focus, .navigation-clean.navbar-default .navbar-nav > li > a:hover {
   color: white !important;
-  background-color: transparent;
+  background-color: black !important;
 }
 
 .navigation-clean .navbar-nav > li > .dropdown-menu {
