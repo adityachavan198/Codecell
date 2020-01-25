@@ -30,7 +30,7 @@
         <div class="container text-center boxed-countdown" data-countdown="03/13/2020 08:00:00">
             <div class="row">
                  <div class="col-12 mb-3">
-                    <h1>Countdown to Hackathon</h1>
+                    <h1 class="text-center">Countdown to Hackathon</h1>
                 </div>
                 <!-- Start: Days -->
                 <div class="col-6 col-md-3 mt-3">
@@ -61,16 +61,16 @@
         <!-- End: Big countdown -->
         <!-- Start: Inline countdown -->
         <div class="container">
-            <p class="text-center mt-5 text-dark" data-countdown="03/13/2020 08:00:00"><span class="number-days">00</span>&nbsp;days <span class="number-hours">00</span>&nbsp;hours <span class="number-minutes">00</span>&nbsp;minutes <span class="number-seconds">00</span>&nbsp;seconds to go !!<br></p>
+            <p class="text-center mt-5 text-light" data-countdown="03/13/2020 08:00:00"><span class="number-days">00</span>&nbsp;days <span class="number-hours">00</span>&nbsp;hours <span class="number-minutes">00</span>&nbsp;minutes <span class="number-seconds">00</span>&nbsp;seconds to go !!<br></p>
         </div>
         <!-- End: Inline countdown -->
-            <h3><p class="text-center mt-5 text-dark">Are you a Coder ? It's time to prove it .</p></h3>
+            <h3><p class="text-center mt-5 text-light">Are you a Coder ? It's time to prove it .</p></h3>
     </section>
     <!-- End: ♣ Countdown BS4 ♣ -->
 
      <hr size="40" class="section-divide">
         <div id="shedule"></div>
-        <iframe height="100%" width="100%" scrolling="no" frameborder=0 sandbox="allow-same-origin"
+        <iframe height="auto" width="100%" scrolling="no" frameborder=0 sandbox="allow-same-origin" style="margin-bottom: 2vh" 
         onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" src="{% url 'shedule' %}"></iframe>
 
     <hr size="40" class="section-divide">
@@ -134,7 +134,7 @@
 	</div>
     <hr size="40" class="section-divide">
     <div id="contact"></div>
-   <div class="container " style="padding-bottom: 3vh;padding: 3vh">
+   <div class="container " style="padding-bottom: 3vh;padding: 1vh">
     <p style="color: white;font-size: 2vmax;text-align: center;margin-bottom: 2vh">Address</p>
     <div class="row">
             <div class="col-sm-6 align-content-center text-white">
@@ -167,7 +167,9 @@
 {#                    </fieldset>#}
 {#                </form>#}
             </div>
-            <div class="col-sm-6 mapouter"><div class="gmap_canvas"><iframe width="494" height="307" id="gmap_canvas" src="https://maps.google.com/maps?q=Rajiv%20gandhi%20instute%20of%20technology%2Cmumbai&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:307px;width:494px;}.gmap_canvas {overflow:hidden;background:none!important;height:307px;width:494px;}</style></div>
+            
+            <div class="col-sm-6 mapouter"><div class="gmap_canvas map-responsive"><iframe width="350" height="290" id="gmap_canvas" src="https://maps.google.com/maps?q=Rajiv%20gandhi%20institute%20of%20technology%2Cmumbai&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:290px;width:350px;}.gmap_canvas {overflow:hidden;background:none!important;height:292px;width:350px;}</style></div>
+
     </div>
    </div>
 

@@ -26,8 +26,8 @@
 
 {% if user.is_authenticated %}
 <header id="header">
-    <div id="navBar" class="container-fluid navbar-default" >
-      <nav class="navbar navbar-expand-lg ">
+    <div id="navBar" class="container-fluid navbar-default fixed-top" >
+      <nav class="navbar navbar-expand-sm ">
         <div class="container-fluid">
           <!-- Logo -->
           <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""></a>
@@ -38,20 +38,20 @@
               aria-controls="navbarContent"
               aria-expanded="false"
               aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width: 30px;" alt=""/></span>
+             <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width: 25px;" alt=""/></span>
             </button>
           <!-- navbar links -->
-          <div class="collapse navbar-collapse" id="navbarContent" >
+          <div class="collapse navbar-collapse text-center" id="navbarContent" >
             <ul class="navbar-nav ml-auto ">
               <li class="nav-item">
 
-                <a class="nav-link text-light " href="{% url 'home' %}" style="font-size: 22px;padding-left: 10px;padding-right: 10px;">Home</a>
+                <a class="nav-link text-light " href="{% url 'home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="{% url 'quiz_category_list_all' %}" data-scroll-nav="5" style="font-size: 22px;padding-left: 15px;padding-right: 10px;"> Quiz</a>
+                <a class="nav-link text-light" href="{% url 'quiz_category_list_all' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px;"> Quiz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="{% url 'forum_home' %}" style="font-size: 22px;padding-left: 10px;padding-right: 15px"> Forum</a>
+                <a class="nav-link text-light" href="{% url 'forum_home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px"> Forum</a>
               </li>
 
                           <li><div  style="padding-left: 07px; padding-top: 08px;;" class="dropdown">
@@ -81,7 +81,7 @@
 {% if not user.is_authenticated %}
 <header id="header">
     <div id="navBar" class="container-fluid navbar-default fixed-top" >
-      <nav class="navbar navbar-expand-lg ">
+      <nav class="navbar navbar-expand-sm ">
         <div class="container-fluid">
           <!-- Logo -->
           <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""></a>
@@ -92,23 +92,23 @@
               aria-controls="navbarContent"
               aria-expanded="false"
               aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width: 30px;" alt=""/></span>
+             <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width:25px;" alt=""/></span>
             </button>
           <!-- navbar links -->
-          <div class="collapse navbar-collapse" id="navbarContent" >
-            <ul class="navbar-nav ml-auto ">
+          <div class="collapse navbar-collapse text-center" id="navbarContent" >
+            <ul class="navbar-nav ml-auto">
               <li class="nav-item">
 
-                <a class="nav-link text-light " href="#codecell" style="font-size: 22px;padding-left: 10px;padding-right: 10px;">Codecell</a>
+                <a class="nav-link text-light " href="#codecell" style="font-size: 25px;padding: 0 15px 0 10px;">Codecell</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#about" data-scroll-nav="5" style="font-size: 22px;padding-left: 15px;padding-right: 10px;">About Us</a>
+                <a class="nav-link text-light" href="#about"  style="font-size: 25px;padding: 0 15px 0 10px;">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#events" style="font-size: 22px;padding-left: 10px;padding-right: 15px">Events</a>
+                <a class="nav-link text-light" href="#events" style="font-size: 25px;padding: 0 15px 0 10px;">Events</a>
               </li>
                 <li class="nav-item">
-                <a class="nav-link text-light" href="{% url 'authenticate' %}" style="font-size: 22px;padding-left: 10px;padding-right: 15px">Login</a>
+                <a class="nav-link text-light" href="{% url 'authenticate' %}" style="font-size: 25px;padding: 0 15px 0 10px;">Login</a>
               </li>
             </ul>
           </div>
