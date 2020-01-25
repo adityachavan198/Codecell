@@ -3,12 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/static/Accounts/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/static/Accounts/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/countdown/assets/css/-Countdown-BS4-.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/countdown/assets/css/-Countdown-BS4-.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/shedule/assets/css/Zig-Zag-Timeline-v3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/shedule/assets/css/Timeline.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/shedule/assets/css/Timeline.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/shedule1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/shedule1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +124,7 @@
       <workItem from="1579772202497" duration="10795000" />
       <workItem from="1579873337639" duration="218000" />
       <workItem from="1579873858730" duration="5571000" />
-      <workItem from="1579929624931" duration="6462000" />
+      <workItem from="1579929624931" duration="9861000" />
     </task>
     <servers />
   </component>

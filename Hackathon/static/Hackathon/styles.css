@@ -1,6 +1,12 @@
 html{
 	scroll-behavior: smooth;
 }
+
+.section-divide{
+	background-color: white;
+	margin: 5vh;
+	margin-bottom: 3vh;
+}
 /***/
 /*{*/
 /*	margin: 0;*/

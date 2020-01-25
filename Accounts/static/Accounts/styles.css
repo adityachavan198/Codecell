@@ -56,7 +56,7 @@ h1 {
   overflow: hidden;
   transform: translateY(-50%); 
   animation: typewriter 1s steps(44) 1s 1 normal both,
-  blinkTextCursor 500ms steps(44) infinite normal ;
+  blinkTextCursor 1000ms steps(44) infinite normal ;
 }
 
 
