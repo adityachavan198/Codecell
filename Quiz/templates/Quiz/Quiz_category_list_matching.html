@@ -17,7 +17,7 @@
           <div class="card-body">
             <h5 class="card-title">Level :- {{ quiz.level }}</h5>
             <p class="card-text">{{ quiz.description }}</p>
-            <a href="{% url 'quiz_detail' slug=quiz.url %}" class="btn btn-primary pull-right">Start</a>
+            <a href="{% url 'quiz_detail' slug=quiz.url %}" class="btn btn-primary btn-lg pull-right">Start</a>
           </div>
         </div>
     {% endfor %}
