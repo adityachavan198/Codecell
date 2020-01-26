@@ -14,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
-    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+{#    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>#}
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
     
@@ -38,7 +38,7 @@
               aria-controls="navbarContent"
               aria-expanded="false"
               aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width: 25px;" alt=""/></span>
+             <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
             </button>
           <!-- navbar links -->
           <div class="collapse navbar-collapse text-center" id="navbarContent" >
@@ -84,7 +84,7 @@
       <nav class="navbar navbar-expand-sm ">
         <div class="container-fluid">
           <!-- Logo -->
-          <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""></a>
+          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" class="img-fluid" alt="" style="height: 7vh"></a>
             <button class="navbar-toggler"
               type="button"
               data-toggle="collapse"
@@ -92,7 +92,7 @@
               aria-controls="navbarContent"
               aria-expanded="false"
               aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width:25px;" alt=""/></span>
+             <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
             </button>
           <!-- navbar links -->
           <div class="collapse navbar-collapse text-center" id="navbarContent" >
@@ -142,7 +142,7 @@ document.getElementById("date").innerHTML = n + " ";
   body{
     font-family: 'Bree Serif', serif;
     overflow-x: hidden;
-    margin-top: 80px;
+    margin-top: 60px;
 
   }
   #navBar{
@@ -153,15 +153,4 @@ font-family: 'Nanum Gothic Coding', monospace;
     border: 0;
   }
 </style>
-
-
-<!-- SCRIPT FOR SCROLLING ANIMATION -->
-{#<script>#}
-{#window.sr = ScrollReveal();#}
-{#sr.reveal(".navbar", {#}
-{#  duration: 2000,#}
-{#  origin: 'bottom',#}
-{#  distance: "300px",#}
-{#});#}
-{#</script>#}
 
