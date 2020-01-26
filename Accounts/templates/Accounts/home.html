@@ -2,39 +2,42 @@
 {% block content %}
 
 {% load static %}
-<div class="section1 box" id="codecell" >
+<div class="section1 box" id="codecell" style="height:100vh">
   <h1 style="padding-top: 35vh;margin-left: 10%;color: #00ff00; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><p style="font-size: larger">{CODE}CELL</p></h1><br>
   <p style="color: white;font-size: 10vmin;margin-left: 10%">Platform for coders,by coders.</p>
   <center><a id="btnHome" href="#about" class="btn bg-light text-dark btn-lg" role="button">Learn more</a></center>
 </div>
 
-    <div id="about"></div>
-  
-<div class="container " style="text-align: center;">
+  <div id="about" style="height:100vh;padding-top: 100px;">
+<div class="container" style="text-align: center;">
     <img class="imgRight" src="{% static 'Accounts/assets/i1.svg' %}" style="height: 10vmax;width: 7vmax">
     <h2 class="upperTop">What is Codecell?</h2>
     <p class="lowerBottom">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
 </div>
 
-<div class="container " style="text-align: center;padding:3vh;margin-bottom: 3vh">
+<div class="container" style="text-align: center;">
     <img class="imgRight" src="{% static 'Accounts/assets/i2.svg' %}" style="height: 10vmax;width: 7vmax">
     <h2 class="upperTop">Who are we?</h2>
     <p class="lowerBottom">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
   </div>
-
-<div class="container-fluid" id="events" style="background-color: black;padding: 3vh;height: auto;">
-  <h2 class="" style="color: white;text-align: center; padding-bottom: 40px;">Our Events</h2>
-  <div class="container-fluid row " >
-
-    <div class="col-lg-6 col-sm-12"><center><a href="{% url 'hackathon_home' %}"><img src="{% static 'Accounts/assets/hack1.jpg' %}" style="padding: 3vmin;/*height: 20vmax;width: 38vmax;*/"  class="img-fluid "></a></center></div>
+    <!-- </div> -->
+  </div>
+  
+<div id="events"  style="height:100%;background-color: black;padding-top: 100px;"> 
+<div class="container-fluid" style="background-color: black;">
+  <h2 class="" style="color: white;text-align: center;">Our Events</h2>
+  <center>
+  <div class="container-fluid row">
+    <div class="col-lg-6 col-sm-12"><a href="{% url 'hackathon_home' %}"><img src="{% static 'Accounts/assets/hack1.jpg' %}" style="padding: 3vmin;/*height: 20vmax;width: 38vmax;*/"  class="img-fluid "></a></div>
     <div class="col-lg-6 col-sm-12"><p class="" style="padding: 3vmin;color: white;margin-bottom: 3vh;text-align: center;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p></div>
 </div>
 
-  <div class="container-fluid row " >
-    <div class="col-lg-6 col-sm-12"><center><a href="#Seminar"><img src="{% static 'Accounts/assets/seminar.png' %}" style="padding: 3vmin/*;height: 20vmax;width: 38vmax*/"  class="img-fluid "></a></center></div>
+  <div class="container-fluid row ">
+    <div class="col-lg-6 col-sm-12"><a href="#Seminar"><img src="{% static 'Accounts/assets/seminar.png' %}" style="padding: 3vmin/*;height: 20vmax;width: 38vmax*/"  class="img-fluid "></a></div>
     <div class="col-lg-6 col-sm-12"><p class="" style="padding: 2vmin;color: white;margin-bottom: 3vh;text-align: center;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p></div>
 </div>
-
+</center>
+</div>
 </div>
 
 
@@ -74,6 +77,5 @@ sr.reveal(".rightTxt", {
 
 
 </script>
-
 
 {% endblock %}

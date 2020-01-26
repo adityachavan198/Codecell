@@ -19,10 +19,9 @@
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="{% static 'Accounts/styles.css' %}" media="screen" />
-
 </head> 
 
-<script src="https://unpkg.com/scrollreveal"></script>
+<!-- <script src="https://unpkg.com/scrollreveal"></script> -->
 
 {% if user.is_authenticated %}
 <header id="header">
@@ -30,7 +29,7 @@
       <nav class="navbar navbar-expand-sm ">
         <div class="container-fluid">
           <!-- Logo -->
-          <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""></a>
+          <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" alt=""></a>
             <button class="navbar-toggler"
               type="button"
               data-toggle="collapse"
@@ -44,7 +43,6 @@
           <div class="collapse navbar-collapse text-center" id="navbarContent" >
             <ul class="navbar-nav ml-auto ">
               <li class="nav-item">
-
                 <a class="nav-link text-light " href="{% url 'home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Home</a>
               </li>
               <li class="nav-item">
@@ -81,25 +79,27 @@
 {% if not user.is_authenticated %}
 <header id="header">
     <div id="navBar" class="container-fluid navbar-default fixed-top" >
-      <nav class="navbar navbar-expand-sm ">
+      <nav class="navbar navbar-expand-sm">
         <div class="container-fluid">
           <!-- Logo -->
           <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""></a>
-            <button class="navbar-toggler"
+            
+            <button class="navbar-toggler logo"
               type="button"
               data-toggle="collapse"
               data-target="#navbarContent"
               aria-controls="navbarContent"
               aria-expanded="false"
               aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width:25px;" alt=""/></span>
+              <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width:25px;" alt=""/>
+              </span>
             </button>
           <!-- navbar links -->
+          
           <div class="collapse navbar-collapse text-center" id="navbarContent" >
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-
-                <a class="nav-link text-light " href="#codecell" style="font-size: 25px;padding: 0 15px 0 10px;">Codecell</a>
+                <a class="nav-link text-light" href="#codecell" style="font-size: 25px;padding: 0 15px 0 10px;">Codecell</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light" href="#about"  style="font-size: 25px;padding: 0 15px 0 10px;">About Us</a>
@@ -124,11 +124,11 @@
 {% endblock %}
 
 
-  <div class="row mt-2">
-    <div class="col copyright">
+  <!-- <div class="row mt-2"> -->
+    <div class="footer2">
       <p align="center"><small style="color: black">© <span id="date"></span>. RGIT-Codecell - All Rights Reserved.</small></p>
     </div>
-  </div>
+  <!-- </div> -->
 
 <script>
 //GET DATE DYNAMICALLY 
@@ -148,9 +148,25 @@ document.getElementById("date").innerHTML = n + " ";
 font-family: 'Nanum Gothic Coding', monospace;
   }
   .navbar-default{
+    max-width:100%;
     background-color: #000;
     border: 0;
   }
+  .anchor{
+  position: absolute;
+  margin-top: 60px;
+  text-align: center;
+}
+.footer2{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 8;
+}
 </style>
 
 
