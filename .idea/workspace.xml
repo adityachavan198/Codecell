@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/Fixed-Navbar-2.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/Fixed-Navbar-2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/Fixed-Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/Fixed-Navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/Navbar-Centered.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/Navbar-Centered.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codecell/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Codecell/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +118,8 @@
       <workItem from="1579873337639" duration="218000" />
       <workItem from="1579873858730" duration="5571000" />
       <workItem from="1579929624931" duration="10461000" />
-      <workItem from="1579955323211" duration="1428000" />
+      <workItem from="1579955323211" duration="1812000" />
+      <workItem from="1580015995261" duration="60000" />
     </task>
     <servers />
   </component>
@@ -142,10 +140,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1579955336409">
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1580015997632">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1579955336409" />
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1580015997632" />
     <state x="343" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579877763458">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
