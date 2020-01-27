@@ -14,15 +14,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
-{#    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>#}
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="{% static 'Accounts/styles.css' %}" media="screen" />
+</head>
 
-</head> 
-
-<script src="https://unpkg.com/scrollreveal"></script>
+<!-- <script src="https://unpkg.com/scrollreveal"></script> -->
 
 {% if user.is_authenticated %}
 <header id="header">
@@ -30,7 +29,7 @@
       <nav class="navbar navbar-expand-sm ">
         <div class="container-fluid">
           <!-- Logo -->
-          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" class="img-fluid" alt="" style="height: 7vh"></a>
+          <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" alt=""></a>
             <button class="navbar-toggler"
               type="button"
               data-toggle="collapse"
@@ -38,13 +37,12 @@
               aria-controls="navbarContent"
               aria-expanded="false"
               aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+             <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width: 25px;" alt=""/></span>
             </button>
           <!-- navbar links -->
           <div class="collapse navbar-collapse text-center" id="navbarContent" >
             <ul class="navbar-nav ml-auto ">
               <li class="nav-item">
-
                 <a class="nav-link text-light " href="{% url 'home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Home</a>
               </li>
               <li class="nav-item">
@@ -54,7 +52,7 @@
                 <a class="nav-link text-light" href="{% url 'forum_home' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px"> Forum</a>
               </li>
 
-              <li><div  style="padding-left: 07px; padding-top: 08px;;" class="dropdown">
+                          <li><div  style="padding-left: 07px; padding-top: 08px;;" class="dropdown">
                 <button type="button" class="btn btn-outline-light dropdown-toggle fa fa-user" data-toggle="dropdown">
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
@@ -81,25 +79,27 @@
 {% if not user.is_authenticated %}
 <header id="header">
     <div id="navBar" class="container-fluid navbar-default fixed-top" >
-      <nav class="navbar navbar-expand-sm ">
+      <nav class="navbar navbar-expand-sm">
         <div class="container-fluid">
           <!-- Logo -->
-          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" class="img-fluid" alt="" style="height: 7vh"></a>
-            <button class="navbar-toggler"
+          <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""></a>
+
+            <button class="navbar-toggler logo"
               type="button"
               data-toggle="collapse"
               data-target="#navbarContent"
               aria-controls="navbarContent"
               aria-expanded="false"
               aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+              <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width:25px;" alt=""/>
+              </span>
             </button>
           <!-- navbar links -->
+
           <div class="collapse navbar-collapse text-center" id="navbarContent" >
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-
-                <a class="nav-link text-light " href="#codecell" style="font-size: 25px;padding: 0 15px 0 10px;">Codecell</a>
+                <a class="nav-link text-light" href="#codecell" style="font-size: 25px;padding: 0 15px 0 10px;">Codecell</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light" href="#about"  style="font-size: 25px;padding: 0 15px 0 10px;">About Us</a>
@@ -124,14 +124,14 @@
 {% endblock %}
 
 
-  <div class="row mt-2">
-    <div class="col copyright">
+  <!-- <div class="row mt-2"> -->
+    <div class="footer2">
       <p align="center"><small style="color: black">© <span id="date"></span>. RGIT-Codecell - All Rights Reserved.</small></p>
     </div>
-  </div>
+  <!-- </div> -->
 
 <script>
-//GET DATE DYNAMICALLY 
+//GET DATE DYNAMICALLY
 var d = new Date();
 var n = d.getFullYear();
 document.getElementById("date").innerHTML = n + " ";
@@ -142,15 +142,40 @@ document.getElementById("date").innerHTML = n + " ";
   body{
     font-family: 'Bree Serif', serif;
     overflow-x: hidden;
-    margin-top: 60px;
 
   }
   #navBar{
 font-family: 'Nanum Gothic Coding', monospace;
   }
   .navbar-default{
+    max-width:100%;
     background-color: #000;
     border: 0;
   }
+  .anchor{
+  position: absolute;
+  margin-top: 60px;
+  text-align: center;
+}
+.footer2{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 8;
+}
 </style>
 
+
+<!-- SCRIPT FOR SCROLLING ANIMATION -->
+{#<script>#}
+{#window.sr = ScrollReveal();#}
+{#sr.reveal(".navbar", {#}
+{#  duration: 2000,#}
+{#  origin: 'bottom',#}
+{#  distance: "300px",#}
+{#});#}
+{#</script>#}
