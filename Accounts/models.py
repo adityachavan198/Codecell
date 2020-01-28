@@ -1,28 +1,23 @@
 from django.db import models
 from django.contrib.auth.models import User
 from Forum.models import *
+from django.core.validators import RegexValidator
 
 # Create your models here.
 
 class Student(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
-    stream=models.CharField(max_length=10, default='Computer')
-    description = models.CharField(max_length=100, blank = True)
-    birthdate = models.CharField(max_length = 50, blank = True)
+    branch=models.CharField(max_length=10, default='Computer', verbose_name="Branch")
+    description=models.CharField(max_length=100, blank = True,help_text="Description about yourself")
+    college_name = models.CharField(max_length=100, blank = True, verbose_name="College Name")
+    birthdate = models.DateTimeField()
     gender = models.CharField(max_length = 50, choices = (("Male","Male"),("Female","Female")))
-    phone = models.IntegerField( blank = True, null = True)
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',message="Phone number must be entered in the format: '+999999999'. Up to 12 digits allowed.")
+    phone_number = models.CharField(validators=[phone_regex], max_length=14, blank=True)
     githublink = models.CharField(max_length = 70, blank = True, default = "")
     facebooklink = models.CharField(max_length = 70, blank = True, default = "")
     instagramlink = models.CharField(max_length = 70, blank = True, default = "")
     linkedinlink = models.CharField(max_length = 70, blank = True, default = "")
-    achname1 = models.CharField(max_length = 70, blank = True, default = "")
-    ach1 = models.CharField(max_length = 100, blank = True, default = "")
-    achname2 = models.CharField(max_length = 70, blank = True, default = "")
-    ach2 = models.CharField(max_length = 100, blank = True, default = "")
-    achname3 = models.CharField(max_length = 70, blank = True, default = "")
-    ach3 = models.CharField(max_length = 100, blank = True, default = "")
-    achname4 = models.CharField(max_length = 70, blank = True, default = "")
-    ach4 = models.CharField(max_length = 100, blank = True, default = "")
 
     def __str__(self):
         return self.user.username
