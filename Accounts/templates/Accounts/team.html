@@ -1,46 +1,18 @@
-{% extends 'Accounts/base.html' %}
-{% block content %}
-
+<!DOCTYPE html>
+<html>
 {% load static %}
-<div class="section1 box" id="codecell" style="height:100vh">
-  <h1 style="padding-top: 35vh;margin-left: 10%;color: #00ff00; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><p style="font-size: larger">{CODE}CELL</p></h1><br>
-  <p style="color: white;font-size: 10vmin;margin-left: 10%">Platform for coders,by coders.</p>
-  <center><a id="btnHome" href="#about" class="btn bg-light text-dark btn-lg" role="button">Learn more</a></center>
-</div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'Accounts/team/assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'Accounts/team/assets/css/Team-with-rotating-cards.css' %}">
+</head>
 
-  <div id="about" style="height:100vh;padding-top: 100px;">
-<div class="container" style="text-align: center;">
-    <img class="imgRight" src="{% static 'Accounts/assets/i1.svg' %}" style="height: 10vmax;width: 7vmax">
-    <h2 class="upperTop">What is Codecell?</h2>
-    <p class="lowerBottom">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-</div>
-
-<div class="container" style="text-align: center;">
-    <img class="imgRight" src="{% static 'Accounts/assets/i2.svg' %}" style="height: 10vmax;width: 7vmax">
-    <h2 class="upperTop">Who are we?</h2>
-    <p class="lowerBottom">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-  </div>
-    <!-- </div> -->
-  </div>
-
-<div id="events"  style="height:100%;background-color: black;padding-top: 100px;">
-<div class="container-fluid" style="background-color: black;">
-  <h2 class="" style="color: white;text-align: center;">Our Events</h2>
-  <center>
-  <div class="container-fluid row">
-    <div class="col-lg-6 col-sm-12"><a href="{% url 'hackathon_home' %}"><img src="{% static 'Accounts/assets/hack1.jpg' %}" style="padding: 3vmin;/*height: 20vmax;width: 38vmax;*/"  class="img-fluid "></a></div>
-    <div class="col-lg-6 col-sm-12"><p class="" style="padding: 3vmin;color: white;margin-bottom: 3vh;text-align: center;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p></div>
-</div>
-
-  <div class="container-fluid row ">
-    <div class="col-lg-6 col-sm-12"><a href="#Seminar"><img src="{% static 'Accounts/assets/seminar.png' %}" style="padding: 3vmin/*;height: 20vmax;width: 38vmax*/"  class="img-fluid "></a></div>
-    <div class="col-lg-6 col-sm-12"><p class="" style="padding: 2vmin;color: white;margin-bottom: 3vh;text-align: center;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p></div>
-</div>
-</center>
-</div>
-</div>
-
-     <!-- Start: Team with rotating cards -->
+<body>
+    <!-- Start: Team with rotating cards -->
     <section class="card-section-imagia">
         <!-- Start: H1 -->
         <h1>Our team</h1>
@@ -71,7 +43,7 @@
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
-{#                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>#}
+                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
                                 <!-- End: footer -->
                             </div>
                             <!-- End: front -->
@@ -118,7 +90,7 @@
                                     <p class="subtitle-imagia">Founder</p>
                                     <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
                                 </div>
-{#                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>#}
+                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
                             </div>
                             <!-- End: front -->
                             <!-- Start: back -->
@@ -167,7 +139,7 @@
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
-{#                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>#}
+                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
                                 <!-- End: footer -->
                             </div>
                             <!-- End: front -->
@@ -200,43 +172,8 @@
         </div>
     </section>
     <!-- End: Team with rotating cards -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
 
-
-<script>
-window.sr = ScrollReveal();
-sr.reveal(".upperTop", {
-  duration: 1500,
-  origin: 'top',
-  distance: "300px",
-  // delay: 100
-});
-sr.reveal(".lowerBottom", {
-  duration: 1500,
-  origin: 'bottom',
-  distance: "300px",
-  // delay: 100
-});
-sr.reveal(".imgRight", {
-  duration: 1500,
-  origin: 'right',
-  distance: "300px",
-  // delay: 100
-});
-sr.reveal(".imgLeft", {
-  duration: 1500,
-  origin: 'left',
-  distance: "300px",
-  // delay: 100
-});
-sr.reveal(".rightTxt", {
-  duration: 1500,
-  origin: 'right',
-  distance: "300px",
-  // delay: 100
-});
-
-
-
-</script>
-
-{% endblock %}
+</html>

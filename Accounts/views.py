@@ -6,6 +6,8 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.db import IntegrityError
+from django.views.decorators.clickjacking import xframe_options_exempt
+
 from Accounts.forms import *
 
 from Accounts.forms import *
@@ -71,6 +73,11 @@ def register(request):
         form1 = user_form()
         form2 = student_form()
     return render(request, template, {'form1': form1,'form2':form2})
+
+@xframe_options_exempt
+def team(request):
+    return render(request, 'Accounts/team.html',{})
+
 # class Login_Register(View):
 #     template = 'Accounts/Login_Register.html'
 #
