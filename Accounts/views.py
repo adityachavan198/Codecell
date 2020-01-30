@@ -58,8 +58,15 @@ def register(request):
         form1 = user_form(request.POST)
         form2 = student_form(request.POST)
         if form1.is_valid() and form2.is_valid():
+            user = form1.save()
+            user.set_password(user.password)
+            user.save()
+            student = form2.save(commit=False)
+            student.user = user
+            student.save()
             print(form1)
             print(form2)
+            return HttpResponseRedirect(reverse('authenticate'))
     else:
         form1 = user_form()
         form2 = student_form()

@@ -14,7 +14,7 @@ class Student(models.Model):
 
     college_name = models.CharField(max_length=100, blank = True, verbose_name="College Name")
 
-    birthdate = models.DateTimeField()
+    birthdate = models.DateTimeField(null = True, blank = True)
 
     gender = models.CharField(max_length = 50, choices = (("Male","Male"),("Female","Female")))
 
