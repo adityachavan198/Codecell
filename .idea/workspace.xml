@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -37,7 +41,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Accounts/static/Accounts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Timetable" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -121,7 +125,9 @@
       <workItem from="1579955323211" duration="1812000" />
       <workItem from="1580015995261" duration="2043000" />
       <workItem from="1580134095258" duration="1030000" />
-      <workItem from="1580216745202" duration="824000" />
+      <workItem from="1580216745202" duration="2838000" />
+      <workItem from="1580223739966" duration="607000" />
+      <workItem from="1580387881938" duration="4321000" />
     </task>
     <servers />
   </component>
@@ -142,10 +148,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1580216753983">
+    <state x="463" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580223745773">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1580216753983" />
+    <state x="463" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1360.741@0.27.1360.741" timestamp="1580223745773" />
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1580387880742">
+      <screen x="0" y="27" width="1360" height="741" />
+    </state>
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1580387880742" />
     <state x="343" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579877763458">
       <screen x="0" y="27" width="1360" height="741" />
     </state>

@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect,HttpResponse
@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.db import IntegrityError
+from Accounts.forms import *
 
 from Accounts.forms import *
 
@@ -24,66 +25,105 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('home'))
 
-class Login_Register(View):
-    template = 'Accounts/Login_Register.html'
+def student_login(request):
+    template = 'Accounts/login.html'
+    try:
+        next_page = request.GET['next']
+    except:
+        next_page = None
 
-    def get(self, request, *args, **kwargs):
-        ''' Process a get request '''
-        if request.user.is_authenticated:
-            return HttpResponseRedirect(reverse('home'))
-        return render(request,self.template,{})
-
-    def post(self, request, *args, **kwargs):
-        ''' Process a post request '''
-        try:
-            next_page = request.GET['next']
-        except:
-            next_page = None
-
-        if request.POST.get('lusername'):
-            username = request.POST.get('lusername')
-            password = request.POST.get('lpassword')
-            user=authenticate(username=username,password=password)
+    if request.method == "POST":
+        form = login_form(request.POST)
+        print("hi")
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            print(username,password)
+            user = authenticate(username=username, password=password)
             if user is not None:
                 if user.is_active:
-                    login(request,user)
+                    login(request, user)
                     if next_page:
                         return HttpResponseRedirect(next_page)
                     return HttpResponseRedirect(reverse('home'))
-            else:
-                return render(request , self.template, {'error':'There is an error in username or password, please try again!'})
+    else:
+        if request.user.is_authenticated:
+            return HttpResponseRedirect(reverse('home'))
+        form = login_form()
+    return render(request, template, {'form': form})
 
-        elif request.POST.get('rusername'):
-            username = request.POST.get('rusername')
-            email = request.POST.get('remail')
-            password = request.POST.get('rpassword')
-            error = None
-            if username is not None and email is not None and password is not None:
-                if username =="" or username == " " or password == "" or password == " " or email =="" or email == " ":
-                    error = "There is error in one of the fields"
-                if error is not None:
-                    return render(request , self.template, {'error': error})
-                try:
-                    newuser = User.objects.create_user(username, email, password)
-                except IntegrityError:
-                    return render(request , self.template, {'error':"Username exists"})
-                newuser.set_password(password)
-                newuser.save()
-                student = Student.objects.create(user = newuser)
-                student.save()
-                
-                user = authenticate(username=username, password=password)
-                if user is not None:
-                    if user.is_active:
-                        login(request,user)
+def register(request):
+    template = 'Accounts/register.html'
+    if request.method == "POST":
+        form1 = user_form(request.POST)
+        form2 = student_form(request.POST)
 
-                if next_page:
-                    return HttpResponseRedirect(next_page)
-                return HttpResponseRedirect(reverse('home'))
-            else:
-                return render(request , self.template, {'error':'There is an error in your form, please try again!'})
-        
-        return render(request , self.template, {'error':'There is an error, please try again!'})
+        if form.is_valid():
+            return redirect('home')
+    else:
+        form1 = user_form()
+        form2 = student_form()
+    return render(request, template, {'form1': form1,'form2':form2})
+# class Login_Register(View):
+#     template = 'Accounts/Login_Register.html'
+#
+#     def get(self, request, *args, **kwargs):
+#         ''' Process a get request '''
+#         if request.user.is_authenticated:
+#             return HttpResponseRedirect(reverse('home'))
+#         return render(request,self.template,{})
+#
+#     def post(self, request, *args, **kwargs):
+#         ''' Process a post request '''
+#         try:
+#             next_page = request.GET['next']
+#         except:
+#             next_page = None
+#
+#         if request.POST.get('lusername'):
+#             username = request.POST.get('lusername')
+#             password = request.POST.get('lpassword')
+#             user=authenticate(username=username,password=password)
+#             if user is not None:
+#                 if user.is_active:
+#                     login(request,user)
+#                     if next_page:
+#                         return HttpResponseRedirect(next_page)
+#                     return HttpResponseRedirect(reverse('home'))
+#             else:
+#                 return render(request , self.template, {'error':'There is an error in username or password, please try again!'})
+#
+#         elif request.POST.get('rusername'):
+#             username = request.POST.get('rusername')
+#             email = request.POST.get('remail')
+#             password = request.POST.get('rpassword')
+#             error = None
+#             if username is not None and email is not None and password is not None:
+#                 if username =="" or username == " " or password == "" or password == " " or email =="" or email == " ":
+#                     error = "There is error in one of the fields"
+#                 if error is not None:
+#                     return render(request , self.template, {'error': error})
+#                 try:
+#                     newuser = User.objects.create_user(username, email, password)
+#                 except IntegrityError:
+#                     return render(request , self.template, {'error':"Username exists"})
+#                 newuser.set_password(password)
+#                 newuser.save()
+#                 student = Student.objects.create(user = newuser)
+#                 student.save()
+#
+#                 user = authenticate(username=username, password=password)
+#                 if user is not None:
+#                     if user.is_active:
+#                         login(request,user)
+#
+#                 if next_page:
+#                     return HttpResponseRedirect(next_page)
+#                 return HttpResponseRedirect(reverse('home'))
+#             else:
+#                 return render(request , self.template, {'error':'There is an error in your form, please try again!'})
+#
+#         return render(request , self.template, {'error':'There is an error, please try again!'})
 
 class User_profile(View):
     template_name = "Accounts/profile.html"

@@ -7,3 +7,4 @@ class register_form(forms.ModelForm):
     class Meta:
         model = team
         exclude = ['size']
+

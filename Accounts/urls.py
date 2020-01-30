@@ -4,6 +4,7 @@ from Accounts import views
 
 registerpatterns = [
     path('logout/',views.user_logout,name='logout'),
-    path('login/', views.Login_Register.as_view(), name = "authenticate"),
+    path('login/', views.student_login, name = "authenticate"),
+    path('register/',views.register, name = "register")
     
 ]

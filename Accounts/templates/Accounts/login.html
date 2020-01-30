@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+  <head>
+    <meta charset="utf-8">
+    <title>Codecell Login</title>
+    <link rel="stylesheet" href="{% static 'Accounts/login/style.css' %}">
+  </head>
+  <body class="box">
+
+<form method="post">
+    {% csrf_token %}
+  <h1>Login</h1>
+  <input type="text"name="username" required placeholder="Username">
+    <span class="helptext" style="color: white" >Username can be 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+  <input type="password"  name="password" required placeholder="Password">
+
+    {% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div style="color: red">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+    <div style="color: red">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+  <input type="submit" required value="Login">
+</form>
+
+
+  </body>
+</html>
