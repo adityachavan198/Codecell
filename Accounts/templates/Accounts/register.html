@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <link rel="stylesheet" href="{% static 'Accounts/register/styles.css' %}">  
+    <link rel="stylesheet" href="{% static 'Accounts/register/styles.css' %}">
 </head>
 <body>
-{{ form1.as_p }}
-{{ form2.as_p }}
+<form method="post">
+    {% csrf_token %}
+    {{ form1.as_p }}
+    {{ form2.as_p }}
+    <input type="submit" value="Register"></input>
+</form>
 </body>
 </html>

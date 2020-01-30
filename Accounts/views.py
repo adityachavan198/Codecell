@@ -57,9 +57,9 @@ def register(request):
     if request.method == "POST":
         form1 = user_form(request.POST)
         form2 = student_form(request.POST)
-
-        if form.is_valid():
-            return redirect('home')
+        if form1.is_valid() and form2.is_valid():
+            print(form1)
+            print(form2)
     else:
         form1 = user_form()
         form2 = student_form()

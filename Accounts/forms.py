@@ -17,4 +17,4 @@ class user_form(forms.ModelForm):
 class student_form(forms.ModelForm):
     class Meta:
         model = Student
-        exclude = ['githublink', 'facebooklink', 'linkedinlink', 'instagramlink','user']
+        exclude = ['githublink', 'facebooklink', 'linkedinlink', 'instagramlink','user','birthdate']
