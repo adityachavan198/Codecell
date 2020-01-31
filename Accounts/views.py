@@ -66,8 +66,6 @@ def register(request):
             student = form2.save(commit=False)
             student.user = user
             student.save()
-            print(form1)
-            print(form2)
             return HttpResponseRedirect(reverse('authenticate'))
     else:
         form1 = user_form()

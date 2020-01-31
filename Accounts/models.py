@@ -12,11 +12,9 @@ class Student(models.Model):
 
     description=models.CharField(max_length=100, blank = True,help_text="Description about yourself")
 
-    college_name = models.CharField(max_length=100, blank = True, verbose_name="College Name")
-
     birthdate = models.DateTimeField(null = True, blank = True)
 
-    gender = models.CharField(max_length = 50, choices = (("Male","Male"),("Female","Female")))
+    gender = models.CharField(max_length = 10)
 
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',message="Phone number must be entered in the format: '+999999999'. Up to 12 digits allowed.")
 

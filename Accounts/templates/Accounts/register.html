@@ -4,13 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
-    <link rel="stylesheet" href="{% static 'Accounts/register/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'Accounts/register/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
-<body>
+<body class="box">
 <form method="post">
     {% csrf_token %}
-    {{ form1.as_p }}
-    {{ form2.as_p }}
+{#    {{ form1.as_p }}#}
+{#    {{ form2.as_p }}#}
+
+     <h1>Register</h1>
+  <input type="text" name="username" maxlength="150" required placeholder="Username">
+    <span class="helptext text-white">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+  <input type="password"  name="password" placeholder="Password">
+{#  <input type="password" name="" placeholder="Confirm Password">#}
+  <input type="email" name="email" maxlength="254" placeholder="Email Address">
+{#  <input type="text" name="" placeholder="College name">#}
+  <input type="text" name="branch" value="Computer" maxlength="10" placeholder="Branch">
+  <input type="text" name="phone_number" maxlength="14" placeholder="Phone no.">
+
+{#<div class="container" style="border: 2px solid #3498db;border-radius: 30px;width: 60%;padding: 2px">#}
+{#  <h1>Gender</h1>#}
+{#  <div class="form-check">#}
+{#  <label class="form-check-label">#}
+{#    <input type="radio" class="form-check-input"  name="gender" value="Male"><p style="color: white;font-size: 1.5vmax;padding: 2px">Male</p>#}
+{#  </label>#}
+{#</div>#}
+{#<div class="form-check">#}
+{#  <label class="form-check-label">#}
+{#    <input type="radio" class="form-check-input" name="gender" value="Female"><p style="color: white;font-size: 1.5vmax;padding: 2px">Female</p>#}
+{#  </label>#}
+{#</div>#}
+{#</div>#}
+
+{% if form.errors %}
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div style="color: red">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+    <div style="color: red">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
     <input type="submit" value="Register"></input>
 </form>
 </body>
