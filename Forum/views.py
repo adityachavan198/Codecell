@@ -25,6 +25,9 @@ class Ask_question(View):
     def get(self, request, *args, **kwargs):
         ''' Process a get request for asking a question '''
         topic = Topic.objects.all()
+        if request.user.student.paid == False:
+            return HttpResponseRedirect(reverse('payment'))
+
         return render(request, self.template_name, {'topic':topic})
 
     def post(self, request, *args, **kwargs):
@@ -57,6 +60,9 @@ class Add_answer(View):
 
     def get(self, request, *args, **kwargs):
         ''' Process a get request for answers '''
+        if request.user.student.paid == False:
+            return HttpResponseRedirect(reverse('payment'))
+
         question = Forum_question.objects.all().filter(pk = kwargs['pk'])[0]
         answers = Forum_answer.objects.all().filter(question = question).order_by('-answered_on')
         return render(request, self.template_name, {'answer':answers, 'question':question})

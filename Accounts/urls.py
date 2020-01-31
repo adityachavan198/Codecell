@@ -7,5 +7,6 @@ registerpatterns = [
     path('login/', views.student_login, name = "authenticate"),
     path('register/',views.register, name = "register"),
     path('team/', views.team, name = "team"),
+    path('payment/', views.payment, name = "payment")
     
 ]

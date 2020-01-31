@@ -28,6 +28,8 @@ class Student(models.Model):
 
     linkedinlink = models.CharField(max_length = 70, blank = True, default = "")
 
+    paid = models.BooleanField(default= False)
+
     def __str__(self):
         return self.user.username
 

@@ -5,10 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/static/Accounts/register/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forum/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Quiz/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +131,7 @@
       <workItem from="1580216745202" duration="2838000" />
       <workItem from="1580223739966" duration="607000" />
       <workItem from="1580387881938" duration="7017000" />
-      <workItem from="1580473948253" duration="2124000" />
+      <workItem from="1580473948253" duration="5807000" />
     </task>
     <servers />
   </component>

@@ -76,71 +76,12 @@ def register(request):
 def team(request):
     return render(request, 'Accounts/team.html',{})
 
-# class Login_Register(View):
-#     template = 'Accounts/Login_Register.html'
-#
-#     def get(self, request, *args, **kwargs):
-#         ''' Process a get request '''
-#         if request.user.is_authenticated:
-#             return HttpResponseRedirect(reverse('home'))
-#         return render(request,self.template,{})
-#
-#     def post(self, request, *args, **kwargs):
-#         ''' Process a post request '''
-#         try:
-#             next_page = request.GET['next']
-#         except:
-#             next_page = None
-#
-#         if request.POST.get('lusername'):
-#             username = request.POST.get('lusername')
-#             password = request.POST.get('lpassword')
-#             user=authenticate(username=username,password=password)
-#             if user is not None:
-#                 if user.is_active:
-#                     login(request,user)
-#                     if next_page:
-#                         return HttpResponseRedirect(next_page)
-#                     return HttpResponseRedirect(reverse('home'))
-#             else:
-#                 return render(request , self.template, {'error':'There is an error in username or password, please try again!'})
-#
-#         elif request.POST.get('rusername'):
-#             username = request.POST.get('rusername')
-#             email = request.POST.get('remail')
-#             password = request.POST.get('rpassword')
-#             error = None
-#             if username is not None and email is not None and password is not None:
-#                 if username =="" or username == " " or password == "" or password == " " or email =="" or email == " ":
-#                     error = "There is error in one of the fields"
-#                 if error is not None:
-#                     return render(request , self.template, {'error': error})
-#                 try:
-#                     newuser = User.objects.create_user(username, email, password)
-#                 except IntegrityError:
-#                     return render(request , self.template, {'error':"Username exists"})
-#                 newuser.set_password(password)
-#                 newuser.save()
-#                 student = Student.objects.create(user = newuser)
-#                 student.save()
-#
-#                 user = authenticate(username=username, password=password)
-#                 if user is not None:
-#                     if user.is_active:
-#                         login(request,user)
-#
-#                 if next_page:
-#                     return HttpResponseRedirect(next_page)
-#                 return HttpResponseRedirect(reverse('home'))
-#             else:
-#                 return render(request , self.template, {'error':'There is an error in your form, please try again!'})
-#
-#         return render(request , self.template, {'error':'There is an error, please try again!'})
-
 class User_profile(View):
     template_name = "Accounts/profile.html"
 
     def get(self, request, *args, **kwargs):
+        if request.user.student.paid == False:
+            return HttpResponseRedirect(reverse('payment'))
         user = get_object_or_404(User, username = kwargs['username'])
         student = get_object_or_404(Student, user = user)
         can_edit = False
@@ -152,6 +93,8 @@ class User_update(View):
     template_name = "Accounts/profile_update.html"
 
     def get(self, request, *args, **kwargs):
+        if request.user.student.paid == False:
+            return HttpResponseRedirect(reverse('payment'))
         user = get_object_or_404(User, username = kwargs['username'])
         student = get_object_or_404(Student, user = user)
         if request.user.is_authenticated and request.user == user:
@@ -200,3 +143,6 @@ class User_update(View):
                 return HttpResponseRedirect(reverse('home'))
 
         return HttpResponseRedirect(reverse('home'))
+
+def payment(request):
+    return render(request, 'Accounts/payment.html', {})
