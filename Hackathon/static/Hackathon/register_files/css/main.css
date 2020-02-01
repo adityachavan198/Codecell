@@ -118,6 +118,10 @@ input[type=range]:active + output {
   .col-2 {
     width: 100%;
   }
+
+  .modal {
+    min-width: 120%;
+  }
 }
 .col-custom {
   width: -webkit-calc((100% - 60px) / 2);
@@ -225,10 +229,6 @@ input[type=range]:active + output {
 /* ==========================================================================
    #BOX-SIZING
    ========================================================================== */
-/**
- * More sensible default box-sizing:
- * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
- */
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -497,11 +497,11 @@ h6 {
 }
 
 .btn--green {
-  background: #00FF00;
+  background: #008000;
 }
 
 .btn--green:hover {
-  background: #4dae3c;
+  background: #00FF00
 }
 
 .btn--blue {
@@ -695,11 +695,12 @@ input {
   position: absolute;
   text-transform: capitalize;
   display: block;
-  color: #00FF00;
+  color: #008000;
   font-size: 14px;
   margin: 0;
   margin-top: 7px;
   left: 0;
+  font-weight: 800;
 }
 
 /* ==========================================================================
@@ -846,5 +847,136 @@ input {
   .card-5 .card-body {
     padding: 40px 30px;
     padding-bottom: 50px;
-  }
+   }
 }
+
+/* ==========================================================================
+   #MODAL
+   ========================================================================== */
+.modals{
+  display: none;
+  font-size: 17px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+  left:0;
+  top:0;
+  height: 100%;
+  width: 100%;
+
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+
+.btn-custom{
+  background:blue;
+  padding: 2em;
+  color: #FFF;
+  border: 0;
+
+}
+
+.btn-custom:hover{
+  background-color: black;
+}
+
+.modal-contents{
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+
+.closeBtn {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+
+.closeBtn:hover, .closeBtn:focus{
+  color: grey;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+   /* ==========================================================================
+   #MODAL-END
+   ========================================================================== */
+
+:root {
+--modal-duration: 1s;
+--modal-color: #6C5EF6;
+}
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+
+  height: 75%;
+  width: 75%;
+  overflow: none;
+
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+#title-modal{
+  font-size: 20px !important;
+}
+.modal-content {
+  margin: 20% auto;
+  width: 65%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+.modal-header h2,
+.modal-footer h3 {
+  margin: 0;
+}
+
+.modal-header {
+  background: var(--modal-color);
+  padding: 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.modal-body {
+  padding: 10px 20px;
+  background: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.close {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+  margin-top: -1.50%;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* @keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */

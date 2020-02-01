@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title Page-->
-    <title>RGIT Hackathon Registration</title>
+    <title>Hackathon Registration</title>
 
     <!-- Icons font CSS-->
     <link href="{% static 'Hackathon/register_files/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'Hackathon/register_files/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Vendor CSS-->
     <link href="{% static 'Hackathon/register_files/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'Hackathon/register_files/vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
@@ -25,28 +25,13 @@
 
 <body>
 {#{{ form.solution1 }}#}
-
-
     <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w960">
-            <div class="card card-5">
-                <div class="card-heading">
-                    <h2 class="title">Registration Form</h2>
+            <div class="card card-5" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="250">
+                <div class="card-heading" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="550">
+                    <h2 class="title" >Registration Form</h2>
                 </div>
-{% if form.errors %}
-    {% for field in form %}
-        {% for error in field.errors %}
-            <div class="alert alert-danger" style="color: #1c7430">
-                <strong>{{ error|escape }}</strong>
-            </div>
-        {% endfor %}
-    {% endfor %}
-    {% for error in form.non_field_errors %}
-        <div class="alert alert-danger" style="color: #1c7430">
-            <strong>{{ error|escape }}</strong>
-        </div>
-    {% endfor %}
-{% endif %}
+
                 <div class="card-body">
                     <form method="POST">
                         {% csrf_token %}
@@ -73,17 +58,6 @@
                             </div>
                         </div>
 
-{#                        <div class="form-row">#}
-{#                              <div class="name">Members</div>#}
-{#                            <div class="value">#}
-{#                                <div class="input-group">#}
-{#                                  <div class="range-control">#}
-{#                                    <input id="inputRange" type="range" min="1" max="4" step="1" value="4" data-thumbwidth="1">#}
-{#                                    <output name="rangeVal">1</output>#}
-{#                                  </div>#}
-{#                                </div>#}
-{#                        </div>#}
-{#                    </div>#}
 
                     <div class="form-row m-b-55">
                         <div class="name">Leader*</div>
@@ -292,12 +266,6 @@
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         {{ form.problem3_selected }}
-{#                                        <select name="subject">#}
-{#                                            <option disabled="disabled" selected="selected" name="problem1_selected" required>Choose Problem Statement</option>#}
-{#                                            <option>How to travel in space</option>#}
-{#                                            <option>How to get rid off stress</option>#}
-{#                                            <option>How to stop rain</option>#}
-{#                                        </select>#}
                                         <div class="select-dropdown"></div>
                                     </div>
                                 </div>
@@ -314,61 +282,6 @@
                             </div>
                         </div>
 
-
-{##}
-{#                        <div class="form-row">#}
-{#                            <div class="name">Solution</div>#}
-{#                            <div class="value">#}
-{#                                <div class="input-group">#}
-{#                                    <input class="input--style-5" type="text" name="email">#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-
-{#                        <div class="form-row">#}
-{#                            <div class="value">#}
-{#                                <div class="input-group">#}
-{#                                    <div class="rs-select2 js-select-simple select--no-search">#}
-{#                                        <select name="subject">#}
-{#                                            <option disabled="disabled" selected="selected">Choose Problem Statement</option>#}
-{#                                            <option>How to travel in space</option>#}
-{#                                            <option>How to get rid off stress</option>#}
-{#                                            <option>How to stop rain</option>#}
-{#                                        </select>#}
-{#                                        <div class="select-dropdown"></div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        #}
-{##}
-{#                        <div class="form-row">#}
-{#                            <div class="value">#}
-{#                                <div class="input-group">#}
-{#                                    <div class="rs-select2 js-select-simple select--no-search">#}
-{#                                        <select name="subject">#}
-{#                                            <option disabled="disabled" selected="selected">Choose Problem Statement</option>#}
-{#                                            <option>How to travel in space</option>#}
-{#                                            <option>How to get rid off stress</option>#}
-{#                                            <option>How to stop rain</option>#}
-{#                                        </select>#}
-{#                                        <div class="select-dropdown"></div>#}
-{#                                    </div>#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        #}
-{#                        <div class="form-row">#}
-{#                            <div class="name">Solution</div>#}
-{#                            <div class="value">#}
-{#                                <div class="input-group">#}
-{#                                    <input class="input--style-5" type="text" name="email">#}
-{#                                </div>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="form-row m-b-55">#}
-
-
                         <div>
                             <button class="btn btn--radius-2 btn--green" type="submit">Register</button>
                         </div>
@@ -377,9 +290,36 @@
             </div>
         </div>
     </div>
+{% if form.errors %}
 
+<!-- Modal Content -->
+  <div id="my-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" onclick="myFunction()">&times;</span>
+        <div class="title" id="title-modal">Errors</div>
+      </div>
+      <div class="modal-body">
+        <p>Please Correct the following errors </p>
+        <p>{% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+    {% endfor %}</p>
+      </div>
+    </div>
+  </div>
+{% endif %}
+<!-- Modal End -->
     <!-- Jquery JS-->
-    <script src="{% static 'Hackathon/register_files/vendor/jquery/jquery.min.js' %}"></script>
+    <!-- <script src="{% static 'Hackathon/register_files/vendor/jquery/jquery.min.js' %}"></script> -->
     <!-- Vendor JS-->
     <script src="{% static 'Hackathon/register_files/vendor/select2/select2.min.js' %}"></script>
     <script src="{% static 'Hackathon/register_files/vendor/datepicker/moment.min.js' %}"></script>
@@ -387,28 +327,24 @@
 
     <!-- Main JS-->
     <script src="{% static 'Hackathon/register_files/js/global.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-            $('input[type="range"]').on('input', function() {
-
-            var control = $(this),
-            controlMin = control.attr('min'),
-            controlMax = control.attr('max'),
-            controlVal = control.val(),
-            controlThumbWidth = control.data('thumbwidth');
-
-            var range = controlMax - controlMin;
-
-            var position = ((controlVal - controlMin) / range) * 100;
-            var positionOffset = Math.round(controlThumbWidth * position / 100) - (controlThumbWidth / 2);
-            var output = control.next('output');
-
-            output
-            .css('left', 'calc(' + position + '% - ' + positionOffset + 'px)')
-            .text(controlVal);
-
-            });
+        AOS.init();
     </script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
+      <!-- Modal JS -->
+      <script>
+        function myFunction() {
+          var x = document.getElementById("my-modal");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+
+      </script>
+      <!--  -->
+</body>
 </html>
 <!-- end document-->

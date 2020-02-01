@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/register_files/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/register_files/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +125,8 @@
       <workItem from="1580216745202" duration="2838000" />
       <workItem from="1580223739966" duration="607000" />
       <workItem from="1580387881938" duration="7017000" />
-      <workItem from="1580473948253" duration="5807000" />
+      <workItem from="1580473948253" duration="6407000" />
+      <workItem from="1580532229765" duration="2120000" />
     </task>
     <servers />
   </component>
@@ -156,10 +151,10 @@
       <screen x="0" y="27" width="1360" height="741" />
     </state>
     <state x="463" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1360.741@0.27.1360.741" timestamp="1580223745773" />
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1580473993598">
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1580532230859">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1580473993598" />
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1580532230859" />
     <state x="343" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579877763458">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
