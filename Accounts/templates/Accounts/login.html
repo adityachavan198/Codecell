@@ -13,7 +13,7 @@
     {% csrf_token %}
   <h1>Login</h1>
   <input type="text"name="username" required placeholder="Username">
-    <span class="helptext" style="color: white" >Username can be 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+    <span class="helptext" style="color: white;font-size: 20px" >Username can be 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
   <input type="password"  name="password" required placeholder="Password">
 
     {% if form.errors %}
@@ -31,10 +31,11 @@
     {% endfor %}
     {% endif %}
   <input type="submit" value="Login">
-
+  
 
 </form>
-
-New user ? <a href="{% url 'register' %}">Click Here</a>
+<a href="{% url 'register' %}" style="text-decoration: none;"><input type="submit" value="Register" ></a>
+<!-- 
+New user ? <a href="{% url 'register' %}">Click Here</a> -->
   </body>
 </html>
