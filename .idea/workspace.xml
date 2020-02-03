@@ -3,14 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/register_files/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/register_files/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -38,7 +52,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Timetable" />
+    <property name="last_opened_file_path" value="$USER_HOME$/temp/mysite/workshop" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
@@ -127,6 +141,8 @@
       <workItem from="1580387881938" duration="7017000" />
       <workItem from="1580473948253" duration="6407000" />
       <workItem from="1580532229765" duration="2120000" />
+      <workItem from="1580658651268" duration="2113000" />
+      <workItem from="1580738185131" duration="2062000" />
     </task>
     <servers />
   </component>
@@ -147,14 +163,14 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580223745773">
+    <state x="463" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580658711821">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="463" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1360.741@0.27.1360.741" timestamp="1580223745773" />
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1580532230859">
+    <state x="463" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1360.741@0.27.1360.741" timestamp="1580658711821" />
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1580738183838">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1580532230859" />
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1580738183838" />
     <state x="343" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579877763458">
       <screen x="0" y="27" width="1360" height="741" />
     </state>

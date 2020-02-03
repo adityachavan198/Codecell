@@ -27,6 +27,9 @@ def hackathon_register(request):
         form = register_form()
     return render(request, template, {'form': form})
 
+def ps(request):
+    return render(request, "Hackathon/ps.html", {})
+
 @xframe_options_exempt
 def shedule(request):
     return render(request, "Hackathon/shedule1.html",{})
