@@ -22,7 +22,7 @@ def hackathon_register(request):
             else:
                 team.size = 2
             team.save()
-            return redirect('hackathon_home')
+            return render(request, "Accounts/registered.html", {})
     else:
         form = register_form()
     return render(request, template, {'form': form})
