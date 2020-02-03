@@ -8,7 +8,7 @@ from django.core.validators import RegexValidator
 class Student(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
 
-    branch=models.CharField(max_length=10, default='Computer', verbose_name="Branch")
+    branch=models.CharField(max_length=30, default='Computer', verbose_name="Branch")
 
     description=models.CharField(max_length=100, blank = True,help_text="Description about yourself")
 
@@ -16,7 +16,7 @@ class Student(models.Model):
 
     gender = models.CharField(max_length = 10)
 
-    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',message="Phone number must be entered in the format: '+999999999'. Up to 12 digits allowed.")
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',message="Phone number must be entered in the format: '9999999999'. Up to 12 digits allowed.")
 
     phone_number = models.CharField(validators=[phone_regex], max_length=14, blank=True)
 

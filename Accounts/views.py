@@ -59,7 +59,9 @@ def register(request):
     if request.method == "POST":
         form1 = user_form(request.POST)
         form2 = student_form(request.POST)
+        print("A")
         if form1.is_valid() and form2.is_valid():
+            print("B")
             user = form1.save()
             user.set_password(user.password)
             user.save()

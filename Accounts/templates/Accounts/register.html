@@ -13,30 +13,46 @@
 
      <h1>Register</h1>
   <input type="text" name="username" maxlength="150" required placeholder="Username">
-    <span class="helptext text-white">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+{#    <span class="helptext text-white">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>#}
   <input type="password"  name="password" placeholder="Password">
 {#  <input type="password" name="" placeholder="Confirm Password">#}
   <input type="email" name="email" maxlength="254" placeholder="Email Address">
 {#  <input type="text" name="" placeholder="College name">#}
-  <input type="text" name="branch" value="Computer" maxlength="10" placeholder="Branch">
+  <input type="text" name="branch" maxlength="30" placeholder="Branch">
   <input type="text" name="phone_number" maxlength="14" placeholder="Phone no.">
 
 
-{% if form.errors %}
-    {% for field in form %}
+{% if form1.errors %}
+    {% for field in form1 %}
         {% for error in field.errors %}
             <div style="color: red">
                 <strong>{{ error|escape }}</strong>
             </div>
         {% endfor %}
     {% endfor %}
-    {% for error in form.non_field_errors %}
+    {% for error in form1.non_field_errors %}
     <div style="color: red">
         <strong>{{ error|escape }}</strong>
     </div>
     {% endfor %}
     {% endif %}
-    <input type="submit" value="Register"></input>
+
+{% if form2.errors %}
+    {% for field in form2 %}
+        {% for error in field.errors %}
+            <div style="color: red">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+    {% for error in form2.non_field_errors %}
+    <div style="color: red">
+        <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <input type="submit" value="Register">
+
 </form>
 </body>
 </html>
