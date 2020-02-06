@@ -48,6 +48,7 @@ def student_login(request):
                     if next_page:
                         return HttpResponseRedirect(next_page)
                     return HttpResponseRedirect(reverse('home'))
+            return render(request, template, {'form': login_form(), 'error':"There was an error while authentication, Please try again!"})
     else:
         if request.user.is_authenticated:
             return HttpResponseRedirect(reverse('home'))

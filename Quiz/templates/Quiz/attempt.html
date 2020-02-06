@@ -1,12 +1,12 @@
 {% extends 'Accounts/base.html' %}
 {% block content %}
-
+    <div style="margin-top: 12vh"></div>
    
 <form enctype="multipart/form-data" method="POST">
     {% csrf_token %}
 
     {% for field in Quiz_form %}
-    <div class="fieldWrapper" style="padding-left: 30px;padding-top: 2vh">
+    <div class="fieldWrapper form-group" style="padding-left: 30px;padding-top: 2vh">
         {{ field.errors }}
        {{ forloop.counter }} ) {{ field.label_tag }} {{ field }}
         {% if field.help_text %}

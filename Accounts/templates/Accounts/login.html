@@ -29,6 +29,12 @@
     </div>
     {% endfor %}
     {% endif %}
+
+    {% if error %}
+        <div style="color: red">
+        <strong>{{ error }}</strong>
+        </div>
+    {% endif %}
   <input type="submit" value="Login">
   
 

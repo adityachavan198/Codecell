@@ -3,13 +3,13 @@
 {% load static %}
 {% block content %}
 
-
+    <div style="margin-top: 20vh"></div>
 		<div class ="container">
 			<div class = "row">
 				<div class = "col-sm-12">
-					<h1> Codecell Quiz Test ::  <font color = "blue"> {{ quiz }} </font> </h1>
+					<h1 style="text-align: justify-all"> Codecell Quiz Test ::  <font color = "blue"> {{ quiz }} </font> </h1>
 					<div class ="table-responsive">
-					<table class = "table table-bordered" style = "margin : 5% 0 ">
+					<table class = "table table-bordered" style = "margin : 5% 0; text-align: center">
 						<thead>
 							<tr>
 								<th colspan = 2> <font color = "green" size = 5><center>Marks : {{marks}}/{{quiz.total_marks}} </center></font></th>
