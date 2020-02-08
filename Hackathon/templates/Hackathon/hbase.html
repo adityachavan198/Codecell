@@ -10,7 +10,7 @@
 
 {# navbar #}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> -->
  <!--    <link rel="stylesheet" href="{% static 'Hackathon/navbar/assets/css/Fixed-Navbar-1.css' %}">
     <link rel="stylesheet" href="{% static 'Hackathon/navbar/assets/css/Fixed-Navbar-2.css' %}">
     <link rel="stylesheet" href="{% static 'Hackathon/navbar/assets/css/Fixed-Navbar.css' %}">
@@ -61,48 +61,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
 {#    first #}
 
+
 </head>
 <body style="background-color: black">
 
-    
-    <div id="navBar" class="navbar-default navbar-dark fixed-top" style="background: black">
+<header id="header">
+    <div id="navBar" class="container-fluid navbar-default navbar-dark fixed-top" style='background-color: black'>
       <nav class="navbar navbar-expand-sm ">
         <div class="container-fluid">
           <!-- Logo -->
-          <a class="navbar-brand" href="{% url 'home' %}" style="color: white">Codecell</a>
-            <button class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarContent"
-              aria-controls="navbarContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+          <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""/></a>
+           <button class="navbar-toggler"
+             type="button"
+             data-toggle="collapse"
+             data-target="#navbarContent"
+             aria-controls="navbarContent"
+             aria-expanded="false"
+             aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width:25px;" alt=""/>
+             </span>
+           </button>
           <!-- navbar links -->
-          <div class="container-fluid collapse navbar-collapse text-center" id="navbarContent" style="background-color: black">
+          <div class="collapse navbar-collapse text-center" id="navbarContent" style="background-color: black">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-
-                <a class="nav-link text-light " role="presentation" href="{% url 'hackathon_register' %}" style="font-size: 22px;padding: 5px 15px 0 15px;">Register</a>
+                <a class="nav-link text-light " role="presentation" href="{% url 'hackathon_register' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Register</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" role="presentation" href="{% url 'ps' %}"  style="font-size: 22px;padding: 5px 15px 0 15px;">Problem statement</a>
+                <a class="nav-link text-light" role="presentation" href="{% url 'ps' %}"  style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Problem statement</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" role="presentation" href="#shedule" style="font-size: 22px;padding: 5px 15px 0 15px;">Schedule</a>
+                <a class="nav-link text-light" role="presentation" href="#shedule" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Schedule</a>
               </li>
                 <li class="nav-item">
-                <a class="nav-link text-light" role="presentation" href="#faq" style="font-size: 22px;padding: 5px 15px 0 15px;">FAQ</a>
+                <a class="nav-link text-light" role="presentation" href="#faq" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">FAQ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" role="presentation" href="#contact" style="font-size: 22px;padding: 5px 15px 0 15px;">Contact Us</a>
+                <a class="nav-link text-light" role="presentation" href="#contact" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Contact Us</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     </div>
+  </header>
+
 
 
 
