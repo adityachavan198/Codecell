@@ -3,18 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codecell/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Codecell/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/templates/Forum/answer_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/templates/Forum/answer_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forum/templates/Forum/askquestion.html" beforeDir="false" afterPath="$PROJECT_DIR$/Forum/templates/Forum/askquestion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz/templates/Quiz/Quiz_category_list_matching.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/templates/Quiz/Quiz_category_list_matching.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz/templates/Quiz/attempt.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/templates/Quiz/attempt.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz/templates/Quiz/correct.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/templates/Quiz/correct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quiz/templates/Quiz/quiz_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/Quiz/templates/Quiz/quiz_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/payment.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +143,8 @@
       <workItem from="1580738185131" duration="2836000" />
       <workItem from="1580741492275" duration="345000" />
       <workItem from="1580744457354" duration="3196000" />
-      <workItem from="1581001177441" duration="2399000" />
+      <workItem from="1581001177441" duration="2523000" />
+      <workItem from="1581136712657" duration="48000" />
     </task>
     <servers />
   </component>
@@ -179,10 +169,10 @@
       <screen x="0" y="27" width="1360" height="741" />
     </state>
     <state x="463" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1360.741@0.27.1360.741" timestamp="1580658711821" />
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1581001176540">
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1581136711051">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1581001176540" />
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1581136711051" />
     <state x="448" y="316" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581002799409">
       <screen x="0" y="27" width="1360" height="741" />
     </state>

@@ -2,9 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Payment_CodeCell</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+    .bg-black{
+        background: rgb(33, 37, 41);
+    }
+    #pay-link{
+        text-decoration: none;
+        color: #00FF00;
+        text-align: center;
+    }
+    div.container{
+        height: 100vh;
+    }
+
+    @media (max-width: 576px) {
+    .instr-1{
+        font-size: 30px;
+    }
+    .instr-2{
+        font-size: 14px;
+    }
+    img.payment{
+        width: 65%;
+    } 
+}
+
+@media (min-width: 576px) {
+    .instr-1{
+        font-size: 38px;
+    }
+    .instr-2{
+        font-size: 16px;
+    }
+    img.payment{
+        width: 65%;
+    } 
+}
+
+@media (min-width: 992px) {
+    .instr-1{
+        font-size: 38px;
+    }
+    .instr-2{
+        font-size: 16px;
+    }
+    img.payment{
+        width: 33%;
+    } 
+}
+
+@media (min-width: 1200px) {
+    .instr-1{
+        font-size: 42px;
+    }
+    .instr-2{
+        font-size: 18px;
+    }
+    img.payment{
+        width: 33%;
+    } 
+
+}
+
+/* img.payment{
+        width: 33%;
+    }  */
+
+    </style>
 </head>
-<body>
-    You have not paid. Please Pay.
+<body class="bg-black">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="d-flex flex-column ">
+            <img class="mx-auto" src="https://omkarc.pythonanywhere.com/static/Accounts/assets/logo.png" width="200px" alt="">
+            <p class="instr-1 text-center pb-0 mb-0" style="color: #ffffff;">You have not done the payment.</p>
+            <p class="instr-2 text-center pb-2" style="color: #ffffff;"> Please complete the payment to activate your account</p>
+            <img class="mx-auto payment" src="https://miro.medium.com/max/785/1*IR2e6Evsopa0qQy2PXTlFA.jpeg" alt="">
+            <a id="pay-link" class="py-2" href="http://www.google.com">7894561203</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
