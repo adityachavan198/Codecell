@@ -3,8 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/team.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/FAQ/assets/css/Faq-by-pomdre.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/FAQ/assets/css/Faq-by-pomdre.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/Fixed-Navbar-1.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/Fixed-Navbar-2.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/Fixed-Navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/Navbar-Centered.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/navbar/assets/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/static/Hackathon/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/static/Hackathon/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/ps.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/ps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +63,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/temp/mysite/workshop" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -146,7 +160,9 @@
       <workItem from="1580744457354" duration="3196000" />
       <workItem from="1581001177441" duration="2523000" />
       <workItem from="1581136712657" duration="432000" />
-      <workItem from="1581225935707" duration="4976000" />
+      <workItem from="1581225935707" duration="5122000" />
+      <workItem from="1581260211081" duration="51000" />
+      <workItem from="1581261554676" duration="1527000" />
     </task>
     <servers />
   </component>
@@ -171,10 +187,10 @@
       <screen x="0" y="27" width="1360" height="741" />
     </state>
     <state x="463" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1360.741@0.27.1360.741" timestamp="1580658711821" />
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1581225935463">
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1581261554689">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1581225935463" />
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1581261554689" />
     <state x="448" y="316" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581002799409">
       <screen x="0" y="27" width="1360" height="741" />
     </state>

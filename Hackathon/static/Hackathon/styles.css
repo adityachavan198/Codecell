@@ -2,11 +2,11 @@ html{
 	scroll-behavior: smooth;
 }
 
-.section-divide{
-	background-color: white;
-	margin: 5vh;
-	margin-bottom: 3vh;
-}
-body{
-	font-family: 'Bree Serif', serif;
+
+#navBar{
+	font-family: 'Nanum Gothic Coding', monospace;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
 }

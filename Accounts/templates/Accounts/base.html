@@ -106,13 +106,16 @@
                   <a class="nav-link text-light" href="{% url 'hackathon_home' %}" style="font-size: 25px;padding: 0 15px 0 10px;">Hackathon</a>
                 </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#codecell" style="font-size: 25px;padding: 0 15px 0 10px;">Codecell</a>
+                <a class="nav-link text-light" href="{% url 'home' %}#codecell" style="font-size: 25px;padding: 0 15px 0 10px;">Codecell</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#about"  style="font-size: 25px;padding: 0 15px 0 10px;">About Us</a>
+                <a class="nav-link text-light" href="{% url 'home' %}#about"  style="font-size: 25px;padding: 0 15px 0 10px;">About Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-light" href="#events" style="font-size: 25px;padding: 0 15px 0 10px;">Events</a>
+                <a class="nav-link text-light" href="{% url 'home' %}#events" style="font-size: 25px;padding: 0 15px 0 10px;">Events</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link text-light" href="{% url 'home' %}#team" style="font-size: 25px;padding: 0 15px 0 10px;">Our Team</a>
               </li>
                 <li class="nav-item">
                 <a class="nav-link text-light" href="{% url 'authenticate' %}" style="font-size: 25px;padding: 0 15px 0 10px;">Login</a>
