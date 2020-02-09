@@ -111,7 +111,7 @@ input[type=range]:active + output {
 .col-2 {
   width: -webkit-calc((100% - 60px) / 2);
   width: -moz-calc((100% - 60px) / 2);
-  width: calc((100% - 220px) / 2);
+  width: calc((100% - 100px)/2);
 }
 
 @media (max-width: 767px) {
@@ -180,7 +180,7 @@ input[type=range]:active + output {
 
 .col-3,
 .col-9 {
-  padding: 0 15px;
+  padding: 10 15px;
   position: relative;
   width: 100%;
   min-height: 1px;
@@ -379,6 +379,14 @@ h6 {
   background: -moz-linear-gradient(bottom left, #08aeea 0%, #b721ff 100%);
   background: -o-linear-gradient(bottom left, #08aeea 0%, #b721ff 100%);
   background: linear-gradient(to top right, #08aeea 0%, #b721ff 100%);
+}
+
+.bg-gra-04 {
+  background: -webkit-gradient(linear, left bottom, right top, from(#868f96), to(#596164));
+  background: -webkit-linear-gradient(bottom left, #868f96 0%, #596164 100%);
+  background: -moz-linear-gradient(bottom left, #868f96 0%, #596164 100%);
+  background: -o-linear-gradient(bottom left, #868f96 0%, #596164 100%);
+  background: linear-gradient(to top right, #868f96 0%, #596164 100%);
 }
 
 /* ==========================================================================
@@ -656,7 +664,7 @@ input {
 }
 
 .input--style-5 {
-  background: white;
+  background: gray;
   line-height: 50px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
