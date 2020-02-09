@@ -1,19 +1,22 @@
-<!DOCTYPE html>
+{#<!DOCTYPE html>#}
+{##}
+{#<html>#}
+{#{% load static %}#}
+{#<head>#}
+{#    <meta charset="utf-8">#}
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">#}
+{#    <title>Team</title>#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">#}
+{#    <link rel="stylesheet" href="{% static 'Accounts/team/assets/css/styles.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'Accounts/team/assets/css/Team-with-rotating-cards.css' %}">#}
+{#</head>#}
+{##}
+{#<body>#}
 
-<html>
-{% load static %}
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Team</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'Accounts/team/assets/css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'Accounts/team/assets/css/Team-with-rotating-cards.css' %}">
-</head>
-
-<body>
-    <!-- Start: Team with rotating cards -->
+{% extends 'Accounts/base.html' %}
+{% block content %}
+ <!-- Start: Team with rotating cards -->
     <section class="card-section-imagia">
         <!-- Start: H1 -->
         <h1>Our team</h1>
@@ -44,7 +47,7 @@
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
-                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                                
                                 <!-- End: footer -->
                             </div>
                             <!-- End: front -->
@@ -91,7 +94,7 @@
                                     <p class="subtitle-imagia">Founder</p>
                                     <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
                                 </div>
-                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                                
                             </div>
                             <!-- End: front -->
                             <!-- Start: back -->
@@ -140,7 +143,7 @@
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
-                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                                
                                 <!-- End: footer -->
                             </div>
                             <!-- End: front -->
@@ -194,7 +197,7 @@
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
-                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                                
                                 <!-- End: footer -->
                             </div>
                             <!-- End: front -->
@@ -241,7 +244,7 @@
                                     <p class="subtitle-imagia">Founder</p>
                                     <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
                                 </div>
-                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                                
                             </div>
                             <!-- End: front -->
                             <!-- Start: back -->
@@ -290,7 +293,7 @@
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
-                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                                
                                 <!-- End: footer -->
                             </div>
                             <!-- End: front -->
@@ -344,7 +347,7 @@
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
-                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
+                                
                                 <!-- End: footer -->
                             </div>
                             <!-- End: front -->
@@ -391,7 +394,6 @@
                                     <p class="subtitle-imagia">Founder</p>
                                     <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
                                 </div>
-                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
                             </div>
                             <!-- End: front -->
                             <!-- Start: back -->
@@ -439,9 +441,6 @@
                                     <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
                                 </div>
                                 <!-- End: texte -->
-                                <!-- Start: footer -->
-                                <div class="footer-imagia"><span><i class="fa fa-plus"></i> More info</span></div>
-                                <!-- End: footer -->
                             </div>
                             <!-- End: front -->
                             <!-- Start: back -->
@@ -474,8 +473,9 @@
 
         </div>
     </section>
-    <!-- End: Team with rotating cards -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+{% endblock %}
+{#    <!-- End: Team with rotating cards -->#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>#}
+{#</body>#}
+{#</html>#}
