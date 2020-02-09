@@ -27,6 +27,7 @@ urlpatterns = [
     path('quiz/', include(Quiz_urls.Quiz_url_patterns)), # urls in quiz category
     path('forum/', include(Forum_urls.Forum_url_patterns)), # urls in forums
     path('hackathon/', include(Hackathon_urls.Hackathon_url_patterns)),
+    path('team/', views.team, name = "team"),
     # re_path(r'^(?P<username>[\w|W-]+)/$', views.User_profile.as_view() , name = "user_profile"),
     # re_path(r'^(?P<username>[\w|W-]+)/update/$', views.User_update.as_view() , name = "profile_update"),
 ]

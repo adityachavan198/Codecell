@@ -3,7 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="fa5a487e-b380-4b66-9d2f-067f64e46594" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/payment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/templates/Accounts/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/templates/Accounts/team.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codecell/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Codecell/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hackathon_register1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/hbase.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hackathon/templates/Hackathon/ps.html" beforeDir="false" afterPath="$PROJECT_DIR$/Hackathon/templates/Hackathon/ps.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +153,8 @@
       <workItem from="1580741492275" duration="345000" />
       <workItem from="1580744457354" duration="3196000" />
       <workItem from="1581001177441" duration="2523000" />
-      <workItem from="1581136712657" duration="48000" />
+      <workItem from="1581136712657" duration="432000" />
+      <workItem from="1581225935707" duration="3318000" />
     </task>
     <servers />
   </component>
@@ -169,10 +179,10 @@
       <screen x="0" y="27" width="1360" height="741" />
     </state>
     <state x="463" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1360.741@0.27.1360.741" timestamp="1580658711821" />
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1581136711051">
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog" timestamp="1581225935463">
       <screen x="0" y="27" width="1360" height="741" />
     </state>
-    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1581136711051" />
+    <state x="336" y="225" key="com.intellij.ide.util.TipDialog/0.27.1360.741@0.27.1360.741" timestamp="1581225935463" />
     <state x="448" y="316" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581002799409">
       <screen x="0" y="27" width="1360" height="741" />
     </state>

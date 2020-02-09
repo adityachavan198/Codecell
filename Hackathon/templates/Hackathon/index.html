@@ -9,6 +9,8 @@
     <!-- Title Page-->
     <title>Hackathon Registration</title>
 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
     <!-- Icons font CSS-->
     <link href="{% static 'Hackathon/register_files/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
     <link href="{% static 'Hackathon/register_files/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
@@ -24,8 +26,51 @@
 </head>
 
 <body>
+
+
+<header id="header">
+    <div id="navBar" class="container-fluid navbar-default navbar-dark fixed-top" style='background-color: black'>
+      <nav class="navbar navbar-expand-sm ">
+        <div class="container-fluid">
+          <!-- Logo -->
+          <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""/></a>
+           <button class="navbar-toggler"
+             type="button"
+             data-toggle="collapse"
+             data-target="#navbarContent"
+             aria-controls="navbarContent"
+             aria-expanded="false"
+             aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><img src="{% static 'Accounts/assets/Ham.png' %}" style="width:25px;" alt=""/>
+             </span>
+           </button>
+          <!-- navbar links -->
+          <div class="collapse navbar-collapse text-center" id="navbarContent" style="background-color: black">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link text-light " role="presentation" href="{% url 'hackathon_register' %}" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" role="presentation" href="{% url 'ps' %}"  style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Problem statement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" role="presentation" href="{% url 'hackathon_home' %}#shedule" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Schedule</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link text-light" role="presentation" href="{% url 'hackathon_home' %}#faq" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" role="presentation" href="{% url 'hackathon_home' %}#contact" style="font-size: 25px;padding-left: 10px;padding-right: 10px;">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
 {#{{ form.solution1 }}#}
-    <div class="page-wrapper p-t-45 p-b-50">
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" style="margin-top: 12vh">
         <div class="wrapper wrapper--w960">
             <div class="card card-5" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="250">
                 <div class="card-heading" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="550">
