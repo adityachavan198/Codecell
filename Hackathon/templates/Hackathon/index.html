@@ -69,8 +69,8 @@
     </div>
   </header>
 
-{#{{ form.solution1 }}#}
-    <div class="page-wrapper bg-gra-04 p-t-45 p-b-50" style="margin-top: 0vh">
+{#{{ form.as_p }}#}
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50" style="margin-top: 0vh">
         <div class="wrapper wrapper--w960" style="padding-top: 8vh">
             <div class="card card-5" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="250">
                 <div class="card-heading" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="550">
@@ -87,11 +87,6 @@
                                     <input class="input--style-5" maxlength="50" required type="text" name="name" id="{{ form.name.auto_id }}">
                                 </div>
                             </div>
-                                    {% for error in form.name.errors %}
-                                    <div class="alert alert-danger" style="color:greenyellow">
-                                    <strong>{{ error|escape }}</strong>
-                                    </div>
-                                    {% endfor %}
                         </div>
 
                          <div class="form-row">
@@ -130,8 +125,17 @@
                             <div class="row row-refine">
                                 <div class="col-3">
                                     <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="leader_year" maxlength="20" required>
-                                        <label class="label--desc">Current Year</label>
+                                        <select name="leader_year" id="id_mate2_year">
+                                              <option value="First Year">First Year</option>
+
+                                              <option value="Second Year">Second Year</option>
+
+                                              <option value="Third Year">Third Year</option>
+
+                                              <option value="Fourth Year">Fourth Year</option>
+
+                                            </select>
+                                            <label class="label--desc">Current Year*</label>
                                     </div>
                                 </div>
                                 <div class="col-9">
@@ -169,8 +173,17 @@
                             <div class="row row-refine">
                                 <div class="col-3">
                                     <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="mate2_year" maxlength="20" required>
-                                        <label class="label--desc">Current Year</label>
+                                        <select name="mate2_year" id="id_mate2_year">
+                                              <option value="First Year">First Year</option>
+
+                                              <option value="Second Year">Second Year</option>
+
+                                              <option value="Third Year">Third Year</option>
+
+                                              <option value="Fourth Year">Fourth Year</option>
+
+                                            </select>
+                                        <label class="label--desc">Current Year*</label>
                                     </div>
                                 </div>
                                 <div class="col-9">
@@ -208,7 +221,16 @@
                             <div class="row row-refine">
                                 <div class="col-3">
                                     <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="mate3_year" maxlength="20">
+                                        <select name="mate3_year" id="id_mate2_year">
+                                              <option value="First Year">First Year</option>
+
+                                              <option value="Second Year">Second Year</option>
+
+                                              <option value="Third Year">Third Year</option>
+
+                                              <option value="Fourth Year">Fourth Year</option>
+
+                                            </select>
                                         <label class="label--desc">Current Year</label>
                                     </div>
                                 </div>
@@ -248,7 +270,16 @@
                             <div class="row row-refine">
                                 <div class="col-3">
                                     <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="mate4_year" maxlength="20">
+                                        <select name="mate4_year" id="id_mate2_year">
+                                              <option value="First Year">First Year</option>
+
+                                              <option value="Second Year">Second Year</option>
+
+                                              <option value="Third Year">Third Year</option>
+
+                                              <option value="Fourth Year">Fourth Year</option>
+
+                                            </select>
                                         <label class="label--desc">Current Year</label>
                                     </div>
                                 </div>
@@ -261,71 +292,55 @@
                             </div>
                         </div>
                     </div>
-                        <div class="form-row">
-                            <div class="name">Select Problem Statement 1*</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        {{ form.problem1_selected }}
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="form-row">
-                            <div class="name">Solution 1*</div>
-                            <div class="value">
-                                <div class="md-form">
-                                      <i class="fas fa-pencil-alt prefix"></i>
-                                      <textarea class="lg-textarea form-control" rows="5" name="solution1" maxlength="500" style="width: 100%"></textarea>
-                                    </div>
-                            </div>
-                        </div>
+                    <div class="form-row m-b-55">
+                        <div class="name">Domain 1</div>
+                   <select name="domain1" class="select-group" required id="id_domain1">
 
-                        <div class="form-row">
-                            <div class="name">Select Problem Statement 2</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        {{ form.problem2_selected }}
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <option value="" selected>---------</option>
 
-                        <div class="form-row">
-                            <div class="name">Solution 2</div>
-                            <div class="value">
-                                <div class="md-form">
-                                      <i class="fas fa-pencil-alt prefix"></i>
-                                      <textarea class="lg-textarea form-control" rows="5" name="solution2" maxlength="500" style="width: 100%"></textarea>
-                                    </div>
-                            </div>
-                        </div>
+                      <option value="Machine Learning / Artificial Intelligence">Machine Learning / Artificial Intelligence</option>
 
-                        <div class="form-row">
-                            <div class="name">Select Problem Statement 3</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        {{ form.problem3_selected }}
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                      <option value="Blockchain">Blockchain</option>
 
-                        <div class="form-row">
-                            <div class="name">Solution 3</div>
-                            <div class="value">
-                                <div class="md-form">
-                                      <i class="fas fa-pencil-alt prefix"></i>
-                                      <textarea class="lg-textarea form-control" rows="5" name="solution3" maxlength="500" style="width: 100%"></textarea>
-                                    </div>
-                            </div>
+                      <option value="Web Development">Web Development</option>
+
+                      <option value="Android Application">Android Application</option>
+
+                    </select>
                         </div>
+                        <div class="form-row m-b-55">
+                    <div class="name">Domain 2</div>
+                            <select name="domain2" class="select-group" required id="id_domain2">
+                      <option value="" selected>---------</option>
+
+                      <option value="Machine Learning / Artificial Intelligence">Machine Learning / Artificial Intelligence</option>
+
+                      <option value="Blockchain">Blockchain</option>
+
+                      <option value="Web Development">Web Development</option>
+
+                      <option value="Android Application">Android Application</option>
+
+                    </select>
+                            </div>
+                            <div class="form-row m-b-55">
+                    <div class="name">Domain 3</div>
+                        <select name="domain3" class="select-group" required id="id_domain3">
+                      <option value="" selected>---------</option>
+
+                      <option value="Machine Learning / Artificial Intelligence">Machine Learning / Artificial Intelligence</option>
+
+                      <option value="Blockchain">Blockchain</option>
+
+                      <option value="Web Development">Web Development</option>
+
+                      <option value="Android Application">Android Application</option>
+
+                    </select>
+                    </div>
+
+                    <!--select-->
 
                         <div>
                             <button class="btn btn--radius-2 btn--green" type="submit">Register</button>
@@ -388,6 +403,22 @@
           }
         }
 
+        const selects = document.querySelectorAll('.select-group');
+selects.forEach((elem) => {
+  elem.addEventListener('change', (event) => {
+    let values = Array.from(selects).map(select => select.value);
+    for (let select of selects) {
+      select.querySelectorAll('option').forEach((option) => {
+        let value = option.value;
+        if (value &&  value !== select.value && values.includes(value)) {
+          option.disabled = true;
+        } else {
+          option.disabled = false;
+        }
+      });
+    }
+  });
+});
       </script>
       <!--  -->
 </body>

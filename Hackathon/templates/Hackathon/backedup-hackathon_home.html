@@ -1,0 +1,242 @@
+{% extends 'Hackathon/hbase.html' %}
+{% block content %}
+
+{% load static %}
+
+
+        <!-- first header -->
+    <!-- Start: Network Particles Hero -->
+    <div class="jumbotron jumbotron-fluid jumbotron-main" style="height:100vh;width:100%;"><script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+    <div id="particles-js">
+	<canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
+	</div>
+        <div class="container center-vertically-holder" >
+            <div class="row center-vertically">
+                <div class="col-12 text-center" style="margin-top:100px;margin-bottom:100px;">
+                    <strong data-aos="fade-down" data-aos-duration="1000" data-aos-delay="700" style="font-size: 3vmax">Hackathon 2020</strong>
+                    <p data-aos="fade-up" data-aos-duration="650" data-aos-delay="1450" id="hero-subtitle" style="margin-top:19px;font-size:2vmax;font-family:Poppins, sans-serif;">RGIT Codecell presents&nbsp;<strong> Major Hacathon </strong>&nbsp;&amp;&nbsp;<strong>Coding Competion</strong>&nbsp on 13 March, 2020.&nbsp;</p><button class="btn btn-primary" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="1500"
+                       onclick="location.href = '{% url 'hackathon_register' %}';" id="hero-btn" type="button">Register now&nbsp;<i class="fa fa-angle-double-right tada animated"></i>&nbsp;</button></div>
+            </div>
+        </div>
+    </div>
+    <!-- End: Network Particles Hero -->
+        <!-- first header -->
+
+ <hr size="40" class="section-divide">
+    <!-- Start: ♣ Countdown BS4 ♣ -->
+    <section class="py-5 bg-black text-white">
+        <!-- Start: Big countdown -->
+        <div class="container text-center boxed-countdown" data-countdown="03/13/2020 08:00:00">
+            <div class="row">
+                 <div class="col-12 mb3 text-center">
+                    <b class="text-center" style='font-size:5vh; font-weight: 900'>Countdown to Hackathon</b>
+                </div>
+                <!-- Start: Days -->
+                <div class="col-6 col-md-3 mt-3">
+                    <p class="number-days m-0 rounded-top">00</p>
+                    <p class="text-countdown rounded-bottom">DAYS</p>
+                </div>
+                <!-- End: Days -->
+                <!-- Start: Hours -->
+                <div class="col-6 col-md-3 mt-3">
+                    <p class="number-hours m-0 rounded-top">00</p>
+                    <p class="text-countdown rounded-bottom">HOURS</p>
+                </div>
+                <!-- End: Hours -->
+                <!-- Start: Minutes -->
+                <div class="col-6 col-md-3 mt-3">
+                    <p class="number-minutes m-0 rounded-top">00</p>
+                    <p class="text-countdown rounded-bottom">MINUTES</p>
+                </div>
+                <!-- End: Minutes -->
+                <!-- Start: Seconds -->
+                <div class="col-6 col-md-3 mt-3">
+                    <p class="number-seconds m-0 rounded-top">00</p>
+                    <p class="text-countdown rounded-bottom">seconds</p>
+                </div>
+                <!-- End: Seconds -->
+            </div>
+        </div>
+        <!-- End: Big countdown -->
+        <!-- Start: Inline countdown -->
+        <div class="container">
+{#            <p class="text-center mt-5 text-light" data-countdown="03/13/2020 08:00:00"><span class="number-days">00</span>&nbsp;days <span class="number-hours">00</span>&nbsp;hours <span class="number-minutes">00</span>&nbsp;minutes <span class="number-seconds">00</span>&nbsp;seconds to go !!<br></p>#}
+        </div>
+        <!-- End: Inline countdown -->
+            <h3><p class="text-center mt-5 text-light">Are you a Coder ? It's time to prove it .</p></h3>
+    </section>
+    <!-- End: ♣ Countdown BS4 ♣ -->
+
+     <hr size="40" class="section-divide">
+        <div id="shedule"></div>
+        <iframe height="auto" width="100%" scrolling="no" frameborder=0 sandbox="allow-same-origin" style="margin-bottom: 2vh"
+        onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';" src="{% url 'shedule' %}"></iframe>
+
+    <hr size="40" class="section-divide">
+
+    <!-- Start: Faq by pomdre -->
+    <div id="faq"></div>
+    <section id="faq" style="padding: 2px;margin: 11px;">
+        <h2 class="text-uppercase text-center" style="font-size: 48;color: white">FAQ</h2>
+        <!-- Start: br --><br >
+        <!-- End: br -->
+        <div class="container">
+            <div class="faqelement"><button class="btn btn-primary faq on" type="button" style="box-shadow: none;">What is a hackathon?&nbsp;</button>
+                <div class="panel">
+                    <p>As the very same suggests, in hackathon we try to use tech to hack into real world problems to solve them better. It is a marathon of building, creating, producing and delivering a product in a short amount of time.
+</p>
+                </div>
+            </div>
+            <!-- Start: br --><br >
+            <!-- End: br -->
+            <div class="faqelement"><button class="btn btn-primary faq on" type="button" style="box-shadow: none;">What is the  selection criteria?&nbsp;</button>
+                <div class="panel">
+                    <p>Evaluation criteria will include novelty of the idea, complexity, clarity and details in the
+prescribed format, feasibility, practicability, sustainability, scale of impact, user experience and
+potential for future work progression.</p>
+                </div>
+            </div>
+            <!-- Start: br --><br >
+            <!-- End: br -->
+
+            <div class="faqelement"><button class="btn btn-primary faq on" type="button" style="box-shadow: none;"> How to form a team?&nbsp;</button>
+                <div class="panel">
+                    <p>Each team should consist of two to four members including a team leader. The team members can be of any institute or branch.</p>
+                </div>
+            </div>
+<!-- Start: br --><br >
+            <!-- End: br -->
+
+            <div class="faqelement"><button class="btn btn-primary faq on" type="button" style="box-shadow: none;">What should I bring along?&nbsp;</button>
+                <div class="panel">
+                    <p>Bring your student ID , laptop, charger, and anything you would need for a sleepover. </p>
+                </div>
+            </div>
+
+            <!-- Start: br --><br >
+            <!-- End: br -->
+
+
+            <div class="faqelement"><button class="btn btn-primary faq on" type="button" style="box-shadow: none;"> How do I register for the RGIT Recursion?&nbsp;</button>
+                <div class="panel">
+                    <p>All teams should register here on the website itself. The deadline for the registrations are 25th feb. </p>
+                </div>
+            </div>
+<!-- Start: br --><br >
+            <!-- End: br -->
+
+            <div class="faqelement"><button class="btn btn-primary faq on" type="button" style="box-shadow: none;"> What should I not bring?&nbsp;</button>
+                <div class="panel">
+                    <p>Any kind of weapons, drugs , alcohol are strictly not permitted. </p>
+                </div>
+            </div>
+
+            <!-- Start: br --><br >
+            <!-- End: br -->
+
+            <div class="faqelement"><button class="btn btn-primary faq on" type="button" style="box-shadow: none;"> How do What will be provided during a hackathon?&nbsp;</button>
+                <div class="panel">
+                    <p>Food, water, refreshments, prizes, (interships), vouchers, bedding , desktop computers etc. will be provided during the hackathon.</p>
+                </div>
+            </div>
+
+            <!-- Start: br --><br >
+            <!-- End: br -->
+
+
+            <div class="faqelement"><button class="btn btn-primary faq on" type="button" style="box-shadow: none;">  Is it allowed to code or make notes before coming to the hackathon?&nbsp;</button>
+                <div class="panel">
+                    <p>You can come prepared with half baked codes , APIs and modules. </p>
+                </div>
+            </div>
+
+            <!-- Start: br --><br >
+            <!-- End: br -->
+
+            <div class="faqelement"><button class="btn btn-primary faq on" type="button" style="box-shadow: none;">Question&nbsp;</button>
+                <div class="panel">
+                    <p>Answer. </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="container"></div>
+    </section>
+    <!-- End: Faq by pomdre -->
+
+    <hr size="40" class="section-divide">
+
+   <!-- sponsors -->
+    <div class="container text-center my-3">
+<h3 style="color: white;padding: 20px">Our Sponsors</h3>
+    <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+        <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item row no-gutters active">
+                <div class="col-3 float-left"><img class="img-fluid" src="{% static 'Hackathon/sponsors/assets/img/slider_1.jpg' %}"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="{% static 'Hackathon/sponsors/assets/img/slider_2.jpg' %}"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="{% static 'Hackathon/sponsors/assets/img/slider_3.jpg' %}"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="{% static 'Hackathon/sponsors/assets/img/slider_4.jpg' %}"></div>
+            </div>
+            <div class="carousel-item row no-gutters">
+                <div class="col-3 float-left"><img class="img-fluid" src="{% static 'Hackathon/sponsors/assets/img/slider_1.jpg' %}"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="{% static 'Hackathon/sponsors/assets/img/slider_2.jpg' %}"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="{% static 'Hackathon/sponsors/assets/img/slider_3.jpg' %}"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="{% static 'Hackathon/sponsors/assets/img/slider_4.jpg' %}"></div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+</div>
+    <!-- sponsors -->
+
+
+	</div>
+    <hr size="40" class="section-divide">
+    <div id="contact"></div>
+   <div class="container " style="padding-bottom: 3vh;padding: 1vh">
+    <p style="color: white;font-size: 2vmax;text-align: center;margin-bottom: 2vh">Address</p>
+    <div class="row">
+            <div class="col-sm-6 align-content-center text-white">
+             <!-- <div class="col-md-2"> -->
+                <p class="text-md-center" style="color: white;font-size: 2vmax">Contact Us</p>
+                <hr>
+         <!--    </div>
+            <div class="col-md-6"> -->
+{#                <div class="col-sm-6" style="align-items: center">#}
+                <address>
+                <strong>Address</strong> :- Rajiv Gandhi Institute of Technology
+                Juhu Versova Link Rd, behind HDFC Bank, Gharkul Society, Bharat Nagar, Versova, Andheri West, Mumbai, Maharashtra 400053
+                    <br>
+                <strong>Call at</strong> :- <a href="tel:+91 123456789"">+91 123456789</a>
+                    <br>
+                <strong>Email at</strong> :- <a href="mailto:rgitcodecell@gmail.com?Subject=Doubts" target="_top">rgitcodecell@gmail.com</a>
+                    </address>
+{#                </div>#}
+
+
+{#                <form>#}
+{#                    <fieldset class="form-group">#}
+{#                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">#}
+{#                    </fieldset>#}
+{#                    <fieldset class="form-group">#}
+{#                        <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>#}
+{#                    </fieldset>#}
+{#                    <fieldset class="form-group text-xs-right">#}
+{#                        <button type="button" class="btn btn-light btn-lg">Send</button>#}
+{#                    </fieldset>#}
+{#                </form>#}
+            </div>
+
+            <div class="col-sm-6 mapouter"><div class="gmap_canvas map-responsive"><iframe width="350" height="290" id="gmap_canvas" src="https://maps.google.com/maps?q=Rajiv%20gandhi%20institute%20of%20technology%2Cmumbai&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:290px;width:350px;}.gmap_canvas {overflow:hidden;background:none!important;height:292px;width:350px;}</style></div>
+
+    </div>
+   </div>
+
+{% endblock %}
