@@ -2,28 +2,25 @@ html{
   scroll-behavior: smooth;
 }
 .box{
-		width: 100%;
-		/*height: 100vh;*/
-		/*padding: 40px 60px;*/
-		}
+    width: 100%;
+    /*height: 100vh;*/
+    /*padding: 40px 60px;*/
+}
 
-	.section1{
-/*		background-image: url("back1.jpg");
-		opacity: 95%;
-		background-repeat: no-repeat;*/
-		height:90vh;
+.section1{
+    height:90vh;
     width: auto;
-		background-color: black;
-		/*background-size: cover;*/
-	}
+    background-color: black;
+    text-align: center;
+}
 
 p{
 	font-size: 20px;
 }
 
 h1 {
-  font-size: 5vmax;
-  color: white;
+    font-size: 5vmax;
+    color: white;
 }
 
 @keyframes typewriter{
@@ -46,7 +43,7 @@ h1 {
 
 .text_1 {
   position: relative;
-  top: 50%;  
+  top: 50%;
   width: 10em;
   margin: 0;
   border-right: 2px solid rgba(255,255,255,.75);
@@ -54,7 +51,7 @@ h1 {
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  transform: translateY(-50%); 
+  transform: translateY(-50%);
   animation: typewriter 1s steps(44) 1s 1 normal both,
   blinkTextCursor 1000ms steps(44) infinite normal ;
 }
@@ -67,7 +64,7 @@ h2{
 .anim{
   font-size: 2vmax;
   position: relative;
-  top: 0%;  
+  top: 0%;
   width: 24em;
   margin: 0;
   border-right: 2px solid rgba(255,255,255,.75);
@@ -75,7 +72,7 @@ h2{
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  transform: translateY(-50%); 
+  transform: translateY(-50%);
   animation: typewriter2 1.5s steps(44) 2.5s 1 normal both,
   blinkTextCursor2 500ms steps(44) infinite normal ;
 }
@@ -102,6 +99,10 @@ h2{
     transform: translate(0);
   }
 }
-
-
-
+.logo-on-page{
+    text-align: center;
+    display: block;
+    padding-top: 10%;
+    padding-left: auto;
+    /* transform: translateX(-50%); */
+}
