@@ -1,11 +1,11 @@
 {% extends 'Accounts/base.html' %} {% block content %} {% load static %}
 <div class="section1 box" id="codecell" style="height:100vh">
-  <div class="logo-on-page">
+  <div class="logo-on-page d-block">
     <img
       src="{% static 'Accounts/assets/logo.png' %}"
       alt=""
       width="50%"
-      style="position: relative"
+      style="position: relative; padding-top: 100px"
     />
   </div>
   <br />
@@ -21,7 +21,7 @@
   </center>
 </div>
 
-<div id="about" style="height:100vh;padding-top: 50px;">
+<div class="d-block"id="about" style="height:100vh;padding-top: 50px;">
   <div class="container" style="text-align: center;">
     <img
       class="imgRight"
@@ -30,7 +30,7 @@
     />
     <h2 class="upperTop">What is Codecell?</h2>
     <p class="lowerBottom">
-      The Platform Where All Of Us Share The Love Of Coding. We Have Interesting Events Such As Reach & Teach Programs, Project Drives, Hackathons And Weekly Challenges Lined Up For You! Interact With Other Coders To Grow Your Knowledge Base And Get Your Hands On The Demanding Technologies In Industries. 
+      The Platform Where All Of Us Share The Love Of Coding. We Have Interesting Events Such As Reach & Teach Programs, Project Drives, Hackathons And Weekly Challenges Lined Up For You! Interact With Other Coders To Grow Your Knowledge Base And Get Your Hands On The Demanding Technologies In Industries.
     </p>
   </div>
 
@@ -42,7 +42,7 @@
     />
     <h2 class="upperTop">Who are we?</h2>
     <p class="lowerBottom">
-        We Helps You Understand The Coding World Outside Our College With This Platform Of Codecell, With The Help Of Our Platform, We Together Aim that The Members Of This Community Shall Grow To Become Better Coders! Introduce Yourself To The World Of Programming And Grow As You Code. 
+        We Helps You Understand The Coding World Outside Our College With This Platform Of Codecell, With The Help Of Our Platform, We Together Aim that The Members Of This Community Shall Grow To Become Better Coders! Introduce Yourself To The World Of Programming And Grow As You Code.
     </p>
   </div>
   <!-- </div> -->
@@ -50,32 +50,31 @@
 
 <div
   id="events"
-  style="height:100%;background-color: black;padding-top: 40px;padding-bottom: 20px"
->
-  <div class="container-fluid" style="background-color: black;padding: 10px">
+  style="height:100%;background-color: black;padding-top: 40px;padding-bottom: 20px">
+  <div class="container" style="background-color: black;padding: 10px">
     <h2 class="" style="color: white;text-align: center;">Our Events</h2>
     <center>
-      <div class="container-fluid row">
+      <div class="container row">
         <div class="col-lg-6 col-sm-12">
-          <a href="{% url 'hackathon_home' %}"
-            ><img
-              src="{% static 'Accounts/assets/hack1.jpeg' %}"
-              style="padding: 3vmin; height: 32vmax;width: 40vmax;"
-              class="img-fluid "
+          <a href="{% url 'hackathon_home' %}"><img
+              src="{% static 'Accounts/assets/Recursion.jpeg' %}"
+              style="padding: 3vmin; height: 24vmax;;"
+              class="img"
           /></a>
         </div>
         <div class="col-lg-6 col-sm-12">
           <p
-            class=""
-            style=" margin-top: 20vmin; padding: 3vmin;color: white;margin-bottom: 3vh;text-align: center;"
-          >
+            class="h4 text-justify"
+            style=" margin-top: 5vmin; padding: 3vmin;color: white; margin-bottom: 3vh;text-align: center;"
+            >
+
             Become A Source Code Champion, Participate In The Hackathon Event Organized By RGIT CodeCell, Get Your Hands Dirty Of The Top Trending Technologies Currently Dominating The Industry Like Android, Web, ML/AI And Much More.... Check Out And Register For An Awesome Level Of Coding Experience.
           </p>
         </div>
       </div>
 
       <div class="container-fluid row ">
-        
+
       </div>
     </center>
   </div>
