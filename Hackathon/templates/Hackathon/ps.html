@@ -4,21 +4,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Start your development with a Design System for Bootstrap 4.">
-  <meta name="author" content="Creative Tim">
+
   <title>Problem Statement - CodeCell</title>
+  
   <link rel="stylesheet" href="{% static 'Hackathon/styles.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 
   <!-- Favicon -->
   <link href="{% static 'Hackathon/ps/assets/img/brand/favicon.png' %}" rel="icon" type="image/png">
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"> -->
   <!-- Icons -->
   <link href="{% static 'Hackathon/ps/assets/vendor/nucleo/css/nucleo.css' %}" rel="stylesheet">
   <link href="{% static 'Hackathon/ps/assets/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
   <!-- Argon CSS -->
   <link type="text/css" href="{% static 'Hackathon/ps/assets/css/argon.css' %}" rel="stylesheet">
+  <style>
+
+    a.nav-link
+    {
+      font-family: 'Nanum Gothic Coding', monospace !important; 
+      font-size: 25px !important; 
+      font-weight: 400 !important;  
+      line-height: 1.5 !important;
+      color: white !important;
+      padding: 8px 5.495px !important;
+  
+    }
+
+    .navbar{
+      padding-top: 0.5rem !important;
+      padding-bottom: 1rem !important;
+    }
+  </style>
 </head>
 
 
@@ -27,7 +45,7 @@
 
 <header id="header">
     <div id="navBar" class="container-fluid navbar-default navbar-dark fixed-top" style="background-color: black; color: white !important;">
-      <nav class="navbar navbar-expand-sm ">
+      <nav class="navbar navbar-expand-sm">
         <div class="container-fluid">
           <!-- Logo -->
           <a class="logo" href="{% url 'home' %}"><img src="{% static 'Accounts/assets/logo.png' %}" width="200px;" alt=""/></a>
@@ -87,21 +105,21 @@
               </div>
               <div class="pl-4">
                 <h4 class="display-3 text-white">Problem Statements</h4>
-                <p class="text-white">The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever.</p>
+                <p class="text-white">Choose from the domain you expertise in.</p>
               </div>
             </div>
             <div class="card shadow shadow-lg--hover mt-5 bg-gradient-gray-dark">
               <div class="card-body">
                 <div class="d-flex px-3">
                   <div>
-                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
                       <i class="ni ni-laptop"></i>
                     </div>
                   </div>
                   <div class="pl-4">
-                    <h5 class="title text-success">Web Developement</h5>
-                    <p style="color: white;">Front end + back Dev asasdwra aasa  scaw puoh n sawacb</p c>
-                    <a href="#webdev" class="text-success">Click Here</a>
+                    <h5 class="title text-primary">Web Developement</h5>
+                    <!-- <p style="color: white;">Front end + back Dev asasdwra aasa  scaw puoh n sawacb</p c>
+                    <a href="#webdev" class="text-success">Click Here</a> -->
                   </div>
                 </div>
               </div>
@@ -111,13 +129,13 @@
                 <div class="d-flex px-3">
                   <div>
                     <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                      <i class="ni ni-atom"></i>
+                      <i class="ni ni-mobile-button"></i>
                     </div>
                   </div>
                   <div class="pl-4">
-                    <h5 class="title text-warning">Artificial Intelligence</h5>
-                    <p style="color: white;">The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever.</p>
-                    <a href="#artificialint" class="text-warning">Click Here</a>
+                    <h5 class="title text-warning">Android Application</h5>
+                    <!-- <p style="color: white;">The Arctic Ocean freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever.</p>
+                    <a href="#artificialint" class="text-warning">Click Here</a> -->
                   </div>
                 </div>
               </div></div>
@@ -126,14 +144,30 @@
                 <div class="card-body">
                   <div class="d-flex px-3">
                     <div>
-                      <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                      <div class="icon icon-shape bg-gradient-info rounded-circle text-white">
                         <i class="ni ni-app"></i>
                       </div>
                     </div>
                     <div class="pl-4">
-                      <h5 class="title text-success">Machine Learning</h5>
-                      <p style="color: white;">Front end + back Dev asasdwra aasa  scaw puoh n sawacb</p>
-                      <a href="#machinelearning" class="text-success">Click Here</a>
+                      <h5 class="title text-info">Machine Learning / Artificial Intelligence</h5>
+                      <!-- <p style="color: white;">Front end + back Dev asasdwra aasa  scaw puoh n sawacb</p>
+                      <a href="#machinelearning" class="text-success">Click Here</a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card shadow shadow-lg--hover mt-5 bg-gradient-gray-dark">
+                <div class="card-body">
+                  <div class="d-flex px-3">
+                    <div>
+                      <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                        <i class="ni ni-money-coins"></i>
+                      </div>
+                    </div>
+                    <div class="pl-4">
+                      <h5 class="title text-success">Blockchain</h5>
+                      <!-- <p style="color: white;">Front end + back Dev asasdwra aasa  scaw puoh n sawacb</p>
+                      <a href="#machinelearning" class="text-success">Click Here</a> -->
                     </div>
                   </div>
                 </div>
@@ -152,7 +186,7 @@
       </div> -->
     </section>
     <!--  -->
-    <section class="section section-lg">
+    <!-- <section class="section section-lg">
       <div class="container">
         <div class="row justify-content-center text-center mb-lg">
           <div class="col-lg-8">
@@ -215,7 +249,8 @@
         </div>
       </div>
     </section>
-<!--  -->
+  -->
+ <!--
 <div style="margin-bottom:-160px;"></div>
     <section class="section section-lg">
       <div class="container">
@@ -345,8 +380,11 @@
           </div>
         </div>
       </div>
-    </section>
-    <div style="margin-bottom:-80px;"></div>
+ </section> 
+ -->
+
+   
+    <div style="margin-bottom:75px;"></div>
   <!-- Core -->
   <script src="{% static 'Hackathon/ps/assets/vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'Hackathon/ps/assets/vendor/popper/popper.min.js' %}"></script>
