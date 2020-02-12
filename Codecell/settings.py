@@ -25,7 +25,7 @@ SECRET_KEY = 'a6ri_w$)txz3t@l!*k%a2w8r04=27$n7b0r!w!9mzcb=hauhip'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','omkarc.pythonanywhere.com',]
+ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','omkarc.pythonanywhere.com','codecell.pythonanywhere.com']
 
 
 # Application definition
@@ -59,7 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
-        'APP_DIRS': True, 
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

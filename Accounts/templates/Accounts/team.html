@@ -1,5 +1,6 @@
 {% extends 'Accounts/base.html' %}
 {% block content %}
+{% load static %}
  <!-- Start: Team with rotating cards -->
     <section class="card-section-imagia" style="margin-top: 8vh;">
         <!-- Start: H1 -->
@@ -21,13 +22,13 @@
                                 <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
                                 <!-- End: cover image -->
                                 <!-- Start: user image -->
-                                <div class="user-imagia"><img class="img-circle" alt="" src="https://unsplash.it/120/120?image=64"></div>
+                                <div class="user-imagia"><img class="img-circle" alt="" src="{% static 'Accounts/assets/team/Aayush.jpg' %}"></div>
                                 <!-- End: user image -->
                                 <!-- Start: texte -->
                                 <div class="content-imagia">
                                     <h3 class="name-imagia">Aayush Singh</h3>
                                     <p class="subtitle-imagia">Founder</p>
-                                    <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves.</em></p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves.</em></p> -->
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
@@ -35,26 +36,6 @@
                                 <!-- End: footer -->
                             </div>
                             <!-- End: front -->
-                            <!-- Start: back -->
-                            <div class="back-imagia">
-                                <!-- Start: content -->
-                                <div class="content-imagia content-back-imagia">
-                                    <div>
-                                        <h3 class="text-center">Lorem Ipsum</h3>
-                                        <p class="text-center">Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva
-                                            aegre vestigia claritudinis pristinae monstrat admodum pauca. </p>
-                                    </div>
-                                </div>
-                                <!-- End: content -->
-                                <!-- Start: footer -->
-                                <div class="footer-imagia">
-                                    <!-- Start: icons -->
-                                    <div class="social-imagia text-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></div>
-                                    <!-- End: icons -->
-                                </div>
-                                <!-- End: footer -->
-                            </div>
-                            <!-- End: back -->
                         </div>
                         <!-- End: card -->
                     </div>
@@ -71,12 +52,12 @@
                                 <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
                                 <!-- End: cover image -->
                                 <!-- Start: user image -->
-                                <div class="user-imagia"><img class="img-circle" alt="" src="https://unsplash.it/120/120?image=64"></div>
+                                <div class="user-imagia"><img class="rounded-circle" alt="" src="{% static 'Accounts/assets/team/Nitish.jpeg' %}"></div>
                                 <!-- End: user image -->
                                 <div class="content-imagia">
                                     <h3 class="name-imagia">Nitish Talekar</h3>
                                     <p class="subtitle-imagia">Founder</p>
-                                    <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p> -->
                                 </div>
 
                             </div>
@@ -106,6 +87,7 @@
                     </div>
                     <!-- End: card container -->
                 </div>
+
                 <div class="col-sm-6 col-md-4">
                     <!-- Start: card container -->
                     <div class="card-container-imagia">
@@ -117,13 +99,13 @@
                                 <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
                                 <!-- End: cover image -->
                                 <!-- Start: user image -->
-                                <div class="user-imagia"><img class="img-circle" alt="" src="https://unsplash.it/120/120?image=64"></div>
+                                <div class="user-imagia"><img class="img-circle" alt="" src="{% static 'Accounts/assets/team/Saad.jpeg' %}"></div>
                                 <!-- End: user image -->
                                 <!-- Start: texte -->
                                 <div class="content-imagia">
-                                    <h3 class="name-imagia">Sagar Ambilpure</h3>
+                                    <h3 class="name-imagia">Saad Ghojaria</h3>
                                     <p class="subtitle-imagia">Founder</p>
-                                    <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p> -->
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
@@ -156,10 +138,7 @@
                     </div>
                     <!-- End: card container -->
                 </div>
-            </div>
 
-
-            <div class="row">
                 <div class="col-sm-6 col-md-4">
                     <!-- Start: card container -->
                     <div class="card-container-imagia">
@@ -171,13 +150,40 @@
                                 <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
                                 <!-- End: cover image -->
                                 <!-- Start: user image -->
-                                <div class="user-imagia"><img class="img-circle" alt="" src="https://unsplash.it/120/120?image=64"></div>
+                                <div class="user-imagia"><img class="rounded-circle" alt="" src="{% static 'Accounts/assets/team/Sagar.jpeg' %}"></div>
+                                <!-- End: user image -->
+                                <div class="content-imagia">
+                                    <h3 class="name-imagia">Sagar Ambilpure</h3>
+                                    <p class="subtitle-imagia">Co-Founder</p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p> -->
+                                </div>
+
+                            </div>
+                            <!-- End: front -->
+                        </div>
+                        <!-- End: card -->
+                    </div>
+                    <!-- End: card container -->
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <!-- Start: card container -->
+                    <div class="card-container-imagia">
+                        <!-- Start: card -->
+                        <div class="card-imagia">
+                            <!-- Start: front -->
+                            <div class="front-imagia">
+                                <!-- Start: cover image -->
+                                <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
+                                <!-- End: cover image -->
+                                <!-- Start: user image -->
+                                <div class="user-imagia"><img class="img-circle" alt="" src="{% static 'Accounts/assets/team/Omkar.jpeg' %}"></div>
                                 <!-- End: user image -->
                                 <!-- Start: texte -->
                                 <div class="content-imagia">
                                     <h3 class="name-imagia">Omkar Chorghe</h3>
                                     <p class="subtitle-imagia">Development Head</p>
-                                    <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves.</em></p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves.</em></p> -->
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
@@ -185,77 +191,13 @@
                                 <!-- End: footer -->
                             </div>
                             <!-- End: front -->
-                            <!-- Start: back -->
-                            <div class="back-imagia">
-                                <!-- Start: content -->
-                                <div class="content-imagia content-back-imagia">
-                                    <div>
-                                        <h3 class="text-center">Lorem Ipsum</h3>
-                                        <p class="text-center">Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva
-                                            aegre vestigia claritudinis pristinae monstrat admodum pauca. </p>
-                                    </div>
-                                </div>
-                                <!-- End: content -->
-                                <!-- Start: footer -->
-                                <div class="footer-imagia">
-                                    <!-- Start: icons -->
-                                    <div class="social-imagia text-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></div>
-                                    <!-- End: icons -->
-                                </div>
-                                <!-- End: footer -->
-                            </div>
-                            <!-- End: back -->
                         </div>
                         <!-- End: card -->
                     </div>
                     <!-- End: card container -->
                 </div>
-                <div class="col-sm-6 col-md-4">
-                    <!-- Start: card container -->
-                    <div class="card-container-imagia">
-                        <!-- Start: card -->
-                        <div class="card-imagia">
-                            <!-- Start: front -->
-                            <div class="front-imagia">
-                                <!-- Start: cover image -->
-                                <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
-                                <!-- End: cover image -->
-                                <!-- Start: user image -->
-                                <div class="user-imagia"><img class="img-circle" alt="" src="https://unsplash.it/120/120?image=64"></div>
-                                <!-- End: user image -->
-                                <div class="content-imagia">
-                                    <h3 class="name-imagia">Nitish Talekar</h3>
-                                    <p class="subtitle-imagia">Founder</p>
-                                    <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
-                                </div>
 
-                            </div>
-                            <!-- End: front -->
-                            <!-- Start: back -->
-                            <div class="back-imagia">
-                                <!-- Start: content -->
-                                <div class="content-imagia content-back-imagia">
-                                    <div>
-                                        <h3 class="text-center">Lorem Ipsum</h3>
-                                        <p class="text-center">Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva
-                                            aegre vestigia claritudinis pristinae monstrat admodum pauca. </p>
-                                    </div>
-                                </div>
-                                <!-- End: content -->
-                                <!-- Start: footer -->
-                                <div class="footer-imagia">
-                                    <!-- Start: icons -->
-                                    <div class="social-imagia text-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></div>
-                                    <!-- End: icons -->
-                                </div>
-                                <!-- End: footer -->
-                            </div>
-                            <!-- End: back -->
-                        </div>
-                        <!-- End: card -->
-                    </div>
-                    <!-- End: card container -->
-                </div>
+
                 <div class="col-sm-6 col-md-4">
                     <!-- Start: card container -->
                     <div class="card-container-imagia">
@@ -267,13 +209,13 @@
                                 <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
                                 <!-- End: cover image -->
                                 <!-- Start: user image -->
-                                <div class="user-imagia"><img class="img-circle" alt="" src="https://unsplash.it/120/120?image=64"></div>
+                                <div class="user-imagia"><img class="img-circle" alt="" src="{% static 'Accounts/assets/team/Devansh.jpeg' %}"></div>
                                 <!-- End: user image -->
                                 <!-- Start: texte -->
                                 <div class="content-imagia">
-                                    <h3 class="name-imagia">Sagar Ambilpure</h3>
-                                    <p class="subtitle-imagia">Founder</p>
-                                    <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
+                                    <h3 class="name-imagia">Devansh Nanani</h3>
+                                    <p class="subtitle-imagia">Operations Head</p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p> -->
                                 </div>
                                 <!-- End: texte -->
                                 <!-- Start: footer -->
@@ -281,181 +223,168 @@
                                 <!-- End: footer -->
                             </div>
                             <!-- End: front -->
-                            <!-- Start: back -->
-                            <div class="back-imagia">
-                                <!-- Start: content -->
-                                <div class="content-imagia content-back-imagia">
-                                    <div>
-                                        <h3 class="text-center">Lorem Ipsum</h3>
-                                        <p class="text-center">Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva
-                                            aegre vestigia claritudinis pristinae monstrat admodum pauca. </p>
-                                    </div>
-                                </div>
-                                <!-- End: content -->
-                                <!-- Start: footer -->
-                                <div class="footer-imagia">
-                                    <!-- Start: icons -->
-                                    <div class="social-imagia text-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></div>
-                                    <!-- End: icons -->
-                                </div>
-                                <!-- End: footer -->
-                            </div>
-                            <!-- End: back -->
                         </div>
                         <!-- End: card -->
                     </div>
                     <!-- End: card container -->
                 </div>
+
+
+                <div class="col-sm-6 col-md-4">
+                    <!-- Start: card container -->
+                    <div class="card-container-imagia">
+                        <!-- Start: card -->
+                        <div class="card-imagia">
+                            <!-- Start: front -->
+                            <div class="front-imagia">
+                                <!-- Start: cover image -->
+                                <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
+                                <!-- End: cover image -->
+                                <!-- Start: user image -->
+                                <div class="user-imagia"><img class="img-circle" alt="" src="{% static 'Accounts/assets/team/Manasi.jpg' %}"></div>
+                                <!-- End: user image -->
+                                <!-- Start: texte -->
+                                <div class="content-imagia">
+                                    <h3 class="name-imagia">Manasi Hodavdekar</h3>
+                                    <p class="subtitle-imagia">Operations Head</p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves.</em></p> -->
+                                </div>
+                                <!-- End: texte -->
+                                <!-- Start: footer -->
+
+                                <!-- End: footer -->
+                            </div>
+                            <!-- End: front -->
+                        </div>
+                        <!-- End: card -->
+                    </div>
+                    <!-- End: card container -->
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <!-- Start: card container -->
+                    <div class="card-container-imagia">
+                        <!-- Start: card -->
+                        <div class="card-imagia">
+                            <!-- Start: front -->
+                            <div class="front-imagia">
+                                <!-- Start: cover image -->
+                                <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
+                                <!-- End: cover image -->
+                                <!-- Start: user image -->
+                                <div class="user-imagia"><img class="rounded-circle" alt="" src="{% static 'Accounts/assets/team/Keshav.jpeg' %}"></div>
+                                <!-- End: user image -->
+                                <div class="content-imagia">
+                                    <h3 class="name-imagia">Keshav Sharma</h3>
+                                    <p class="subtitle-imagia">Operations Head</p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p> -->
+                                </div>
+
+                            </div>
+                            <!-- End: front -->
+                        </div>
+                        <!-- End: card -->
+                    </div>
+                    <!-- End: card container -->
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <!-- Start: card container -->
+                    <div class="card-container-imagia">
+                        <!-- Start: card -->
+                        <div class="card-imagia">
+                            <!-- Start: front -->
+                            <div class="front-imagia">
+                                <!-- Start: cover image -->
+                                <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
+                                <!-- End: cover image -->
+                                <!-- Start: user image -->
+                                <div class="user-imagia"><img class="img-circle" alt="" src="{% static 'Accounts/assets/team/Sanchita.jpeg' %}"></div>
+                                <!-- End: user image -->
+                                <!-- Start: texte -->
+                                <div class="content-imagia">
+                                    <h3 class="name-imagia">Sanchita Shirur</h3>
+                                    <p class="subtitle-imagia">Logistics Head</p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p> -->
+                                </div>
+                                <!-- End: texte -->
+                                <!-- Start: footer -->
+
+                                <!-- End: footer -->
+                            </div>
+                            <!-- End: front -->
+                        </div>
+                        <!-- End: card -->
+                    </div>
+                    <!-- End: card container -->
+                </div>
+                <div class="col-sm-6 col-md-4 offset-2">
+                    <!-- Start: card container -->
+                    <div class="card-container-imagia">
+                        <!-- Start: card -->
+                        <div class="card-imagia">
+                            <!-- Start: front -->
+                            <div class="front-imagia">
+                                <!-- Start: cover image -->
+                                <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
+                                <!-- End: cover image -->
+                                <!-- Start: user image -->
+                                <div class="user-imagia"><img class="rounded-circle" alt="" src="{% static 'Accounts/assets/team/Anagha.jpeg' %}"></div>
+                                <!-- End: user image -->
+                                <div class="content-imagia">
+                                    <h3 class="name-imagia">Anagha Patil</h3>
+                                    <p class="subtitle-imagia">Logistics Head</p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p> -->
+                                </div>
+
+                            </div>
+                            <!-- End: front -->
+                        </div>
+                        <!-- End: card -->
+                    </div>
+                    <!-- End: card container -->
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <!-- Start: card container -->
+                    <div class="card-container-imagia">
+                        <!-- Start: card -->
+                        <div class="card-imagia">
+                            <!-- Start: front -->
+                            <div class="front-imagia">
+                                <!-- Start: cover image -->
+                                <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
+                                <!-- End: cover image -->
+                                <!-- Start: user image -->
+                                <div class="user-imagia"><img class="img-circle" alt="" src="{% static 'Accounts/assets/team/Sejal.jpg' %}"></div>
+                                <!-- End: user image -->
+                                <!-- Start: texte -->
+                                <div class="content-imagia">
+                                    <h3 class="name-imagia">Sejal Kore</h3>
+                                    <p class="subtitle-imagia">Resources Head</p>
+                                    <!-- <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p> -->
+                                </div>
+                                <!-- End: texte -->
+                            </div>
+                            <!-- End: front -->
+                        </div>
+                        <!-- End: card -->
+                    </div>
+                    <!-- End: card container -->
+                </div>
+
+
+
             </div>
 
-
-            <div class="row">
-                <div class="col-sm-6 col-md-4">
-                    <!-- Start: card container -->
-                    <div class="card-container-imagia">
-                        <!-- Start: card -->
-                        <div class="card-imagia">
-                            <!-- Start: front -->
-                            <div class="front-imagia">
-                                <!-- Start: cover image -->
-                                <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
-                                <!-- End: cover image -->
-                                <!-- Start: user image -->
-                                <div class="user-imagia"><img class="img-circle" alt="" src="https://unsplash.it/120/120?image=64"></div>
-                                <!-- End: user image -->
-                                <!-- Start: texte -->
-                                <div class="content-imagia">
-                                    <h3 class="name-imagia">Aayush Singh</h3>
-                                    <p class="subtitle-imagia">Founder</p>
-                                    <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves.</em></p>
-                                </div>
-                                <!-- End: texte -->
-                                <!-- Start: footer -->
-
-                                <!-- End: footer -->
-                            </div>
-                            <!-- End: front -->
-                            <!-- Start: back -->
-                            <div class="back-imagia">
-                                <!-- Start: content -->
-                                <div class="content-imagia content-back-imagia">
-                                    <div>
-                                        <h3 class="text-center">Lorem Ipsum</h3>
-                                        <p class="text-center">Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva
-                                            aegre vestigia claritudinis pristinae monstrat admodum pauca. </p>
-                                    </div>
-                                </div>
-                                <!-- End: content -->
-                                <!-- Start: footer -->
-                                <div class="footer-imagia">
-                                    <!-- Start: icons -->
-                                    <div class="social-imagia text-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></div>
-                                    <!-- End: icons -->
-                                </div>
-                                <!-- End: footer -->
-                            </div>
-                            <!-- End: back -->
-                        </div>
-                        <!-- End: card -->
-                    </div>
-                    <!-- End: card container -->
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <!-- Start: card container -->
-                    <div class="card-container-imagia">
-                        <!-- Start: card -->
-                        <div class="card-imagia">
-                            <!-- Start: front -->
-                            <div class="front-imagia">
-                                <!-- Start: cover image -->
-                                <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
-                                <!-- End: cover image -->
-                                <!-- Start: user image -->
-                                <div class="user-imagia"><img class="img-circle" alt="" src="https://unsplash.it/120/120?image=64"></div>
-                                <!-- End: user image -->
-                                <div class="content-imagia">
-                                    <h3 class="name-imagia">Nitish Talekar</h3>
-                                    <p class="subtitle-imagia">Founder</p>
-                                    <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
-                                </div>
-                            </div>
-                            <!-- End: front -->
-                            <!-- Start: back -->
-                            <div class="back-imagia">
-                                <!-- Start: content -->
-                                <div class="content-imagia content-back-imagia">
-                                    <div>
-                                        <h3 class="text-center">Lorem Ipsum</h3>
-                                        <p class="text-center">Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva
-                                            aegre vestigia claritudinis pristinae monstrat admodum pauca. </p>
-                                    </div>
-                                </div>
-                                <!-- End: content -->
-                                <!-- Start: footer -->
-                                <div class="footer-imagia">
-                                    <!-- Start: icons -->
-                                    <div class="social-imagia text-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></div>
-                                    <!-- End: icons -->
-                                </div>
-                                <!-- End: footer -->
-                            </div>
-                            <!-- End: back -->
-                        </div>
-                        <!-- End: card -->
-                    </div>
-                    <!-- End: card container -->
-                </div>
-                <div class="col-sm-6 col-md-4">
-                    <!-- Start: card container -->
-                    <div class="card-container-imagia">
-                        <!-- Start: card -->
-                        <div class="card-imagia">
-                            <!-- Start: front -->
-                            <div class="front-imagia">
-                                <!-- Start: cover image -->
-                                <div class="cover-imagia"><img alt="" src="https://unsplash.it/720/500?image=1067"></div>
-                                <!-- End: cover image -->
-                                <!-- Start: user image -->
-                                <div class="user-imagia"><img class="img-circle" alt="" src="https://unsplash.it/120/120?image=64"></div>
-                                <!-- End: user image -->
-                                <!-- Start: texte -->
-                                <div class="content-imagia">
-                                    <h3 class="name-imagia">Sagar Ambilpure</h3>
-                                    <p class="subtitle-imagia">Founder</p>
-                                    <p class="text-center"><em>Tantum autem cuique tribuendum, primum quantum ipse efficere possis, deinde etiam quantum ille quem diligas atque adiuves. </em></p>
-                                </div>
-                                <!-- End: texte -->
-                            </div>
-                            <!-- End: front -->
-                            <!-- Start: back -->
-                            <div class="back-imagia">
-                                <!-- Start: content -->
-                                <div class="content-imagia content-back-imagia">
-                                    <div>
-                                        <h3 class="text-center">Lorem Ipsum</h3>
-                                        <p class="text-center">Et hanc quidem praeter oppida multa duae civitates exornant Seleucia opus Seleuci regis, et Claudiopolis quam deduxit coloniam Claudius Caesar. Isaura enim antehac nimium potens, olim subversa ut rebellatrix interneciva
-                                            aegre vestigia claritudinis pristinae monstrat admodum pauca. </p>
-                                    </div>
-                                </div>
-                                <!-- End: content -->
-                                <!-- Start: footer -->
-                                <div class="footer-imagia">
-                                    <!-- Start: icons -->
-                                    <div class="social-imagia text-center"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></div>
-                                    <!-- End: icons -->
-                                </div>
-                                <!-- End: footer -->
-                            </div>
-                            <!-- End: back -->
-                        </div>
-                        <!-- End: card -->
-                    </div>
-                    <!-- End: card container -->
-                </div>
-            </div>
 
 
         </div>
+
+
+
+
+
+
     </section>
 {% endblock %}
 {#    <!-- End: Team with rotating cards -->#}
