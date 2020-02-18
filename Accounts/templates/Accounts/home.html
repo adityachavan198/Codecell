@@ -1,27 +1,28 @@
 {% extends 'Accounts/base.html' %} {% block content %} {% load static %}
-<div class="section1 box" id="codecell" style="height:100vh">
-  <div class="logo-on-page d-block">
+<div class="section1 box" id="codecell" >
+  <div class="logo-on-page d-block" >
     <img
       src="{% static 'Accounts/assets/logo.png' %}"
       alt=""
       width="50%"
-      style="position: relative; padding-top: 100px"
+      style="position: relative;margin-top: 15vh"
     />
   </div>
-  <br />
-  <p style="color: white;font-size: 10vmin;">Platform for coders,by coders.</p>
+  
+  <p style="color: white;font-size: 10vmin;margin-top: 10px">Platform for coders,by coders.</p>
   <center>
     <a
       id="btnHome"
       href="#about"
       class="btn bg-light text-dark btn-lg"
       role="button"
+      style="vertical-align: top;padding: 10px"
       >Learn more</a
     >
   </center>
 </div>
 
-<div class="d-block"id="about" style="height:100vh;padding-top: 50px;">
+<div class="d-block"id="about" style="height:auto;padding-top: 50px;padding-bottom: 50px">
   <div class="container" style="text-align: center;">
     <img class="imgRight"
       src="{% static 'Accounts/assets/i1.svg' %}"
@@ -56,7 +57,7 @@
         <div class="col-lg-6 col-sm-12">
           <a href="{% url 'hackathon_home' %}"><img
               src="{% static 'Accounts/assets/Recursion.jpeg' %}"
-              style="padding: 3vmin; height: 24vmax;;"
+              style="padding: 3vmin; height: 24vmax;"
               class="img"
           /></a>
         </div>
